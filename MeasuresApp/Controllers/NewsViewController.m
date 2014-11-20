@@ -7,22 +7,79 @@
 //
 
 #import "NewsViewController.h"
+#import "NewsTableViewCell.h"
+#import "DetailNewsViewController.h"
 
-@interface NewsViewController ()
+@interface NewsViewController (){
+    NSMutableArray * listOfNews;
+}
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfNews;
+@property (strong, nonatomic) UINavigationController * navControllerForNews;
 
 @end
 
 @implementation NewsViewController
+@synthesize navControllerForNews;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)initProperties
+{
+    listOfNews = [[NSMutableArray alloc] initWithArray:@[@"news.png"]];
+    self.tblListOfNews.dataSource = self;
+    self.tblListOfNews.delegate = self;
+}
+
+#pragma mark - TableView delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;//listOfSponsors.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"NewsCell";
+    NSInteger row = indexPath.row;
+    
+    NewsTableViewCell *cell = (NewsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib;
+        if((row % 2) == 0)
+            nib = [[NSBundle mainBundle] loadNibNamed:@"NewsTableViewCell" owner:self options:nil];
+        else
+             nib = [[NSBundle mainBundle] loadNibNamed:@"NewsTableViewCellR" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
+    
+    /*
+    if(!navControllerForNews)
+        navControllerForNews = [[UINavigationController alloc] initWithRootViewController:];
+     */
+    
+    UIViewController *stubController = [[UIViewController alloc] init];
+    stubController.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:stubController animated:YES];
+}
+
+#pragma mark - Open detail information about selected news
 
 /*
 #pragma mark - Navigation

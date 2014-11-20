@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParentForFrontViewController.h"
 
-@interface NewsViewController : UIViewController
+@interface NewsViewController : ParentForFrontViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController">
             <connections>
+                <outlet property="tblListOfNews" destination="jX2-6E-ah5" id="GNE-S2-Ux8"/>
                 <outlet property="view" destination="Qyk-TF-abR" id="Xhc-9l-icP"/>
             </connections>
         </placeholder>
@@ -13,7 +14,20 @@
         <view contentMode="scaleToFill" id="Qyk-TF-abR">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jX2-6E-ah5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jX2-6E-ah5" secondAttribute="trailing" id="Ejb-o7-KBA"/>
+                <constraint firstAttribute="bottom" secondItem="jX2-6E-ah5" secondAttribute="bottom" id="GQi-pB-e1q"/>
+                <constraint firstItem="jX2-6E-ah5" firstAttribute="top" secondItem="Qyk-TF-abR" secondAttribute="top" id="OD5-j3-I5Z"/>
+                <constraint firstItem="jX2-6E-ah5" firstAttribute="leading" secondItem="Qyk-TF-abR" secondAttribute="leading" id="RtK-35-dbg"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="212" y="-32"/>
         </view>
