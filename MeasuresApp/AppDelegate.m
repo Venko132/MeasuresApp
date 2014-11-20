@@ -10,6 +10,7 @@
 #import "RearViewController.h"
 #import "SWRevealViewController.h"
 #import "PosterViewController.h"
+#import <VKSdk.h>
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -38,6 +39,12 @@
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [VKSdk processOpenURL:url fromApplication:sourceApplication];
     
     return YES;
 }
