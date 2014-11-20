@@ -32,6 +32,15 @@
                         <action selector="facebookPost:" destination="-1" eventType="touchUpInside" id="ekq-xb-pn9"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGi-ny-GRs">
+                    <rect key="frame" x="43" y="244" width="70" height="30"/>
+                    <state key="normal" title="Instagram">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="instagramPost:" destination="-1" eventType="touchUpInside" id="n0C-VR-je6"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

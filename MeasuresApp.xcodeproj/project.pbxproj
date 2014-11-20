@@ -48,6 +48,7 @@
 		84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */; };
 		84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */; };
 		84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */; };
+		84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C841A1DE9E90093BDE9 /* HelperClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearTableViewCell.xib; sourceTree = "<group>"; };
 		84C90C7B1A1CE08C0093BDE9 /* ParentForFrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentForFrontViewController.h; sourceTree = "<group>"; };
 		84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentForFrontViewController.m; sourceTree = "<group>"; };
+		84C90C831A1DE9E90093BDE9 /* HelperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperClass.h; sourceTree = "<group>"; };
+		84C90C841A1DE9E90093BDE9 /* HelperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperClass.m; sourceTree = "<group>"; };
 		88AD94AF126C3B68A495106A /* libPods-MeasuresApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeasuresApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC52C47A06BEE6ADFA8D90D1 /* Pods-MeasuresApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeasuresApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeasuresApp/Pods-MeasuresApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +176,7 @@
 		849E26881A1BAC9E00C56951 /* MeasuresApp */ = {
 			isa = PBXGroup;
 			children = (
+				84C90C821A1DE9980093BDE9 /* OtherClasses */,
 				84BF5A791A1CC6CF00EB28C6 /* Controllers */,
 				849E268D1A1BAC9E00C56951 /* AppDelegate.h */,
 				849E268E1A1BAC9E00C56951 /* AppDelegate.m */,
@@ -345,6 +349,15 @@
 				84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */,
 			);
 			name = ParentFront;
+			sourceTree = "<group>";
+		};
+		84C90C821A1DE9980093BDE9 /* OtherClasses */ = {
+			isa = PBXGroup;
+			children = (
+				84C90C831A1DE9E90093BDE9 /* HelperClass.h */,
+				84C90C841A1DE9E90093BDE9 /* HelperClass.m */,
+			);
+			path = OtherClasses;
 			sourceTree = "<group>";
 		};
 		B1C1E638A30ABCB4C3FAF920 /* Frameworks */ = {
@@ -532,6 +545,7 @@
 				84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */,
 				84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */,
 				849E268C1A1BAC9E00C56951 /* main.m in Sources */,
+				84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */,
 				84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */,
 				84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */,
 				84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */,

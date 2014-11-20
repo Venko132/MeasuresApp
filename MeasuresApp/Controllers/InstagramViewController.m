@@ -7,11 +7,14 @@
 //
 
 #import "InstagramViewController.h"
+#import "HelperClass.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
-@interface InstagramViewController ()
-
+@interface InstagramViewController ()<UIDocumentInteractionControllerDelegate>{
+    UIImageView *imageInstagram;
+}
+@property (nonatomic, strong) UIDocumentInteractionController *documentController;
 
 @end
 
@@ -27,7 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Call social share
+#pragma mark - Share message in social networks
 
 -(IBAction)facebookPost:(id)sender{
     
@@ -45,7 +48,7 @@
         }
         [controller dismissViewControllerAnimated:YES completion:nil];
     };
-    controller.completionHandler =myBlock;
+    controller.completionHandler = myBlock;
     //Adding the Text to the facebook post value from iOS
     [controller setInitialText:@"My test post"];
     //Adding the URL to the facebook post value from iOS
@@ -59,6 +62,47 @@
                                            composeViewControllerForServiceType:SLServiceTypeTwitter];
     [tweetSheet setInitialText:@"My test tweet"];
     [self presentViewController:tweetSheet animated:YES completion:nil];
+}
+
+#pragma mark - Instagram
+
+-(IBAction)instagramPost:(id)sender
+{
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
+    if([[UIApplication sharedApplication] canOpenURL:instagramURL])
+    {
+        CGFloat cropVal = (imageInstagram.image.size.height > imageInstagram.image.size.width ? imageInstagram.image.size.width : imageInstagram.image.size.height);
+        
+        cropVal *= [imageInstagram.image scale];
+        
+        CGRect cropRect = (CGRect){.size.height = cropVal, .size.width = cropVal};
+        CGImageRef imageRef = CGImageCreateWithImageInRect([imageInstagram.image CGImage], cropRect);
+        
+        NSData *imageData = UIImageJPEGRepresentation([UIImage imageWithCGImage:imageRef], 1.0);
+        CGImageRelease(imageRef);
+        
+        NSString *writePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"instagram.igo"];
+        if (![imageData writeToFile:writePath atomically:YES]) {
+            // failure
+            NSLog(@"image save failed to path %@", writePath);
+            return;
+        } else {
+            // success.
+        }
+        
+        // send it to instagram.
+        NSURL *fileURL = [NSURL fileURLWithPath:writePath];
+        self.documentController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
+        self.documentController.delegate = self;
+        [self.documentController setUTI:@"com.instagram.exclusivegram"];
+        [self.documentController setAnnotation:@{@"InstagramCaption" : @"We are making fun"}];
+        [self.documentController presentOpenInMenuFromRect:self.view.bounds inView:self.view animated:YES];
+    }
+    else
+    {
+        [HelperClass showMessage:@"Instagram not installed in this device!\nTo share image please install instagram." withTitle:@"Error"];
+        
+    }
 }
 
 /*
