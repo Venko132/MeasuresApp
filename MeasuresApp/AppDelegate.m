@@ -7,16 +7,38 @@
 //
 
 #import "AppDelegate.h"
+#import "RearViewController.h"
+#import "SWRevealViewController.h"
+#import "PosterViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<SWRevealViewControllerDelegate>
 
 @end
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    PosterViewController *frontViewController = [[PosterViewController alloc] init];
+    RearViewController *rearViewController = [[RearViewController alloc] init];
+    
+    UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    
+    SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
+                                                    initWithRearViewController:rearViewController frontViewController:frontNavigationController];
+    
+    mainRevealController.delegate = self;
+    
+    self.viewController = mainRevealController;
+    
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -122,6 +144,29 @@
             abort();
         }
     }
+}
+
+#pragma mark - SideBar delegate
+
+- (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position
+{
+    NSString *str = nil;
+    if ( position == FrontViewPositionLeft ) str = @"FrontViewPositionLeft";
+    if ( position == FrontViewPositionRight ) str = @"FrontViewPositionRight";
+    if ( position == FrontViewPositionRightMost ) str = @"FrontViewPositionRightMost";
+    if ( position == FrontViewPositionRightMostRemoved ) str = @"FrontViewPositionRightMostRemoved";
+    return str;
+}
+
+
+- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
+{
+    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+}
+
+- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
+{
+    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
 }
 
 @end

@@ -7,14 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84028F371A1CD68000A6D297 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84028F351A1CD68000A6D297 /* RearViewController.m */; };
+		84028F381A1CD68000A6D297 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84028F361A1CD68000A6D297 /* RearViewController.xib */; };
 		849E268C1A1BAC9E00C56951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E268B1A1BAC9E00C56951 /* main.m */; };
 		849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E268E1A1BAC9E00C56951 /* AppDelegate.m */; };
 		849E26921A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849E26901A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld */; };
-		849E26951A1BAC9E00C56951 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E26941A1BAC9E00C56951 /* ViewController.m */; };
-		849E26981A1BAC9E00C56951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849E26961A1BAC9E00C56951 /* Main.storyboard */; };
 		849E269A1A1BAC9E00C56951 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849E26991A1BAC9E00C56951 /* Images.xcassets */; };
 		849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849E269B1A1BAC9E00C56951 /* LaunchScreen.xib */; };
 		849E26A91A1BAC9E00C56951 /* MeasuresAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E26A81A1BAC9E00C56951 /* MeasuresAppTests.m */; };
+		84A195F01A1CCF2200066790 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A195EE1A1CCF2200066790 /* SWRevealViewController.m */; };
+		84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F731A1CD42500601CCD /* PosterViewController.m */; };
+		84AA4F761A1CD42500601CCD /* PosterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F741A1CD42500601CCD /* PosterViewController.xib */; };
+		84AA4F7A1A1CD4AB00601CCD /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */; };
+		84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */; };
+		84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F7D1A1CD4BF00601CCD /* NewsViewController.m */; };
+		84AA4F801A1CD4EC00601CCD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F7F1A1CD4EC00601CCD /* NewsViewController.xib */; };
+		84AA4F871A1CD5B400601CCD /* InstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F851A1CD5B400601CCD /* InstagramViewController.m */; };
+		84AA4F881A1CD5B400601CCD /* InstagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F861A1CD5B400601CCD /* InstagramViewController.xib */; };
+		84AA4F8D1A1CD5D300601CCD /* PlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F8B1A1CD5D300601CCD /* PlacesViewController.m */; };
+		84AA4F8E1A1CD5D300601CCD /* PlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F8C1A1CD5D300601CCD /* PlacesViewController.xib */; };
+		84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F911A1CD5FB00601CCD /* SponsorsViewController.m */; };
+		84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F921A1CD5FB00601CCD /* SponsorsViewController.xib */; };
+		84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A591A1CC56C00EB28C6 /* bookmark.png */; };
+		84BF5A6A1A1CC56C00EB28C6 /* bookmark_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */; };
+		84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5B1A1CC56C00EB28C6 /* calendar.png */; };
+		84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5C1A1CC56C00EB28C6 /* calendar_photo.jpg */; };
+		84BF5A6D1A1CC56C00EB28C6 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5D1A1CC56C00EB28C6 /* comments.png */; };
+		84BF5A6E1A1CC56C00EB28C6 /* comments_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5E1A1CC56C00EB28C6 /* comments_photo.jpg */; };
+		84BF5A6F1A1CC56C00EB28C6 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5F1A1CC56C00EB28C6 /* map.png */; };
+		84BF5A701A1CC56C00EB28C6 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A601A1CC56C00EB28C6 /* menu.png */; };
+		84BF5A711A1CC56C00EB28C6 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A611A1CC56C00EB28C6 /* menu@2x.png */; };
+		84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A621A1CC56C00EB28C6 /* nav_bg.png */; };
+		84BF5A731A1CC56C00EB28C6 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A631A1CC56C00EB28C6 /* news.png */; };
+		84BF5A741A1CC56C00EB28C6 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A641A1CC56C00EB28C6 /* photo.png */; };
+		84BF5A751A1CC56C00EB28C6 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A651A1CC56C00EB28C6 /* tag.png */; };
+		84BF5A761A1CC56C00EB28C6 /* tag_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */; };
+		84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A671A1CC56C00EB28C6 /* wishlist.png */; };
+		84BF5A781A1CC56C00EB28C6 /* wishlist_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A681A1CC56C00EB28C6 /* wishlist_photo.jpg */; };
+		84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */; };
+		84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */; };
+		84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +60,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84028F341A1CD68000A6D297 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
+		84028F351A1CD68000A6D297 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
+		84028F361A1CD68000A6D297 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
 		849E26861A1BAC9E00C56951 /* MeasuresApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeasuresApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849E268A1A1BAC9E00C56951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849E268B1A1BAC9E00C56951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		849E268D1A1BAC9E00C56951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		849E268E1A1BAC9E00C56951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		849E26911A1BAC9E00C56951 /* MeasuresApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeasuresApp.xcdatamodel; sourceTree = "<group>"; };
-		849E26931A1BAC9E00C56951 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		849E26941A1BAC9E00C56951 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		849E26971A1BAC9E00C56951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849E26991A1BAC9E00C56951 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		849E269C1A1BAC9E00C56951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		849E26A21A1BAC9E00C56951 /* MeasuresAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeasuresAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849E26A71A1BAC9E00C56951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849E26A81A1BAC9E00C56951 /* MeasuresAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeasuresAppTests.m; sourceTree = "<group>"; };
+		84A195ED1A1CCF2200066790 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		84A195EE1A1CCF2200066790 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		84AA4F721A1CD42500601CCD /* PosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterViewController.h; sourceTree = "<group>"; };
+		84AA4F731A1CD42500601CCD /* PosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterViewController.m; sourceTree = "<group>"; };
+		84AA4F741A1CD42500601CCD /* PosterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PosterViewController.xib; sourceTree = "<group>"; };
+		84AA4F771A1CD4AB00601CCD /* ParticipantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantsViewController.h; sourceTree = "<group>"; };
+		84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantsViewController.m; sourceTree = "<group>"; };
+		84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsViewController.xib; sourceTree = "<group>"; };
+		84AA4F7C1A1CD4BF00601CCD /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		84AA4F7D1A1CD4BF00601CCD /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		84AA4F7F1A1CD4EC00601CCD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		84AA4F841A1CD5B400601CCD /* InstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramViewController.h; sourceTree = "<group>"; };
+		84AA4F851A1CD5B400601CCD /* InstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramViewController.m; sourceTree = "<group>"; };
+		84AA4F861A1CD5B400601CCD /* InstagramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramViewController.xib; sourceTree = "<group>"; };
+		84AA4F8A1A1CD5D300601CCD /* PlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesViewController.h; sourceTree = "<group>"; };
+		84AA4F8B1A1CD5D300601CCD /* PlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesViewController.m; sourceTree = "<group>"; };
+		84AA4F8C1A1CD5D300601CCD /* PlacesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesViewController.xib; sourceTree = "<group>"; };
+		84AA4F901A1CD5FB00601CCD /* SponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorsViewController.h; sourceTree = "<group>"; };
+		84AA4F911A1CD5FB00601CCD /* SponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorsViewController.m; sourceTree = "<group>"; };
+		84AA4F921A1CD5FB00601CCD /* SponsorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorsViewController.xib; sourceTree = "<group>"; };
+		84BF5A591A1CC56C00EB28C6 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
+		84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookmark_photo.jpg; sourceTree = "<group>"; };
+		84BF5A5B1A1CC56C00EB28C6 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		84BF5A5C1A1CC56C00EB28C6 /* calendar_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = calendar_photo.jpg; sourceTree = "<group>"; };
+		84BF5A5D1A1CC56C00EB28C6 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
+		84BF5A5E1A1CC56C00EB28C6 /* comments_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comments_photo.jpg; sourceTree = "<group>"; };
+		84BF5A5F1A1CC56C00EB28C6 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		84BF5A601A1CC56C00EB28C6 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		84BF5A611A1CC56C00EB28C6 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		84BF5A621A1CC56C00EB28C6 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
+		84BF5A631A1CC56C00EB28C6 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		84BF5A641A1CC56C00EB28C6 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		84BF5A651A1CC56C00EB28C6 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tag_photo.jpg; sourceTree = "<group>"; };
+		84BF5A671A1CC56C00EB28C6 /* wishlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wishlist.png; sourceTree = "<group>"; };
+		84BF5A681A1CC56C00EB28C6 /* wishlist_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wishlist_photo.jpg; sourceTree = "<group>"; };
+		84C90C741A1CDB0B0093BDE9 /* RearTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearTableViewCell.h; sourceTree = "<group>"; };
+		84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearTableViewCell.m; sourceTree = "<group>"; };
+		84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearTableViewCell.xib; sourceTree = "<group>"; };
+		84C90C7B1A1CE08C0093BDE9 /* ParentForFrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentForFrontViewController.h; sourceTree = "<group>"; };
+		84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentForFrontViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84028F391A1CD68600A6D297 /* Rear */ = {
+			isa = PBXGroup;
+			children = (
+				84028F341A1CD68000A6D297 /* RearViewController.h */,
+				84028F351A1CD68000A6D297 /* RearViewController.m */,
+				84028F361A1CD68000A6D297 /* RearViewController.xib */,
+			);
+			name = Rear;
+			sourceTree = "<group>";
+		};
 		849E267D1A1BAC9E00C56951 = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +166,9 @@
 		849E26881A1BAC9E00C56951 /* MeasuresApp */ = {
 			isa = PBXGroup;
 			children = (
+				84BF5A791A1CC6CF00EB28C6 /* Controllers */,
 				849E268D1A1BAC9E00C56951 /* AppDelegate.h */,
 				849E268E1A1BAC9E00C56951 /* AppDelegate.m */,
-				849E26931A1BAC9E00C56951 /* ViewController.h */,
-				849E26941A1BAC9E00C56951 /* ViewController.m */,
-				849E26961A1BAC9E00C56951 /* Main.storyboard */,
 				849E26991A1BAC9E00C56951 /* Images.xcassets */,
 				849E269B1A1BAC9E00C56951 /* LaunchScreen.xib */,
 				849E26901A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld */,
@@ -99,6 +180,7 @@
 		849E26891A1BAC9E00C56951 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84BF5A581A1CC56C00EB28C6 /* Images */,
 				849E268A1A1BAC9E00C56951 /* Info.plist */,
 				849E268B1A1BAC9E00C56951 /* main.m */,
 			);
@@ -120,6 +202,142 @@
 				849E26A71A1BAC9E00C56951 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84A195EC1A1CCF2200066790 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84A195ED1A1CCF2200066790 /* SWRevealViewController.h */,
+				84A195EE1A1CCF2200066790 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		84AA4F811A1CD57D00601CCD /* News */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4F7C1A1CD4BF00601CCD /* NewsViewController.h */,
+				84AA4F7D1A1CD4BF00601CCD /* NewsViewController.m */,
+				84AA4F7F1A1CD4EC00601CCD /* NewsViewController.xib */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		84AA4F821A1CD58800601CCD /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4F771A1CD4AB00601CCD /* ParticipantsViewController.h */,
+				84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */,
+				84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */,
+			);
+			name = Participants;
+			sourceTree = "<group>";
+		};
+		84AA4F831A1CD59600601CCD /* Poster */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4F721A1CD42500601CCD /* PosterViewController.h */,
+				84AA4F731A1CD42500601CCD /* PosterViewController.m */,
+				84AA4F741A1CD42500601CCD /* PosterViewController.xib */,
+			);
+			name = Poster;
+			sourceTree = "<group>";
+		};
+		84AA4F891A1CD5BA00601CCD /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4F841A1CD5B400601CCD /* InstagramViewController.h */,
+				84AA4F851A1CD5B400601CCD /* InstagramViewController.m */,
+				84AA4F861A1CD5B400601CCD /* InstagramViewController.xib */,
+			);
+			name = Instagram;
+			sourceTree = "<group>";
+		};
+		84AA4F8F1A1CD5D600601CCD /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4F8A1A1CD5D300601CCD /* PlacesViewController.h */,
+				84AA4F8B1A1CD5D300601CCD /* PlacesViewController.m */,
+				84AA4F8C1A1CD5D300601CCD /* PlacesViewController.xib */,
+			);
+			name = Places;
+			sourceTree = "<group>";
+		};
+		84AA4F951A1CD5FF00601CCD /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				84AA4F901A1CD5FB00601CCD /* SponsorsViewController.h */,
+				84AA4F911A1CD5FB00601CCD /* SponsorsViewController.m */,
+				84AA4F921A1CD5FB00601CCD /* SponsorsViewController.xib */,
+			);
+			name = Sponsors;
+			sourceTree = "<group>";
+		};
+		84BF5A581A1CC56C00EB28C6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				84BF5A591A1CC56C00EB28C6 /* bookmark.png */,
+				84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */,
+				84BF5A5B1A1CC56C00EB28C6 /* calendar.png */,
+				84BF5A5C1A1CC56C00EB28C6 /* calendar_photo.jpg */,
+				84BF5A5D1A1CC56C00EB28C6 /* comments.png */,
+				84BF5A5E1A1CC56C00EB28C6 /* comments_photo.jpg */,
+				84BF5A5F1A1CC56C00EB28C6 /* map.png */,
+				84BF5A601A1CC56C00EB28C6 /* menu.png */,
+				84BF5A611A1CC56C00EB28C6 /* menu@2x.png */,
+				84BF5A621A1CC56C00EB28C6 /* nav_bg.png */,
+				84BF5A631A1CC56C00EB28C6 /* news.png */,
+				84BF5A641A1CC56C00EB28C6 /* photo.png */,
+				84BF5A651A1CC56C00EB28C6 /* tag.png */,
+				84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */,
+				84BF5A671A1CC56C00EB28C6 /* wishlist.png */,
+				84BF5A681A1CC56C00EB28C6 /* wishlist_photo.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		84BF5A791A1CC6CF00EB28C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84A195EC1A1CCF2200066790 /* SWRevealViewController */,
+				84028F391A1CD68600A6D297 /* Rear */,
+				84AA4F831A1CD59600601CCD /* Poster */,
+				84AA4F821A1CD58800601CCD /* Participants */,
+				84AA4F811A1CD57D00601CCD /* News */,
+				84AA4F891A1CD5BA00601CCD /* Instagram */,
+				84AA4F8F1A1CD5D600601CCD /* Places */,
+				84AA4F951A1CD5FF00601CCD /* Sponsors */,
+				84C90C791A1CDB120093BDE9 /* CostumCells */,
+				84C90C7E1A1CE0A30093BDE9 /* ParentFront */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84C90C791A1CDB120093BDE9 /* CostumCells */ = {
+			isa = PBXGroup;
+			children = (
+				84C90C7A1A1CDB200093BDE9 /* RearCell */,
+			);
+			name = CostumCells;
+			sourceTree = "<group>";
+		};
+		84C90C7A1A1CDB200093BDE9 /* RearCell */ = {
+			isa = PBXGroup;
+			children = (
+				84C90C741A1CDB0B0093BDE9 /* RearTableViewCell.h */,
+				84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */,
+				84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */,
+			);
+			name = RearCell;
+			sourceTree = "<group>";
+		};
+		84C90C7E1A1CE0A30093BDE9 /* ParentFront */ = {
+			isa = PBXGroup;
+			children = (
+				84C90C7B1A1CE08C0093BDE9 /* ParentForFrontViewController.h */,
+				84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */,
+			);
+			name = ParentFront;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +420,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849E26981A1BAC9E00C56951 /* Main.storyboard in Resources */,
+				84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */,
+				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
+				84BF5A711A1CC56C00EB28C6 /* menu@2x.png in Resources */,
+				84AA4F881A1CD5B400601CCD /* InstagramViewController.xib in Resources */,
+				84BF5A741A1CC56C00EB28C6 /* photo.png in Resources */,
+				84BF5A6E1A1CC56C00EB28C6 /* comments_photo.jpg in Resources */,
+				84BF5A761A1CC56C00EB28C6 /* tag_photo.jpg in Resources */,
+				84028F381A1CD68000A6D297 /* RearViewController.xib in Resources */,
+				84BF5A6A1A1CC56C00EB28C6 /* bookmark_photo.jpg in Resources */,
+				84BF5A731A1CC56C00EB28C6 /* news.png in Resources */,
+				84AA4F761A1CD42500601CCD /* PosterViewController.xib in Resources */,
+				84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */,
+				84BF5A751A1CC56C00EB28C6 /* tag.png in Resources */,
+				84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */,
+				84AA4F8E1A1CD5D300601CCD /* PlacesViewController.xib in Resources */,
+				84BF5A6F1A1CC56C00EB28C6 /* map.png in Resources */,
+				84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */,
+				84BF5A6D1A1CC56C00EB28C6 /* comments.png in Resources */,
+				84BF5A781A1CC56C00EB28C6 /* wishlist_photo.jpg in Resources */,
+				84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */,
+				84BF5A701A1CC56C00EB28C6 /* menu.png in Resources */,
+				84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */,
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
+				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,
 				849E269A1A1BAC9E00C56951 /* Images.xcassets in Resources */,
+				84AA4F801A1CD4EC00601CCD /* NewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,10 +463,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AA4F7A1A1CD4AB00601CCD /* ParticipantsViewController.m in Sources */,
+				84AA4F871A1CD5B400601CCD /* InstagramViewController.m in Sources */,
 				849E26921A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld in Sources */,
+				84AA4F8D1A1CD5D300601CCD /* PlacesViewController.m in Sources */,
+				84A195F01A1CCF2200066790 /* SWRevealViewController.m in Sources */,
 				849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */,
-				849E26951A1BAC9E00C56951 /* ViewController.m in Sources */,
+				84028F371A1CD68000A6D297 /* RearViewController.m in Sources */,
+				84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */,
+				84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */,
 				849E268C1A1BAC9E00C56951 /* main.m in Sources */,
+				84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */,
+				84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */,
+				84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +498,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		849E26961A1BAC9E00C56951 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				849E26971A1BAC9E00C56951 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		849E269B1A1BAC9E00C56951 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +658,7 @@
 				849E26AE1A1BAC9E00C56951 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		849E26AF1A1BAC9E00C56951 /* Build configuration list for PBXNativeTarget "MeasuresAppTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +667,7 @@
 				849E26B11A1BAC9E00C56951 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
