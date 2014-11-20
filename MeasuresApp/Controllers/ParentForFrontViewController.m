@@ -7,6 +7,7 @@
 //
 
 #import "ParentForFrontViewController.h"
+#import "HelperClass.h"
 
 @interface ParentForFrontViewController ()
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initSideBare];
+    [HelperClass setImageOnNavigationBarForController:self];
 }
 
 - (void)didReceiveMemoryWarning {

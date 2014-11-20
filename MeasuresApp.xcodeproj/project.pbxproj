@@ -10,6 +10,9 @@
 		39CEA9381703A3BA8031E9B5 /* libPods-MeasuresApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AD94AF126C3B68A495106A /* libPods-MeasuresApp.a */; };
 		84028F371A1CD68000A6D297 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84028F351A1CD68000A6D297 /* RearViewController.m */; };
 		84028F381A1CD68000A6D297 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84028F361A1CD68000A6D297 /* RearViewController.xib */; };
+		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
+		8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */; };
+		8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEE61A1E08D60028ED17 /* ConstantsClass.m */; };
 		849E268C1A1BAC9E00C56951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E268B1A1BAC9E00C56951 /* main.m */; };
 		849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E268E1A1BAC9E00C56951 /* AppDelegate.m */; };
 		849E26921A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849E26901A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld */; };
@@ -66,6 +69,11 @@
 		84028F341A1CD68000A6D297 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
 		84028F351A1CD68000A6D297 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
 		84028F361A1CD68000A6D297 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
+		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
+		8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorTableViewCell.m; sourceTree = "<group>"; };
+		8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
+		8475FEE51A1E08D60028ED17 /* ConstantsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsClass.h; sourceTree = "<group>"; };
+		8475FEE61A1E08D60028ED17 /* ConstantsClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstantsClass.m; sourceTree = "<group>"; };
 		849E26861A1BAC9E00C56951 /* MeasuresApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeasuresApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849E268A1A1BAC9E00C56951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849E268B1A1BAC9E00C56951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -151,6 +159,16 @@
 				84028F361A1CD68000A6D297 /* RearViewController.xib */,
 			);
 			name = Rear;
+			sourceTree = "<group>";
+		};
+		8475FEE31A1DF3900028ED17 /* SponsorCell */ = {
+			isa = PBXGroup;
+			children = (
+				8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */,
+				8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */,
+				8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */,
+			);
+			name = SponsorCell;
 			sourceTree = "<group>";
 		};
 		849E267D1A1BAC9E00C56951 = {
@@ -327,6 +345,7 @@
 		84C90C791A1CDB120093BDE9 /* CostumCells */ = {
 			isa = PBXGroup;
 			children = (
+				8475FEE31A1DF3900028ED17 /* SponsorCell */,
 				84C90C7A1A1CDB200093BDE9 /* RearCell */,
 			);
 			name = CostumCells;
@@ -356,6 +375,8 @@
 			children = (
 				84C90C831A1DE9E90093BDE9 /* HelperClass.h */,
 				84C90C841A1DE9E90093BDE9 /* HelperClass.m */,
+				8475FEE51A1E08D60028ED17 /* ConstantsClass.h */,
+				8475FEE61A1E08D60028ED17 /* ConstantsClass.m */,
 			);
 			path = OtherClasses;
 			sourceTree = "<group>";
@@ -483,6 +504,7 @@
 				84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */,
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
 				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,
+				8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */,
 				849E269A1A1BAC9E00C56951 /* Images.xcassets in Resources */,
 				84AA4F801A1CD4EC00601CCD /* NewsViewController.xib in Resources */,
 			);
@@ -538,6 +560,7 @@
 				84AA4F7A1A1CD4AB00601CCD /* ParticipantsViewController.m in Sources */,
 				84AA4F871A1CD5B400601CCD /* InstagramViewController.m in Sources */,
 				849E26921A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld in Sources */,
+				8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */,
 				84AA4F8D1A1CD5D300601CCD /* PlacesViewController.m in Sources */,
 				84A195F01A1CCF2200066790 /* SWRevealViewController.m in Sources */,
 				849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */,
@@ -548,6 +571,7 @@
 				84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */,
 				84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */,
 				84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */,
+				8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */,
 				84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

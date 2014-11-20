@@ -11,6 +11,7 @@
 #import "SWRevealViewController.h"
 #import "PosterViewController.h"
 #import <VKSdk.h>
+#import "ConstantsClass.h"
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -25,6 +26,10 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
     
+    // NavigationBar instance
+    //[self initNavigationBar];
+    
+    // SiderBar insatance
     PosterViewController *frontViewController = [[PosterViewController alloc] init];
     RearViewController *rearViewController = [[RearViewController alloc] init];
     
@@ -174,6 +179,20 @@
 - (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
 {
     NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+}
+
+#pragma mark - UINavigation Bar
+
+- (void)initNavigationBar
+{
+    UIColor * navBarTintColor = [UIColor blueColor];
+    [[UINavigationBar appearance] setBarTintColor:navBarTintColor];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [UIFont fontWithName:constFontName size:21.0], NSFontAttributeName, nil]];
+    
 }
 
 @end

@@ -54,5 +54,29 @@
                                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
 }
 
++ (UIView*)setNavBarTitle:(NSString*)title andWith:(float)_width fontSize:(float)_fontSize{
+    UILabel* lblNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,0,_width,40)];
+    lblNavTitle.textAlignment = NSTextAlignmentLeft;
+#warning Set custom color
+    lblNavTitle.backgroundColor = [UIColor clearColor];
+    lblNavTitle.lineBreakMode = NSLineBreakByWordWrapping;
+    lblNavTitle.numberOfLines = 0;
+    lblNavTitle.text = title;
+    return lblNavTitle;
+}
+
+#warning Need upgrate
++ (void)setImageOnNavigationBarForController:(UIViewController*)_controller
+{
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0.0, 0.0, 70.0, 40.0);
+    button.backgroundColor = [UIColor clearColor];
+    UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, -10.0f, 40.0f, 40.0f)];
+    img.image = [UIImage imageNamed:@"news.png"];
+    [button addSubview:img];
+    UIBarButtonItem* barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    _controller.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
 
 @end

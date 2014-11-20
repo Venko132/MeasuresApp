@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParentForFrontViewController.h"
 
-@interface SponsorsViewController : UIViewController
+@interface SponsorsViewController : ParentForFrontViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

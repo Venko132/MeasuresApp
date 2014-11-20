@@ -36,32 +36,60 @@
     
     SLComposeViewController *controller = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeFacebook];
-    SLComposeViewControllerCompletionHandler myBlock =
-    ^(SLComposeViewControllerResult result){
-        if (result == SLComposeViewControllerResultCancelled)
-        {
-            NSLog(@"Cancelled");
-        }
-        else
-        {
-            NSLog(@"Done");
-        }
-        [controller dismissViewControllerAnimated:YES completion:nil];
-    };
-    controller.completionHandler = myBlock;
-    //Adding the Text to the facebook post value from iOS
-    [controller setInitialText:@"My test post"];
-    //Adding the URL to the facebook post value from iOS
-    [controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
-    //Adding the Text to the facebook post value from iOS
-    [self presentViewController:controller animated:YES completion:nil];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewControllerCompletionHandler myBlock =
+        ^(SLComposeViewControllerResult result){
+            if (result == SLComposeViewControllerResultCancelled)
+            {
+                NSLog(@"Cancelled");
+            }
+            else
+            {
+                NSLog(@"Done");
+            }
+            [controller dismissViewControllerAnimated:YES completion:nil];
+        };
+        controller.completionHandler = myBlock;
+        //Adding the Text to the facebook post value from iOS
+        [controller setInitialText:@"My test post"];
+        //Adding the URL to the facebook post value from iOS
+        //[controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
+        //Adding the Text to the facebook post value from iOS
+        [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        [HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
+    }
 }
 
 -(IBAction)twitterPost:(id)sender{
+    /*
     SLComposeViewController *tweetSheet = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeTwitter];
     [tweetSheet setInitialText:@"My test tweet"];
     [self presentViewController:tweetSheet animated:YES completion:nil];
+     */
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"My test tweet"];
+        [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result)
+         {
+             if (result == SLComposeViewControllerResultCancelled)
+             {
+                 NSLog(@"The user cancelled.");
+             }
+             else if (result == SLComposeViewControllerResultDone)
+             {
+                 NSLog(@"The user sent the tweet");
+             }
+         }];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        [HelperClass showMessage:@"Twitter integration is not available.  A Twitter account must be set up on your device." withTitle:@"Error"];
+    }
 }
 
 #pragma mark - Instagram

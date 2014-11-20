@@ -20,5 +20,7 @@
 
 + (HelperClass*)sharedHelper;
 + (void)showMessage:(NSString*)alertText withTitle:(NSString*)alertTitle;
++ (UIView*)setNavBarTitle:(NSString*)title andWith:(float)_width fontSize:(float)_fontSize;
++ (void)setImageOnNavigationBarForController:(UIViewController*)_controller;
 
 @end

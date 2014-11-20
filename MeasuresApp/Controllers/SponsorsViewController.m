@@ -7,8 +7,16 @@
 //
 
 #import "SponsorsViewController.h"
+#import "HelperClass.h"
+#import "SponsorTableViewCell.h"
 
-@interface SponsorsViewController ()
+static NSString * const cTitleName = @"Спонсоры";
+
+@interface SponsorsViewController (){
+    NSMutableArray * listOfSponsors;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfSponsors;
 
 @end
 
@@ -17,6 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Sponsors"
+                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                       fontSize:12.0f];
+    [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +36,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)initProperties
+{
+    listOfSponsors = [[NSMutableArray alloc] initWithArray:@[@"news.png"]];
+    self.tblListOfSponsors.dataSource = self;
+    self.tblListOfSponsors.delegate = self;
+}
+
+#pragma mark - TableView delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;//listOfSponsors.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SponsorCell";
+    
+    SponsorTableViewCell *cell = (SponsorTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SponsorTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
+}
 /*
 #pragma mark - Navigation
 
