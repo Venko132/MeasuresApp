@@ -66,7 +66,6 @@
              nib = [[NSBundle mainBundle] loadNibNamed:@"NewsTableViewCellR" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
     return cell;
 }
 

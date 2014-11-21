@@ -19,6 +19,11 @@
 		843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3B1A1F6154005FA987 /* menu@2x.png */; };
 		843F9E3F1A1F6154005FA987 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3C1A1F6154005FA987 /* banner.png */; };
 		843F9E401A1F6154005FA987 /* separatorLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3D1A1F6154005FA987 /* separatorLine.png */; };
+		843F9E481A1F770D005FA987 /* Fregat_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E431A1F770D005FA987 /* Fregat_bold.otf */; };
+		843F9E491A1F770D005FA987 /* Fregat_bold_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E441A1F770D005FA987 /* Fregat_bold_italic.otf */; };
+		843F9E4A1A1F770D005FA987 /* Fregat_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E451A1F770D005FA987 /* Fregat_italic.otf */; };
+		843F9E4B1A1F770D005FA987 /* Fregat_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E461A1F770D005FA987 /* Fregat_regular.otf */; };
+		843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E471A1F770D005FA987 /* Nautilus.otf */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
 		8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */; };
 		8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEE61A1E08D60028ED17 /* ConstantsClass.m */; };
@@ -88,6 +93,11 @@
 		843F9E3B1A1F6154005FA987 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		843F9E3C1A1F6154005FA987 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
 		843F9E3D1A1F6154005FA987 /* separatorLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separatorLine.png; sourceTree = "<group>"; };
+		843F9E431A1F770D005FA987 /* Fregat_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_bold.otf; sourceTree = "<group>"; };
+		843F9E441A1F770D005FA987 /* Fregat_bold_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_bold_italic.otf; sourceTree = "<group>"; };
+		843F9E451A1F770D005FA987 /* Fregat_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_italic.otf; sourceTree = "<group>"; };
+		843F9E461A1F770D005FA987 /* Fregat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_regular.otf; sourceTree = "<group>"; };
+		843F9E471A1F770D005FA987 /* Nautilus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nautilus.otf; sourceTree = "<group>"; };
 		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
 		8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorTableViewCell.m; sourceTree = "<group>"; };
 		8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
@@ -200,6 +210,26 @@
 			name = DetailNews;
 			sourceTree = "<group>";
 		};
+		843F9E411A1F770D005FA987 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				843F9E421A1F770D005FA987 /* Fregat */,
+				843F9E471A1F770D005FA987 /* Nautilus.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		843F9E421A1F770D005FA987 /* Fregat */ = {
+			isa = PBXGroup;
+			children = (
+				843F9E431A1F770D005FA987 /* Fregat_bold.otf */,
+				843F9E441A1F770D005FA987 /* Fregat_bold_italic.otf */,
+				843F9E451A1F770D005FA987 /* Fregat_italic.otf */,
+				843F9E461A1F770D005FA987 /* Fregat_regular.otf */,
+			);
+			path = Fregat;
+			sourceTree = "<group>";
+		};
 		8475FEE31A1DF3900028ED17 /* SponsorCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +278,7 @@
 		849E26891A1BAC9E00C56951 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				843F9E411A1F770D005FA987 /* Fonts */,
 				84BF5A581A1CC56C00EB28C6 /* Images */,
 				849E268A1A1BAC9E00C56951 /* Info.plist */,
 				849E268B1A1BAC9E00C56951 /* main.m */,
@@ -528,6 +559,7 @@
 				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
 				84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */,
 				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
+				843F9E4B1A1F770D005FA987 /* Fregat_regular.otf in Resources */,
 				84AA4F881A1CD5B400601CCD /* InstagramViewController.xib in Resources */,
 				84BF5A741A1CC56C00EB28C6 /* photo.png in Resources */,
 				84BF5A6E1A1CC56C00EB28C6 /* comments_photo.jpg in Resources */,
@@ -542,6 +574,7 @@
 				84BF5A751A1CC56C00EB28C6 /* tag.png in Resources */,
 				84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */,
 				84AA4F8E1A1CD5D300601CCD /* PlacesViewController.xib in Resources */,
+				843F9E4A1A1F770D005FA987 /* Fregat_italic.otf in Resources */,
 				84BF5A6F1A1CC56C00EB28C6 /* map.png in Resources */,
 				84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */,
 				843F9E3F1A1F6154005FA987 /* banner.png in Resources */,
@@ -550,13 +583,16 @@
 				84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */,
 				84BF5A701A1CC56C00EB28C6 /* menu.png in Resources */,
 				84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */,
+				843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */,
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
 				843F9E371A1E5179005FA987 /* DetailNewsViewController.xib in Resources */,
+				843F9E491A1F770D005FA987 /* Fregat_bold_italic.otf in Resources */,
 				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,
 				843F9E321A1E4499005FA987 /* NewsTableViewCell.xib in Resources */,
 				8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */,
 				849E269A1A1BAC9E00C56951 /* Images.xcassets in Resources */,
 				84AA4F801A1CD4EC00601CCD /* NewsViewController.xib in Resources */,
+				843F9E481A1F770D005FA987 /* Fregat_bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
