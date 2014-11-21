@@ -49,16 +49,6 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    for (NSString *familyName in [UIFont familyNames]) {
-        
-        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-            
-            NSLog(@"%@", fontName);
-            
-        }
-        
-    }
-    
     return YES;
 }
 
@@ -199,9 +189,8 @@
 
 - (void)initNavigationBar
 {
-    UIColor * navBarTintColor = [UIColor blueColor];//[UIColor colorWithRed:56.0f green:61.0f blue:120.0 alpha:1.0f];//blue
+    UIColor * navBarTintColor = [UIColor colorWithRed:0.0f green:161.0f blue:220.0 alpha:1.0f];//blue
     [[UINavigationBar appearance] setBarTintColor:navBarTintColor];
-    
     [[UINavigationBar appearance] setTranslucent:NO];
     /*
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:

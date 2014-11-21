@@ -71,7 +71,7 @@
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0.0, 0.0, 60.0, 40.0);
     button.backgroundColor = [UIColor clearColor];
-    UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(-5.0f, -10.0f, 60.0f, 40.0f)];
+    UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, -5.0f, 60.0f, 40.0f)];
     img.image = [UIImage imageNamed:constImagePoster];
     [button addSubview:img];
     UIBarButtonItem* barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];

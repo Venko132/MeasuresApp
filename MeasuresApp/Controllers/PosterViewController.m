@@ -23,12 +23,19 @@ static NSString *const VKApiID      = @"4642356";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = NSLocalizedString(@"Front View", nil);
+    [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initProperties
+{
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Афиша"
+                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                       fontSize:12.0f];
 }
 
 #pragma mark - Share message in social networks

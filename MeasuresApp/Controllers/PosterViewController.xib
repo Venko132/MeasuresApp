@@ -14,9 +14,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-IP-eRc">
-                    <rect key="frame" x="210" y="428" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-IP-eRc">
+                    <rect key="frame" x="191" y="385" width="46" height="30"/>
                     <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0JM-hI-ueB"/>
+                        <constraint firstAttribute="width" constant="46" id="z2R-Ny-lGc"/>
+                    </constraints>
                     <state key="normal" title="VK">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -24,9 +28,63 @@
                         <action selector="shareToVK:" destination="-1" eventType="touchUpInside" id="0f8-CN-uaV"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
+                    <rect key="frame" x="83" y="385" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="Hjr-0D-Vn4"/>
+                        <constraint firstAttribute="height" constant="30" id="YBX-Ne-39v"/>
+                    </constraints>
+                    <state key="normal" title="FB">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
+                    <rect key="frame" x="137" y="385" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="jdo-LR-PkZ"/>
+                        <constraint firstAttribute="height" constant="30" id="uAK-hn-A4E"/>
+                    </constraints>
+                    <state key="normal" title="TW">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZpE-z6-hME">
+                    <rect key="frame" x="0.0" y="448" width="320" height="32"/>
+                    <color key="backgroundColor" red="0.2196078431372549" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="ikg-KC-tOC"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Inn-o6-nCn">
+                    <rect key="frame" x="0.0" y="64" width="320" height="122"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="yl3-i3-dqf" secondAttribute="centerX" id="5CA-KQ-QfT"/>
+                <constraint firstItem="Tv7-IP-eRc" firstAttribute="bottom" secondItem="yl3-i3-dqf" secondAttribute="bottom" id="5UZ-Jm-Psm"/>
+                <constraint firstItem="yl3-i3-dqf" firstAttribute="leading" secondItem="VtD-Pz-vF2" secondAttribute="trailing" constant="8" id="DYe-Af-1zP"/>
+                <constraint firstItem="Tv7-IP-eRc" firstAttribute="leading" secondItem="yl3-i3-dqf" secondAttribute="trailing" constant="8" id="Ekw-sg-gNe"/>
+                <constraint firstAttribute="bottom" secondItem="ZpE-z6-hME" secondAttribute="bottom" id="Fsz-xo-VBl"/>
+                <constraint firstItem="Tv7-IP-eRc" firstAttribute="bottom" secondItem="VtD-Pz-vF2" secondAttribute="bottom" id="G6d-u1-KoZ"/>
+                <constraint firstItem="ZpE-z6-hME" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rzb-1h-AP3"/>
+                <constraint firstItem="ZpE-z6-hME" firstAttribute="top" secondItem="yl3-i3-dqf" secondAttribute="bottom" constant="33" id="YDU-Mq-Ch0"/>
+                <constraint firstAttribute="trailing" secondItem="ZpE-z6-hME" secondAttribute="trailing" id="pA6-wJ-suO"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140" y="155"/>
         </view>
+        <visualEffectView opaque="NO" contentMode="scaleToFill" id="Zm9-qT-0pM">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tbj-UG-U0r">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            </view>
+            <blurEffect style="light"/>
+        </visualEffectView>
     </objects>
 </document>

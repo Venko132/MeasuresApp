@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel* lblInformation;
 @property (weak, nonatomic) IBOutlet UIImageView * imgAvatar;
 
+- (void)setTitle:(NSString*)_title andInfo:(NSString*)_info;
+
 @end
