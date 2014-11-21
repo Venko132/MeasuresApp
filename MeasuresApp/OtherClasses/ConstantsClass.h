@@ -12,6 +12,7 @@
 
 extern NSString * const constFontName;
 extern NSString * const constImageMainMenu;
+extern NSString * const constImagePoster;
 extern NSString * const constViewTitleSponsors;
 extern NSString * const constViewTitleNews;
 extern NSString * const constViewTitlePlaces;

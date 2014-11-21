@@ -69,10 +69,10 @@
 + (void)setImageOnNavigationBarForController:(UIViewController*)_controller
 {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0.0, 0.0, 70.0, 40.0);
+    button.frame = CGRectMake(0.0, 0.0, 60.0, 40.0);
     button.backgroundColor = [UIColor clearColor];
-    UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, -10.0f, 40.0f, 40.0f)];
-    img.image = [UIImage imageNamed:@"news.png"];
+    UIImageView * img = [[UIImageView alloc] initWithFrame:CGRectMake(-5.0f, -10.0f, 60.0f, 40.0f)];
+    img.image = [UIImage imageNamed:constImagePoster];
     [button addSubview:img];
     UIBarButtonItem* barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     _controller.navigationItem.rightBarButtonItem = barButtonItem;

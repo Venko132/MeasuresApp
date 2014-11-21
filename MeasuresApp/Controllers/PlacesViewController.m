@@ -7,6 +7,7 @@
 //
 
 #import "PlacesViewController.h"
+#import "HelperClass.h"
 
 @interface PlacesViewController ()
 
@@ -17,7 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"Places";
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitlePlaces
+                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                       fontSize:12.0f];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,7 +7,6 @@
 //
 
 #import "ParentForFrontViewController.h"
-#import "HelperClass.h"
 
 @interface ParentForFrontViewController ()
 
@@ -32,9 +31,20 @@
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
-    
+    /*
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:constImageMainMenu]
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    */
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0.0, 0.0, 24.0, 23.0);
+    button.backgroundColor = [UIColor clearColor];
+    UIImage * btnImage = [UIImage imageNamed:constImageMainMenu];
+    [button addTarget:revealController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundImage:btnImage forState:UIControlStateNormal];
+    [button setBackgroundImage:btnImage forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem* revealButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
     self.navigationItem.leftBarButtonItem = revealButtonItem;
 }
 

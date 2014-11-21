@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParentForFrontViewController.h"
 
-@interface ParticipantsViewController : UIViewController
+@interface ParticipantsViewController : ParentForFrontViewController
 
 @end
