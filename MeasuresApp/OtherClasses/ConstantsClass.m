@@ -10,6 +10,11 @@
 
 @implementation ConstantsClass
 
-NSString * constFontName = @"HelveticaNeue-CondensedBlack";
+NSString * const constFontName = @"HelveticaNeue-CondensedBlack";
+NSString * const constImageMainMenu = @"menu.png";
+NSString * const constViewTitleSponsors = @"Спонсоры";
+NSString * const constViewTitleNews = @"Новости";
+NSString * const constViewTitlePlaces = @"Места";
+NSString * const constViewTitleParticipants = @"Участники";
 
 @end

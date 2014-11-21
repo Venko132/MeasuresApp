@@ -7,6 +7,7 @@
 //
 
 #import "DetailNewsViewController.h"
+#import "HelperClass.h"
 
 @interface DetailNewsViewController ()
 
@@ -17,11 +18,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initProperties
+{
+    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:constImageMainMenu]
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(returnToPreview)];
+    self.navigationItem.leftBarButtonItem = backItem;
+    
+    [HelperClass setImageOnNavigationBarForController:self];
+    
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleNews
+                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                       fontSize:12.0f];
+}
+
+- (void)returnToPreview
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

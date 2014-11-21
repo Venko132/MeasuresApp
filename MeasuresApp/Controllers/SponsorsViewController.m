@@ -10,8 +10,6 @@
 #import "HelperClass.h"
 #import "SponsorTableViewCell.h"
 
-static NSString * const cTitleName = @"Спонсоры";
-
 @interface SponsorsViewController (){
     NSMutableArray * listOfSponsors;
 }
@@ -25,7 +23,7 @@ static NSString * const cTitleName = @"Спонсоры";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Sponsors"
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleSponsors
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
     [self initProperties];

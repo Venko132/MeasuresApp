@@ -9,6 +9,7 @@
 #import "NewsViewController.h"
 #import "NewsTableViewCell.h"
 #import "DetailNewsViewController.h"
+#import "HelperClass.h"
 
 @interface NewsViewController (){
     NSMutableArray * listOfNews;
@@ -34,6 +35,10 @@
 
 - (void)initProperties
 {
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleNews
+                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                       fontSize:12.0f];
+    
     listOfNews = [[NSMutableArray alloc] initWithArray:@[@"news.png"]];
     self.tblListOfNews.dataSource = self;
     self.tblListOfNews.delegate = self;

@@ -33,7 +33,7 @@
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
     
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu.png"]
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:constImageMainMenu]
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
 }
