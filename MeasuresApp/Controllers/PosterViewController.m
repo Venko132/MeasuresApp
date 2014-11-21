@@ -12,6 +12,7 @@
 static NSString *const TOKEN_KEY    = @"my_application_access_token";
 static NSString *const SHARE_DIALOG = @"Test share dialog";
 static NSArray  * SCOPE = nil;
+static NSString *const VKApiID      = @"4642356";
 
 @interface PosterViewController ()<VKSdkDelegate>
 
@@ -36,7 +37,7 @@ static NSArray  * SCOPE = nil;
 - (IBAction)shareToVK:(id)sender {
     if(!SCOPE)
         SCOPE = @[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO, VK_PER_PHOTOS, VK_PER_NOHTTPS, VK_PER_EMAIL, VK_PER_MESSAGES];
-    [VKSdk initializeWithDelegate:self andAppId:@"3974615"];
+    [VKSdk initializeWithDelegate:self andAppId:VKApiID];
     if ([VKSdk wakeUpSession])
     {
         [self startWorkingWithVK];
