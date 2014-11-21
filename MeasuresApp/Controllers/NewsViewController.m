@@ -74,9 +74,8 @@
         navControllerForNews = [[UINavigationController alloc] initWithRootViewController:];
      */
     
-    UIViewController *stubController = [[UIViewController alloc] init];
-    stubController.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController pushViewController:stubController animated:YES];
+    DetailNewsViewController *detailController = [[DetailNewsViewController alloc] initWithNibName:NSStringFromClass([DetailNewsViewController class]) bundle:nil];
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 #pragma mark - Open detail information about selected news
