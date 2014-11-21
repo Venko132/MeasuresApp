@@ -10,7 +10,12 @@
 
 @implementation ConstantsClass
 
-NSString * const constFontName = @"HelveticaNeue-CondensedBlack";
+NSString * const constFontName              = @"HelveticaNeue-CondensedBlack";
+NSString * const constFontFregatBoldItalic  = @"Fregat-BoldItalic";
+NSString * const constFontFregatBold        = @"Fregat-Bold";
+NSString * const constFontFregatItalic      = @"Fregat-Italic";
+NSString * const constFontFregatRegular     = @"Fregat";
+NSString * const constFontNautilusPompilius = @"NautilusPompilius";
 
 NSString * const constImageMainMenu = @"menu.png";
 NSString * const constImagePoster = @"posterImage.png";
