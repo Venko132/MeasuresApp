@@ -24,6 +24,7 @@
 		843F9E4A1A1F770D005FA987 /* Fregat_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E451A1F770D005FA987 /* Fregat_italic.otf */; };
 		843F9E4B1A1F770D005FA987 /* Fregat_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E461A1F770D005FA987 /* Fregat_regular.otf */; };
 		843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E471A1F770D005FA987 /* Nautilus.otf */; };
+		843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E4D1A1F9ECD005FA987 /* bannerBig.png */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
 		8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */; };
 		8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEE61A1E08D60028ED17 /* ConstantsClass.m */; };
@@ -98,6 +99,7 @@
 		843F9E451A1F770D005FA987 /* Fregat_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_italic.otf; sourceTree = "<group>"; };
 		843F9E461A1F770D005FA987 /* Fregat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_regular.otf; sourceTree = "<group>"; };
 		843F9E471A1F770D005FA987 /* Nautilus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nautilus.otf; sourceTree = "<group>"; };
+		843F9E4D1A1F9ECD005FA987 /* bannerBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerBig.png; sourceTree = "<group>"; };
 		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
 		8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorTableViewCell.m; sourceTree = "<group>"; };
 		8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 		84BF5A581A1CC56C00EB28C6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				843F9E4D1A1F9ECD005FA987 /* bannerBig.png */,
 				843F9E3B1A1F6154005FA987 /* menu@2x.png */,
 				843F9E3C1A1F6154005FA987 /* banner.png */,
 				843F9E3D1A1F6154005FA987 /* separatorLine.png */,
@@ -572,6 +575,7 @@
 				84AA4F761A1CD42500601CCD /* PosterViewController.xib in Resources */,
 				84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */,
 				84BF5A751A1CC56C00EB28C6 /* tag.png in Resources */,
+				843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */,
 				84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */,
 				84AA4F8E1A1CD5D300601CCD /* PlacesViewController.xib in Resources */,
 				843F9E4A1A1F770D005FA987 /* Fregat_italic.otf in Resources */,
