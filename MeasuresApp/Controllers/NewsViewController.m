@@ -83,6 +83,18 @@
     [self.navigationController pushViewController:detailController animated:YES];
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIImageView * imgBanner = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), 30.0f)];
+    imgBanner.image = [UIImage imageNamed:constImageBanner];
+    return imgBanner;
+}
+
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30.0f;
+}
+
 #pragma mark - Open detail information about selected news
 
 /*

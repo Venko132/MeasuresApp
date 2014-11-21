@@ -16,6 +16,9 @@
 		843F9E361A1E5179005FA987 /* DetailNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F9E341A1E5179005FA987 /* DetailNewsViewController.m */; };
 		843F9E371A1E5179005FA987 /* DetailNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E351A1E5179005FA987 /* DetailNewsViewController.xib */; };
 		843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E391A1F44A3005FA987 /* posterImage.png */; };
+		843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3B1A1F6154005FA987 /* menu@2x.png */; };
+		843F9E3F1A1F6154005FA987 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3C1A1F6154005FA987 /* banner.png */; };
+		843F9E401A1F6154005FA987 /* separatorLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3D1A1F6154005FA987 /* separatorLine.png */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
 		8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */; };
 		8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEE61A1E08D60028ED17 /* ConstantsClass.m */; };
@@ -82,6 +85,9 @@
 		843F9E341A1E5179005FA987 /* DetailNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailNewsViewController.m; sourceTree = "<group>"; };
 		843F9E351A1E5179005FA987 /* DetailNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailNewsViewController.xib; sourceTree = "<group>"; };
 		843F9E391A1F44A3005FA987 /* posterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = posterImage.png; sourceTree = "<group>"; };
+		843F9E3B1A1F6154005FA987 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		843F9E3C1A1F6154005FA987 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
+		843F9E3D1A1F6154005FA987 /* separatorLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separatorLine.png; sourceTree = "<group>"; };
 		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
 		8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorTableViewCell.m; sourceTree = "<group>"; };
 		8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
@@ -338,6 +344,9 @@
 		84BF5A581A1CC56C00EB28C6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				843F9E3B1A1F6154005FA987 /* menu@2x.png */,
+				843F9E3C1A1F6154005FA987 /* banner.png */,
+				843F9E3D1A1F6154005FA987 /* separatorLine.png */,
 				843F9E391A1F44A3005FA987 /* posterImage.png */,
 				84BF5A591A1CC56C00EB28C6 /* bookmark.png */,
 				84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */,
@@ -516,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */,
+				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
 				84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */,
 				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
 				84AA4F881A1CD5B400601CCD /* InstagramViewController.xib in Resources */,
@@ -523,6 +533,7 @@
 				84BF5A6E1A1CC56C00EB28C6 /* comments_photo.jpg in Resources */,
 				84BF5A761A1CC56C00EB28C6 /* tag_photo.jpg in Resources */,
 				84028F381A1CD68000A6D297 /* RearViewController.xib in Resources */,
+				843F9E401A1F6154005FA987 /* separatorLine.png in Resources */,
 				84BF5A6A1A1CC56C00EB28C6 /* bookmark_photo.jpg in Resources */,
 				84BF5A731A1CC56C00EB28C6 /* news.png in Resources */,
 				843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */,
@@ -533,6 +544,7 @@
 				84AA4F8E1A1CD5D300601CCD /* PlacesViewController.xib in Resources */,
 				84BF5A6F1A1CC56C00EB28C6 /* map.png in Resources */,
 				84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */,
+				843F9E3F1A1F6154005FA987 /* banner.png in Resources */,
 				84BF5A6D1A1CC56C00EB28C6 /* comments.png in Resources */,
 				84BF5A781A1CC56C00EB28C6 /* wishlist_photo.jpg in Resources */,
 				84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */,
