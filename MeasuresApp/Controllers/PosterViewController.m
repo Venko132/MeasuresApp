@@ -87,7 +87,7 @@ static NSString *const VKApiID      = @"4642356";
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
-    [self presentViewController:controller animated:YES completion:nil];
+    [self.navigationController presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)vkSdkAcceptedUserToken:(VKAccessToken *)token {
