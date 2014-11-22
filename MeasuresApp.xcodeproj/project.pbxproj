@@ -66,6 +66,7 @@
 		84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */; };
 		84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */; };
 		84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C841A1DE9E90093BDE9 /* HelperClass.m */; };
+		BCA719411A1FC1AC0098F20F /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA719401A1FC1AC0098F20F /* DataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,8 @@
 		84C90C831A1DE9E90093BDE9 /* HelperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperClass.h; sourceTree = "<group>"; };
 		84C90C841A1DE9E90093BDE9 /* HelperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperClass.m; sourceTree = "<group>"; };
 		88AD94AF126C3B68A495106A /* libPods-MeasuresApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeasuresApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA7193F1A1FC1AC0098F20F /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		BCA719401A1FC1AC0098F20F /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		EC52C47A06BEE6ADFA8D90D1 /* Pods-MeasuresApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeasuresApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeasuresApp/Pods-MeasuresApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,6 +272,8 @@
 				84BF5A791A1CC6CF00EB28C6 /* Controllers */,
 				849E268D1A1BAC9E00C56951 /* AppDelegate.h */,
 				849E268E1A1BAC9E00C56951 /* AppDelegate.m */,
+				BCA7193F1A1FC1AC0098F20F /* DataModel.h */,
+				BCA719401A1FC1AC0098F20F /* DataModel.m */,
 				849E26991A1BAC9E00C56951 /* Images.xcassets */,
 				849E269B1A1BAC9E00C56951 /* LaunchScreen.xib */,
 				849E26901A1BAC9E00C56951 /* MeasuresApp.xcdatamodeld */,
@@ -654,6 +659,7 @@
 				84AA4F8D1A1CD5D300601CCD /* PlacesViewController.m in Sources */,
 				84A195F01A1CCF2200066790 /* SWRevealViewController.m in Sources */,
 				843F9E361A1E5179005FA987 /* DetailNewsViewController.m in Sources */,
+				BCA719411A1FC1AC0098F20F /* DataModel.m in Sources */,
 				849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */,
 				84028F371A1CD68000A6D297 /* RearViewController.m in Sources */,
 				84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */,
