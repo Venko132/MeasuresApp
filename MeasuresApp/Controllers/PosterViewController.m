@@ -7,14 +7,14 @@
 //
 
 #import "PosterViewController.h"
-#import <VKSdk.h>
+
 
 static NSString *const TOKEN_KEY    = @"my_application_access_token";
 static NSString *const SHARE_DIALOG = @"Test share dialog";
 static NSArray  * SCOPE = nil;
 static NSString *const VKApiID      = @"4642356";
 
-@interface PosterViewController ()<VKSdkDelegate>
+@interface PosterViewController ()
 
 @end
 

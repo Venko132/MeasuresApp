@@ -8,7 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "ParentForFrontViewController.h"
+#import <VKSdk.h>
 
-@interface PosterViewController : ParentForFrontViewController
+@interface PosterViewController : ParentForFrontViewController<VKSdkDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareFB;
+@property (weak, nonatomic) IBOutlet UIButton *btnDhareTW;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareVK;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPlaceOfAction;
+@property (weak, nonatomic) IBOutlet UILabel *lblDateOfAction;
+@property (weak, nonatomic) IBOutlet UILabel *lblPlaceOfAction;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitleOfAction;
+@property (weak, nonatomic) IBOutlet UILabel *lblMessageAboutFinishAction;
+@property (weak, nonatomic) IBOutlet UILabel *lblInfo;
+
 
 @end
