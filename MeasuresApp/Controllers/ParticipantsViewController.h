@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ParentForFrontViewController.h"
 
-@interface ParticipantsViewController : ParentForFrontViewController
+@interface ParticipantsViewController : ParentForFrontViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

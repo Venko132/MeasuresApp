@@ -9,6 +9,8 @@
 #import "ParticipantsViewController.h"
 
 @interface ParticipantsViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *cltListOfPartisipants;
+@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 
 @end
 
@@ -20,11 +22,40 @@
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleParticipants
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
+    [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initProperties
+{
+    self.cltListOfPartisipants.dataSource = self;
+    self.cltListOfPartisipants.delegate = self;
+    [self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+}
+
+#pragma mark - CollectionView delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [[collectionView cellForItemAtIndexPath:indexPath] setSelected:NO];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 6;
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor blueColor];
+    cell.layer.cornerRadius = CGRectGetWidth(cell.layer.bounds)/2;
+    
+    return cell;
 }
 
 /*
