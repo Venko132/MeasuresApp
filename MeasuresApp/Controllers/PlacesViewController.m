@@ -9,7 +9,12 @@
 #import "PlacesViewController.h"
 #import "HelperClass.h"
 
-@interface PlacesViewController ()
+
+@interface PlacesViewController (){
+    NSMutableArray * listOfAdresses;
+}
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfAdresses;
+@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 
 @end
 
@@ -21,11 +26,52 @@
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitlePlaces
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
+    [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initProperties
+{
+    self.tblListOfAdresses.dataSource = self;
+    self.tblListOfAdresses.delegate = self;
+}
+
+#pragma mark - TableView delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;//listOfAdresses.count
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"AdressCell";
+    
+    AdressTableViewCell *cell = (AdressTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AdressTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.selected = NO;
+    cell.delegatePlace = self;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+#pragma mark - ProtocolPlace delegate
+
+- (void)showRoute{
+    NSLog(@"Show route");
+}
+
+- (void)openMaps{
+    NSLog(@"Open Maps");
 }
 
 /*

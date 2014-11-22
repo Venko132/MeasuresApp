@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ParentForFrontViewController.h"
+#import "AdressTableViewCell.h"
 
-@interface PlacesViewController : ParentForFrontViewController
+@interface PlacesViewController : ParentForFrontViewController<UITableViewDataSource, UITableViewDelegate, ProtocolPlace>
 
 @end

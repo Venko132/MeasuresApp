@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlacesViewController">
             <connections>
+                <outlet property="lblFooter" destination="gw6-xV-IfS" id="0Hf-dZ-UXf"/>
+                <outlet property="tblListOfAdresses" destination="T9c-Dg-F98" id="87T-hb-sOc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,41 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOq-Ip-K8T">
+                    <rect key="frame" x="0.0" y="448" width="320" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-xV-IfS">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="LTg-XK-zZ5"/>
+                        <constraint firstAttribute="trailing" secondItem="gw6-xV-IfS" secondAttribute="trailing" id="WbJ-rI-bPS"/>
+                        <constraint firstAttribute="bottom" secondItem="gw6-xV-IfS" secondAttribute="bottom" id="cSm-uv-XZv"/>
+                        <constraint firstItem="gw6-xV-IfS" firstAttribute="top" secondItem="vOq-Ip-K8T" secondAttribute="top" id="juG-0k-0hd"/>
+                        <constraint firstItem="gw6-xV-IfS" firstAttribute="leading" secondItem="vOq-Ip-K8T" secondAttribute="leading" id="uM5-fF-Wg7"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="T9c-Dg-F98">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="T9c-Dg-F98" secondAttribute="trailing" id="3Ut-MV-ktw"/>
+                <constraint firstItem="T9c-Dg-F98" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6aK-1x-Phf"/>
+                <constraint firstAttribute="trailing" secondItem="vOq-Ip-K8T" secondAttribute="trailing" id="I2Z-Re-YiD"/>
+                <constraint firstItem="vOq-Ip-K8T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UKu-z1-3TQ"/>
+                <constraint firstItem="T9c-Dg-F98" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eiJ-0z-RJN"/>
+                <constraint firstAttribute="bottom" secondItem="vOq-Ip-K8T" secondAttribute="bottom" id="tZZ-xf-bgO"/>
+                <constraint firstItem="vOq-Ip-K8T" firstAttribute="top" secondItem="T9c-Dg-F98" secondAttribute="bottom" id="wXk-DR-1pd"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
