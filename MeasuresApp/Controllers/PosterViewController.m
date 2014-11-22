@@ -36,6 +36,16 @@ static NSString *const VKApiID      = @"4642356";
     self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Афиша"
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
+    [self setCornerRadiusForView:self.btnShareTW];
+    [self setCornerRadiusForView:self.btnShareFB];
+    [self setCornerRadiusForView:self.btnShareVK];
+}
+
+#pragma mark - Other methods
+
+- (void)setCornerRadiusForView:(UIView*)_viewS
+{
+    _viewS.layer.cornerRadius = CGRectGetWidth(_viewS.bounds)/2;
 }
 
 #pragma mark - Share message in social networks

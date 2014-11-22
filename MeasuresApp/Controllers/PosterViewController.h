@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 @property (weak, nonatomic) IBOutlet UIButton *btnShareFB;
-@property (weak, nonatomic) IBOutlet UIButton *btnDhareTW;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareTW;
 @property (weak, nonatomic) IBOutlet UIButton *btnShareVK;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPlaceOfAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblDateOfAction;

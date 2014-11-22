@@ -6,8 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PosterViewController">
             <connections>
-                <outlet property="btnDhareTW" destination="yl3-i3-dqf" id="FYr-GP-QHi"/>
                 <outlet property="btnShareFB" destination="VtD-Pz-vF2" id="mF9-tR-Z1K"/>
+                <outlet property="btnShareTW" destination="yl3-i3-dqf" id="BYm-ik-iN1"/>
                 <outlet property="btnShareVK" destination="Tv7-IP-eRc" id="hjo-kB-DBD"/>
                 <outlet property="imgPlaceOfAction" destination="fRq-Bv-dbt" id="Q1y-T4-qxy"/>
                 <outlet property="lblDateOfAction" destination="QcP-p1-YKt" id="1LC-Uo-GTg"/>
@@ -46,10 +46,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ZK-4l-WWt">
                     <rect key="frame" x="80" y="391" width="160" height="40"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
-                            <rect key="frame" x="57" y="5" width="46" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
+                            <rect key="frame" x="3" y="5" width="46" height="30"/>
                             <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="TW">
+                            <state key="normal" title="FB">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -63,13 +63,6 @@
                                 <action selector="shareToVK:" destination="-1" eventType="touchUpInside" id="0f8-CN-uaV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
-                            <rect key="frame" x="3" y="5" width="46" height="30"/>
-                            <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="FB">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -77,9 +70,6 @@
                         <constraint firstAttribute="width" constant="160" id="yGc-qc-WzT"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-Bv-dbt">
-                    <rect key="frame" x="15" y="301" width="290" height="82"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-TB-XzN">
                     <rect key="frame" x="0.0" y="246" width="320" height="47"/>
                     <subviews>
@@ -178,6 +168,16 @@
                         <constraint firstAttribute="bottom" secondItem="aov-jV-NHx" secondAttribute="bottom" id="tbv-SF-pdo"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
+                    <rect key="frame" x="137" y="396" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="TW">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-Bv-dbt">
+                    <rect key="frame" x="15" y="301" width="290" height="82"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -215,6 +215,7 @@
         </label>
     </objects>
     <resources>
+        <image name="banner.png" width="931" height="119"/>
         <image name="bannerBig.png" width="932" height="551"/>
         <image name="separatorLine.png" width="768" height="3"/>
     </resources>
