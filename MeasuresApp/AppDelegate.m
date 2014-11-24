@@ -12,6 +12,7 @@
 #import "PosterViewController.h"
 #import <VKSdk.h>
 #import "ConstantsClass.h"
+#import "DataModel.h"
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -23,6 +24,7 @@
 @synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [DataModel Instance];
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
     
