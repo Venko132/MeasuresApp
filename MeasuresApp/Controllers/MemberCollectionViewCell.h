@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelperClass.h"
 
-@interface MemberCollectionViewCell : UICollectionViewCell
+@interface MemberCollectionViewCell : UICollectionViewCell <ProtocolUploadDataToCell>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;

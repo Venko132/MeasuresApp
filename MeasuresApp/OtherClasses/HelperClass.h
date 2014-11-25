@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ConstantsClass.h"
+#import "DataModel.h"
 
 @interface UIImage (Helpers)
 
 + (void) loadFromURL: (NSURL*) url callback:(void (^)(UIImage *image))callback;
+
+@end
+
+@protocol ProtocolUploadDataToCell <NSObject>
+
+@required
+- (void)uploadDataToCell:(NSInteger)rowIndex;
 
 @end
 

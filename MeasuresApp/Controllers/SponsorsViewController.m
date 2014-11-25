@@ -12,6 +12,7 @@
 
 @interface SponsorsViewController (){
     NSMutableArray * listOfSponsors;
+    DataModel * dataModel;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfSponsors;
@@ -36,7 +37,6 @@
 
 - (void)initProperties
 {
-    listOfSponsors = [[NSMutableArray alloc] initWithArray:@[@"news.png"]];
     self.tblListOfSponsors.dataSource = self;
     self.tblListOfSponsors.delegate = self;
 }
@@ -45,12 +45,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;//listOfSponsors.count;
+    return [dataModel sponsorsCount];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SponsorCell";
+    NSInteger row = indexPath.row;
     
     SponsorTableViewCell *cell = (SponsorTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
@@ -59,6 +60,8 @@
         cell = [nib objectAtIndex:0];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    [cell uploadDataToCell:row];
     
     return cell;
 }

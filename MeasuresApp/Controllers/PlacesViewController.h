@@ -10,6 +10,6 @@
 #import "ParentForFrontViewController.h"
 #import "AdressTableViewCell.h"
 
-@interface PlacesViewController : ParentForFrontViewController<UITableViewDataSource, UITableViewDelegate, ProtocolPlace>
+@interface PlacesViewController : ParentForFrontViewController<UITableViewDataSource, UITableViewDelegate, ProtocolPlace, UIActionSheetDelegate>
 
 @end

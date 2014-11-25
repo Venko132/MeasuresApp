@@ -20,4 +20,8 @@
     // Configure the view for the selected state
 }
 
+- (void)uploadDataToCell:(NSInteger)rowIndex{
+    //
+}
+
 @end

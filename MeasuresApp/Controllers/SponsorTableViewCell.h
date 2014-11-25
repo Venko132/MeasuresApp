@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelperClass.h"
 
-@interface SponsorTableViewCell : UITableViewCell
+@interface SponsorTableViewCell : UITableViewCell <ProtocolUploadDataToCell>
 
 @property (weak, nonatomic) IBOutlet UIImageView * imgSponsorAvatar;
 

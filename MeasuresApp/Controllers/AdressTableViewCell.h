@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HelperClass.h"
 
 @protocol ProtocolPlace <NSObject>
 
@@ -17,7 +17,7 @@
 
 @end
 
-@interface AdressTableViewCell : UITableViewCell
+@interface AdressTableViewCell : UITableViewCell <ProtocolUploadDataToCell>
 
 @property (weak, nonatomic) IBOutlet UILabel * lblAdress;
 @property (weak, nonatomic) IBOutlet UILabel * lblDate;

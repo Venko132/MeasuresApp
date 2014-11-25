@@ -7,24 +7,29 @@
 //
 
 #import "AdressTableViewCell.h"
-#import "ConstantsClass.h"
 
-static float const fontSizeDate = 12.0f;
-static float const fontSizeAdress = 17.0f;
-static float const fontSizeBtnTitle = 12.0f;
+static float const fontSizeDate = 10.0f;
+static float const fontSizeAdress = 20.0f;
+static float const fontSizeBtnTitle = 10.0f;
 
 @implementation AdressTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblDate setFont:[UIFont fontWithName:constFontArial size:fontSizeDate]];
-    self.lblDate.textColor = [UIColor grayColor];
+    [self.lblDate setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDate]];
+    self.lblDate.textColor = [HelperClass appGrayColor];
     
-    [self.lblAdress setFont:[UIFont fontWithName:constFontArial size:fontSizeAdress]];
-    self.lblDate.textColor = [UIColor blueColor];
+    [self.lblAdress setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeAdress]];
+    self.lblAdress.textColor = [HelperClass appBlueColor];
     
-    [self.btnOpenMap.titleLabel setFont:[UIFont fontWithName:constFontArial size:fontSizeBtnTitle]];
-    [self.btnOpenRoute.titleLabel setFont:[UIFont fontWithName:constFontArial size:fontSizeBtnTitle]];
+    [self.btnOpenMap.titleLabel setFont:[UIFont fontWithName:constFontArialBold size:fontSizeBtnTitle]];
+    [self.btnOpenRoute.titleLabel setFont:[UIFont fontWithName:constFontArialBold size:fontSizeBtnTitle]];
+    
+    self.btnOpenMap.titleLabel.numberOfLines = 0;
+    self.btnOpenRoute.titleLabel.numberOfLines = 0;
+    
+    [self.btnOpenMap setTitle:@"Посмотреть на\nкарте" forState:UIControlStateNormal];
+    [self.btnOpenRoute setTitle:@"Посмотреть схему\nпроезда" forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,6 +46,13 @@ static float const fontSizeBtnTitle = 12.0f;
         if([self.delegatePlace respondsToSelector:@selector(showRoute)])
             [self.delegatePlace performSelector:@selector(showRoute)];
     }
+}
+
+- (void)uploadDataToCell:(NSInteger)rowIndex
+{
+    DataModel * dataModel = [DataModel Instance];
+    self.lblAdress.text = [dataModel placeNameAtIndex:rowIndex];
+    self.lblDate.text = [dataModel placeSubtitleAtIndex:rowIndex];
 }
 
 @end

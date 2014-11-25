@@ -78,7 +78,6 @@ static float const fontSizeDateOfAction = 24.0f;
     //[paragrahStyle setLineSpacing:0.75];
     //[attString addAttribute:NSParagraphStyleAttributeName value:paragrahStyle range:rangeTitle];
     //[attString addAttribute:NSBaselineOffsetAttributeName value:@10.0 range:rangeInfo];
-    
     self.lblMessageAboutFinishAction.attributedText = attString;
     //self.lblMessageAboutFinishAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bannerBig.png"]];
     //[self.lblMessageAboutFinishAction setContentScaleFactor:0.5];
@@ -127,7 +126,7 @@ static float const fontSizeDateOfAction = 24.0f;
     shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[UIImage imageNamed:@"apple"]
                                                            andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
     //shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
-    [shareDialog presentIn:self.navigationController];
+    [shareDialog presentIn:self];
 }
 
 - (void)vkSdkNeedCaptchaEnter:(VKError *)captchaError {

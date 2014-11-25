@@ -11,6 +11,7 @@
 @interface ConstantsClass : NSObject
 
 extern NSString * const constFontArial;
+extern NSString * const constFontArialBold;
 extern NSString * const constFontFregatBoldItalic;
 extern NSString * const constFontFregatBold;
 extern NSString * const constFontFregatItalic;

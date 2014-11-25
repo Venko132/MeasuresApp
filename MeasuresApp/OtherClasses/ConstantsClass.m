@@ -10,7 +10,8 @@
 
 @implementation ConstantsClass
 
-NSString * const constFontArial             = @"ArialMT";
+NSString * const constFontArial             = @"ArialMT";//ArialHebrew
+NSString * const constFontArialBold         = @"Arial-BoldMT";//ArialRoundedMTBold
 NSString * const constFontFregatBoldItalic  = @"Fregat-BoldItalic";
 NSString * const constFontFregatBold        = @"Fregat-Bold";
 NSString * const constFontFregatItalic      = @"Fregat-Italic";
