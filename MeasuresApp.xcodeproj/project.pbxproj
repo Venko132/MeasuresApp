@@ -64,6 +64,8 @@
 		84BF5A761A1CC56C00EB28C6 /* tag_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */; };
 		84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A671A1CC56C00EB28C6 /* wishlist.png */; };
 		84BF5A781A1CC56C00EB28C6 /* wishlist_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A681A1CC56C00EB28C6 /* wishlist_photo.jpg */; };
+		84C1BA061A247D0500E087B0 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */; };
+		84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */; };
 		84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */; };
 		84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */; };
 		84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */; };
@@ -158,6 +160,9 @@
 		84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tag_photo.jpg; sourceTree = "<group>"; };
 		84BF5A671A1CC56C00EB28C6 /* wishlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wishlist.png; sourceTree = "<group>"; };
 		84BF5A681A1CC56C00EB28C6 /* wishlist_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wishlist_photo.jpg; sourceTree = "<group>"; };
+		84C1BA031A247D0500E087B0 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
+		84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
+		84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		84C90C741A1CDB0B0093BDE9 /* RearTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearTableViewCell.h; sourceTree = "<group>"; };
 		84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearTableViewCell.m; sourceTree = "<group>"; };
 		84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearTableViewCell.xib; sourceTree = "<group>"; };
@@ -442,6 +447,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		84C1BA081A247D0900E087B0 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				84C1BA031A247D0500E087B0 /* CategoryTableViewCell.h */,
+				84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */,
+				84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */,
+			);
+			name = CategoryCell;
+			sourceTree = "<group>";
+		};
 		84C90C791A1CDB120093BDE9 /* CostumCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +464,7 @@
 				8475FEE31A1DF3900028ED17 /* SponsorCell */,
 				84C90C7A1A1CDB200093BDE9 /* RearCell */,
 				8478FCD71A2094760022E421 /* AdressCell */,
+				84C1BA081A247D0900E087B0 /* CategoryCell */,
 			);
 			name = CostumCells;
 			sourceTree = "<group>";
@@ -584,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */,
+				84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */,
 				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
 				84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */,
 				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
@@ -683,6 +700,7 @@
 				BCA719411A1FC1AC0098F20F /* DataModel.m in Sources */,
 				849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */,
 				8478FCD51A2094700022E421 /* AdressTableViewCell.m in Sources */,
+				84C1BA061A247D0500E087B0 /* CategoryTableViewCell.m in Sources */,
 				84028F371A1CD68000A6D297 /* RearViewController.m in Sources */,
 				84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */,
 				84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */,

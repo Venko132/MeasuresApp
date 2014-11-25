@@ -7,8 +7,17 @@
 //
 
 #import "ParticipantsViewController.h"
+#import "CategoryTableViewCell.h"
 
-@interface ParticipantsViewController ()
+@interface ParticipantsViewController (){
+    NSInteger _presentedRow;
+    
+    UIColor * selectedCellBGColor;
+    UIColor * notSelectedCellBGColor;
+    
+    BOOL isCategoriesOpen;
+}
+
 @property (weak, nonatomic) IBOutlet UICollectionView *cltListOfPartisipants;
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfCategories;
@@ -37,6 +46,11 @@
     self.cltListOfPartisipants.dataSource = self;
     self.cltListOfPartisipants.delegate = self;
     [self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    
+    _presentedRow = -1;
+    
+    notSelectedCellBGColor = [HelperClass appBlueColor];
+    selectedCellBGColor = [HelperClass appPinkColor];
 }
 
 #pragma mark - CollectionView delegate
@@ -70,7 +84,7 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    RearTableViewCell *cell = (RearTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSInteger row = indexPath.row;
     
     if (nil == cell)
@@ -80,19 +94,76 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString *text = [listOfEvents objectAtIndex:row];
+    NSString *text = [NSString stringWithFormat:@"Category %i",row];
     
-    cell.lblTitle.text = text;
+    cell.lblCategory.text = text;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger row = indexPath.row;
     
+    if ( row == _presentedRow )
+    {
+        return;
+    }
+    
+    _presentedRow = row;
 }
 
 - (IBAction)animationOfListCategories:(id)sender {
+    static float heigthOfTable = 100.0f;
+    float heigthAnimation;
+    if(!isCategoriesOpen)
+    {
+        heigthAnimation = heigthOfTable;
+        self.vwContainerOfAnimation.hidden = NO;
+        [UIView animateWithDuration:0.1f animations:^{
+            //Container
+            CGRect newRect = self.vwContainerOfAnimation.frame;
+            newRect.size.height += heigthAnimation;
+            self.vwContainerOfAnimation.frame = newRect;
+            
+            //CollectionView
+            newRect = self.cltListOfPartisipants.frame;
+            newRect.size.height -= heigthAnimation;
+            newRect.origin.y += heigthAnimation;
+            self.cltListOfPartisipants.frame = newRect;
+            
+            //Table
+            /*newRect = self.tblListOfCategories.frame;
+            newRect.size.height += heigthAnimation;
+            self.tblListOfCategories.frame = newRect;
+            */
+        } completion:^(BOOL finished) {
+            isCategoriesOpen = YES;
+        }];
+    } else {
+        heigthAnimation = -heigthOfTable;
+        self.vwContainerOfAnimation.hidden = NO;
+        [UIView animateWithDuration:0.1f animations:^{
+            //Container
+            CGRect newRect = self.vwContainerOfAnimation.frame;
+            newRect.size.height += heigthAnimation;
+            self.vwContainerOfAnimation.frame = newRect;
+            
+            //CollectionView
+            newRect = self.cltListOfPartisipants.frame;
+            newRect.size.height -= heigthAnimation;
+            newRect.origin.y += heigthAnimation;
+            self.cltListOfPartisipants.frame = newRect;
+            
+            //Table
+            /*newRect = self.tblListOfCategories.frame;
+            newRect.size.height += heigthAnimation;
+            self.tblListOfCategories.frame = newRect;
+            */
+        } completion:^(BOOL finished) {
+            isCategoriesOpen = NO;
+        }];
+    }
 }
 
 /*
