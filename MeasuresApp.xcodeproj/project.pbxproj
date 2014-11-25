@@ -66,6 +66,8 @@
 		84BF5A781A1CC56C00EB28C6 /* wishlist_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A681A1CC56C00EB28C6 /* wishlist_photo.jpg */; };
 		84C1BA061A247D0500E087B0 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */; };
 		84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */; };
+		84C1BA0C1A248E7A00E087B0 /* MemberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1BA0A1A248E7A00E087B0 /* MemberCollectionViewCell.m */; };
+		84C1BA0D1A248E7A00E087B0 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1BA0B1A248E7A00E087B0 /* MemberCollectionViewCell.xib */; };
 		84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */; };
 		84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */; };
 		84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */; };
@@ -163,6 +165,9 @@
 		84C1BA031A247D0500E087B0 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
 		84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
 		84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		84C1BA091A248E7A00E087B0 /* MemberCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberCollectionViewCell.h; sourceTree = "<group>"; };
+		84C1BA0A1A248E7A00E087B0 /* MemberCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCollectionViewCell.m; sourceTree = "<group>"; };
+		84C1BA0B1A248E7A00E087B0 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
 		84C90C741A1CDB0B0093BDE9 /* RearTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearTableViewCell.h; sourceTree = "<group>"; };
 		84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearTableViewCell.m; sourceTree = "<group>"; };
 		84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearTableViewCell.xib; sourceTree = "<group>"; };
@@ -457,6 +462,16 @@
 			name = CategoryCell;
 			sourceTree = "<group>";
 		};
+		84C1BA0E1A248E7F00E087B0 /* MemberCell */ = {
+			isa = PBXGroup;
+			children = (
+				84C1BA091A248E7A00E087B0 /* MemberCollectionViewCell.h */,
+				84C1BA0A1A248E7A00E087B0 /* MemberCollectionViewCell.m */,
+				84C1BA0B1A248E7A00E087B0 /* MemberCollectionViewCell.xib */,
+			);
+			name = MemberCell;
+			sourceTree = "<group>";
+		};
 		84C90C791A1CDB120093BDE9 /* CostumCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +480,7 @@
 				84C90C7A1A1CDB200093BDE9 /* RearCell */,
 				8478FCD71A2094760022E421 /* AdressCell */,
 				84C1BA081A247D0900E087B0 /* CategoryCell */,
+				84C1BA0E1A248E7F00E087B0 /* MemberCell */,
 			);
 			name = CostumCells;
 			sourceTree = "<group>";
@@ -627,6 +643,7 @@
 				84BF5A6D1A1CC56C00EB28C6 /* comments.png in Resources */,
 				84BF5A781A1CC56C00EB28C6 /* wishlist_photo.jpg in Resources */,
 				84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */,
+				84C1BA0D1A248E7A00E087B0 /* MemberCollectionViewCell.xib in Resources */,
 				84BF5A701A1CC56C00EB28C6 /* menu.png in Resources */,
 				84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */,
 				843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */,
@@ -700,6 +717,7 @@
 				BCA719411A1FC1AC0098F20F /* DataModel.m in Sources */,
 				849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */,
 				8478FCD51A2094700022E421 /* AdressTableViewCell.m in Sources */,
+				84C1BA0C1A248E7A00E087B0 /* MemberCollectionViewCell.m in Sources */,
 				84C1BA061A247D0500E087B0 /* CategoryTableViewCell.m in Sources */,
 				84028F371A1CD68000A6D297 /* RearViewController.m in Sources */,
 				84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */,

@@ -101,4 +101,8 @@
     return [UIColor colorWithRed:(204.0f/255.0) green:(126.0f/255.0) blue:(186.0f/255.0) alpha:1.0f];
 }
 
++ (UIColor*)appGrayColor{
+    return [UIColor colorWithRed:(135.0f/255.0) green:(135.0f/255.0) blue:(135.0f/255.0) alpha:1.0f];
+}
+
 @end

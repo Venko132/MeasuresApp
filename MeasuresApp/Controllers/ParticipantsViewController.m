@@ -8,6 +8,7 @@
 
 #import "ParticipantsViewController.h"
 #import "CategoryTableViewCell.h"
+#import "MemberCollectionViewCell.h"
 
 @interface ParticipantsViewController (){
     NSInteger _presentedRow;
@@ -24,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIView *vwContainerOfAnimation;
 
 @end
+
+static NSString * const cltMemberCellId = @"MemberCell";
 
 @implementation ParticipantsViewController
 
@@ -45,12 +48,19 @@
 {
     self.cltListOfPartisipants.dataSource = self;
     self.cltListOfPartisipants.delegate = self;
-    [self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    //[self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cltMemberCellId];
+    UINib *cellNib = [UINib nibWithNibName:@"MemberCollectionViewCell" bundle:nil];
+    [self.cltListOfPartisipants registerNib:cellNib forCellWithReuseIdentifier:cltMemberCellId];
     
     _presentedRow = -1;
     
     notSelectedCellBGColor = [HelperClass appBlueColor];
     selectedCellBGColor = [HelperClass appPinkColor];
+    
+    self.tblListOfCategories.dataSource = self;
+    self.tblListOfCategories.delegate = self;
+    
+    [HelperClass initLblFooter:self.lblFooter];
 }
 
 #pragma mark - CollectionView delegate
@@ -67,15 +77,12 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
-    cell.backgroundColor = [UIColor blueColor];
-    cell.layer.cornerRadius = CGRectGetWidth(cell.layer.bounds)/2;
+    MemberCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cltMemberCellId forIndexPath:indexPath];
     
     return cell;
 }
 
-#pragma mark - Table delegate
+#pragma mark - TableView delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
@@ -89,7 +96,7 @@
     
     if (nil == cell)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RearTableViewCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -103,12 +110,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[tableView cellForRowAtIndexPath:indexPath] setBackgroundColor:selectedCellBGColor];
     NSInteger row = indexPath.row;
     
     if ( row == _presentedRow )
     {
         return;
     }
+    
+    NSIndexPath * indexPathDeselect = [NSIndexPath indexPathForRow:_presentedRow inSection:0];
+    [[tableView cellForRowAtIndexPath:indexPathDeselect] setBackgroundColor:notSelectedCellBGColor];
+    
+    //Filter memberships
     
     _presentedRow = row;
 }

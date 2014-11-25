@@ -29,5 +29,6 @@
 
 + (UIColor*)appBlueColor;
 + (UIColor*)appPinkColor;
++ (UIColor*)appGrayColor;
 
 @end
