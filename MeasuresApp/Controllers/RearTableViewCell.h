@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelperClass.h"
 
 @interface RearTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel * lblTitle;
 
 @end

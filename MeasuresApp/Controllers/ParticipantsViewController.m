@@ -11,6 +11,8 @@
 @interface ParticipantsViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *cltListOfPartisipants;
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfCategories;
+@property (weak, nonatomic) IBOutlet UIView *vwContainerOfAnimation;
 
 @end
 
@@ -57,6 +59,40 @@
     cell.layer.cornerRadius = CGRectGetWidth(cell.layer.bounds)/2;
     
     return cell;
+}
+
+#pragma mark - Table delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    RearTableViewCell *cell = (RearTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSInteger row = indexPath.row;
+    
+    if (nil == cell)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RearTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSString *text = [listOfEvents objectAtIndex:row];
+    
+    cell.lblTitle.text = text;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+- (IBAction)animationOfListCategories:(id)sender {
 }
 
 /*

@@ -55,17 +55,24 @@
 }
 
 + (UIView*)setNavBarTitle:(NSString*)title andWith:(float)_width fontSize:(float)_fontSize{
-    UILabel* lblNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,0,_width,40)];
+    CGRect rectOfView = CGRectMake(0,0,_width,40);
+    UILabel* lblNavTitle = [[UILabel alloc] initWithFrame:rectOfView];
     lblNavTitle.textAlignment = NSTextAlignmentLeft;
-#warning Set custom color
     lblNavTitle.backgroundColor = [UIColor clearColor];
     lblNavTitle.lineBreakMode = NSLineBreakByWordWrapping;
+    [lblNavTitle setFont:[UIFont fontWithName:constFontFregatBold size:16.0f]];
     lblNavTitle.numberOfLines = 0;
+    lblNavTitle.textColor = [UIColor whiteColor];
+    lblNavTitle.adjustsFontSizeToFitWidth=YES;
     lblNavTitle.text = title;
-    return lblNavTitle;
+    lblNavTitle.minimumScaleFactor = 0.5;
+    
+    UIView * vwCustom = [[UIView alloc] initWithFrame:rectOfView];
+    [vwCustom addSubview:lblNavTitle];
+    
+    return vwCustom;
 }
 
-#warning Need upgrate
 + (void)setImageOnNavigationBarForController:(UIViewController*)_controller
 {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -85,6 +92,13 @@
     UIFont * lblFont = [UIFont fontWithName:constFontArial size:fontSize];
     [lblFooter setFont:lblFont];
     lblFooter.numberOfLines = 0;
+}
+
++ (UIColor*)appBlueColor{
+    return [UIColor colorWithRed:(56.0f/255.0) green:(61.0f/255.0) blue:(120.0f/255.0) alpha:1.0f];
+}
++ (UIColor*)appPinkColor{
+    return [UIColor colorWithRed:(204.0f/255.0) green:(126.0f/255.0) blue:(186.0f/255.0) alpha:1.0f];
 }
 
 @end

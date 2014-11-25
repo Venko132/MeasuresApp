@@ -10,8 +10,11 @@
 
 @implementation RearTableViewCell
 
+static float fontSizeTitle = 14.0f;
+
 - (void)awakeFromNib {
     // Initialization code
+    [self.lblTitle setFont:[UIFont fontWithName:constFontFregatRegular size:fontSizeTitle]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

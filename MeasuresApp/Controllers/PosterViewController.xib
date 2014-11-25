@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -144,13 +145,13 @@
                     <rect key="frame" x="80" y="391" width="160" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Поделиться:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1v-NO-HEj">
-                            <rect key="frame" x="0.0" y="-2" width="160" height="22"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.2196078431372549" green="0.23921568627450979" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-IP-eRc">
-                            <rect key="frame" x="122" y="22" width="30" height="30"/>
+                            <rect key="frame" x="122" y="19" width="30" height="30"/>
                             <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="VK">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,17 +160,17 @@
                                 <action selector="shareToVK:" destination="-1" eventType="touchUpInside" id="0f8-CN-uaV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
-                            <rect key="frame" x="8" y="22" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
+                            <rect key="frame" x="65" y="19" width="30" height="30"/>
                             <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="FB">
+                            <state key="normal" title="TW">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
-                            <rect key="frame" x="65" y="22" width="30" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
+                            <rect key="frame" x="8" y="19" width="30" height="30"/>
                             <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="TW">
+                            <state key="normal" title="FB">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>

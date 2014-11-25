@@ -14,11 +14,15 @@
 #import "PlacesViewController.h"
 #import "NewsViewController.h"
 #import "InstagramViewController.h"
+#import "RearTableViewCell.h"
 
 @interface RearViewController ()
 {
     NSInteger _presentedRow;
     NSArray * listOfEvents;
+    
+    UIColor * selectedCellBGColor;
+    UIColor * notSelectedCellBGColor;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfEvents;
@@ -46,6 +50,11 @@
     
     tblListOfEvents.dataSource = self;
     tblListOfEvents.delegate  = self;
+    
+    _presentedRow = -1;
+    
+    notSelectedCellBGColor = [HelperClass appBlueColor];
+    selectedCellBGColor = [HelperClass appPinkColor];
 }
 
 #pragma mark - TableView delegate
@@ -58,23 +67,27 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    RearTableViewCell *cell = (RearTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSInteger row = indexPath.row;
     
     if (nil == cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RearTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSString *text = [listOfEvents objectAtIndex:row];
     
-    cell.textLabel.text = text;
+    cell.lblTitle.text = text;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[tableView cellForRowAtIndexPath:indexPath] setBackgroundColor:selectedCellBGColor];
+    // Transition
     SWRevealViewController *revealController = self.revealViewController;
     
     // selecting row
@@ -89,6 +102,8 @@
         return;
     }
     
+    NSIndexPath * indexPathDeselect = [NSIndexPath indexPathForRow:_presentedRow inSection:0];
+    [[tableView cellForRowAtIndexPath:indexPathDeselect] setBackgroundColor:notSelectedCellBGColor];
     // otherwise we'll create a new frontViewController and push it with animation
     UIViewController *newFrontController = nil;
     
@@ -121,6 +136,18 @@
     [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
     _presentedRow = row;  // <- store the presented row
     
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (cell.isSelected == YES)
+    {
+        [cell setBackgroundColor:selectedCellBGColor];
+    }
+    else
+    {
+        [cell setBackgroundColor:notSelectedCellBGColor];
+    }
 }
 /*
 #pragma mark - Navigation

@@ -58,6 +58,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SponsorTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -66,6 +67,7 @@
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
+
 /*
 #pragma mark - Navigation
 

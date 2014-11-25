@@ -203,7 +203,7 @@
 
 - (void)initNavigationBar
 {
-    UIColor * navBarTintColor = [UIColor colorWithRed:0.0f green:161.0f blue:220.0 alpha:1.0f];//blue
+    UIColor * navBarTintColor = [HelperClass appBlueColor];
     [[UINavigationBar appearance] setBarTintColor:navBarTintColor];
     [[UINavigationBar appearance] setTranslucent:NO];
     /*
