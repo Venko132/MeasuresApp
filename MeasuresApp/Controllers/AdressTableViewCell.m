@@ -17,14 +17,14 @@ static float const fontSizeBtnTitle = 12.0f;
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblDate setFont:[UIFont fontWithName:constFontName size:fontSizeDate]];
+    [self.lblDate setFont:[UIFont fontWithName:constFontArial size:fontSizeDate]];
     self.lblDate.textColor = [UIColor grayColor];
     
-    [self.lblAdress setFont:[UIFont fontWithName:constFontName size:fontSizeAdress]];
+    [self.lblAdress setFont:[UIFont fontWithName:constFontArial size:fontSizeAdress]];
     self.lblDate.textColor = [UIColor blueColor];
     
-    [self.btnOpenMap.titleLabel setFont:[UIFont fontWithName:constFontName size:fontSizeBtnTitle]];
-    [self.btnOpenRoute.titleLabel setFont:[UIFont fontWithName:constFontName size:fontSizeBtnTitle]];
+    [self.btnOpenMap.titleLabel setFont:[UIFont fontWithName:constFontArial size:fontSizeBtnTitle]];
+    [self.btnOpenRoute.titleLabel setFont:[UIFont fontWithName:constFontArial size:fontSizeBtnTitle]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

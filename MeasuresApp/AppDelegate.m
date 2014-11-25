@@ -35,8 +35,10 @@
     
     UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     
+    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+    
     SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
-                                                    initWithRearViewController:rearViewController frontViewController:frontNavigationController];
+                                                    initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
     
     mainRevealController.rearViewRevealWidth = CGRectGetWidth(window.bounds)/2;
     //mainRevealController.rearViewRevealOverdraw = 120;
@@ -48,7 +50,17 @@
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
+    /*
+    for (NSString *familyName in [UIFont familyNames]) {
+        
+        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+            
+            NSLog(@"%@", fontName);
+            
+        }
+        
+    }
+    */
     return YES;
 }
 

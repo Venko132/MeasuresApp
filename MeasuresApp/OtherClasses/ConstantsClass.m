@@ -10,7 +10,7 @@
 
 @implementation ConstantsClass
 
-NSString * const constFontName              = @"HelveticaNeue-CondensedBlack";
+NSString * const constFontArial             = @"ArialMT";
 NSString * const constFontFregatBoldItalic  = @"Fregat-BoldItalic";
 NSString * const constFontFregatBold        = @"Fregat-Bold";
 NSString * const constFontFregatItalic      = @"Fregat-Italic";
@@ -26,6 +26,6 @@ NSString * const constViewTitleNews = @"Новости";
 NSString * const constViewTitlePlaces = @"Места";
 NSString * const constViewTitleParticipants = @"Участники";
 
-NSString * const constFootterString = @"(c) 2014 Don't Take Fake Christmas Market. Все права защищены. ";
+NSString * const constFootterString = @"(c) 2014 Don't Take Fake Christmas Market. Все права защищены.\nНи один митболл не пострадал.";
 
 @end

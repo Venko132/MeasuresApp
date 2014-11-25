@@ -78,5 +78,13 @@
     _controller.navigationItem.rightBarButtonItem = barButtonItem;
 }
 
++ (void)initLblFooter:(UILabel*)lblFooter
+{
+    float fontSize = 9.0f;
+    lblFooter.text = constFootterString;
+    UIFont * lblFont = [UIFont fontWithName:constFontArial size:fontSize];
+    [lblFooter setFont:lblFont];
+    lblFooter.numberOfLines = 0;
+}
 
 @end

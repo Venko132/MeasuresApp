@@ -17,7 +17,7 @@ static float const fontSizeInfoTitle = 17.0f;
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblDate setFont:[UIFont fontWithName:constFontName size:fontSizeDate]];
+    [self.lblDate setFont:[UIFont fontWithName:constFontArial size:fontSizeDate]];
     self.lblDate.textColor = [UIColor grayColor];
 }
 
@@ -38,8 +38,8 @@ static float const fontSizeInfoTitle = 17.0f;
     [attString addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor] range:rangeTitle];
     [attString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:rangeInfo];
     //Font
-    UIFont * fontTitle = [UIFont fontWithName:constFontName size:fontSizeInfoTitle];
-    UIFont * fontInfo = [UIFont fontWithName:constFontName size:fontSizeInfo];
+    UIFont * fontTitle = [UIFont fontWithName:constFontArial size:fontSizeInfoTitle];
+    UIFont * fontInfo = [UIFont fontWithName:constFontArial size:fontSizeInfo];
     [attString addAttribute:NSFontAttributeName value:fontTitle range:rangeTitle];
     [attString addAttribute:NSFontAttributeName value:fontInfo range:rangeInfo];
     

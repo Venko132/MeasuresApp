@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleOfAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblMessageAboutFinishAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblInfo;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitleForSocialShare;
 
 
 @end

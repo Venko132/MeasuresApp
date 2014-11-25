@@ -15,6 +15,7 @@
     UIImageView *imageInstagram;
 }
 @property (nonatomic, strong) UIDocumentInteractionController *documentController;
+@property (weak, nonatomic) IBOutlet UILabel *lblTest;
 
 @end
 
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self test];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,6 +135,35 @@
     }
 }
 
+#pragma mark - Test
+
+- (void)test
+{
+    NSMutableDictionary *attributesDictionary = [NSMutableDictionary dictionary];
+    
+    [attributesDictionary setObject:[UIFont systemFontOfSize:12] forKey:NSFontAttributeName];
+    //[attributesDictionary setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    //[attributesDictionary setObject:[UIColor blackColor] forKey:NSBackgroundColorAttributeName];
+    //[attributesDictionary setObject:@5.0 forKey:NSBaselineOffsetAttributeName];
+    //[attributesDictionary setObject:@2.0 forKey:NSStrikethroughStyleAttributeName];
+    //[attributesDictionary setObject:[UIColor redColor] forKey:NSStrokeColorAttributeName];
+    //[attributesDictionary setObject:@2.0 forKey:NSStrokeWidthAttributeName];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 2.0;
+    [attributesDictionary setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor lightGrayColor];
+    shadow.shadowBlurRadius = 1.0;
+    shadow.shadowOffset = CGSizeMake(0.0, 2.0);
+    [attributesDictionary setObject:shadow forKey:NSShadowAttributeName];
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Eezy Tutorials Website"];
+    [attString setAttributes:attributesDictionary range:NSMakeRange(0, 12)];
+    NSLog(@"%@",attString);
+    
+    self.lblTest.attributedText = attString;
+}
 /*
 #pragma mark - Navigation
 
