@@ -60,7 +60,7 @@
         [allData setObject:[NSMutableArray array] forKey:const_Places];
         [allData setObject:[NSMutableArray array] forKey:const_News];
         // отключено до тестирования
-//        [self load];
+        //[self load];
 //        [self save];
     }
     return self;

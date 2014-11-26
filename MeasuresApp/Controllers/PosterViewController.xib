@@ -47,9 +47,6 @@
                         <constraint firstAttribute="trailing" secondItem="764-75-0Ut" secondAttribute="trailing" id="nME-3O-1ym"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-Bv-dbt">
-                    <rect key="frame" x="15" y="280" width="290" height="103"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-lo-q6A">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
@@ -66,7 +63,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="zAi-nN-q5S" secondAttribute="bottom" constant="-5" id="8Uu-Yu-eJx"/>
                         <constraint firstAttribute="height" constant="100" id="M62-4Q-WaS"/>
@@ -131,7 +127,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Zq3-FB-MaZ" firstAttribute="top" secondItem="qm1-qz-l3Q" secondAttribute="top" id="D1b-iQ-1El"/>
                         <constraint firstItem="Zq3-FB-MaZ" firstAttribute="leading" secondItem="qm1-qz-l3Q" secondAttribute="leading" id="H0r-Fi-8Eu"/>
@@ -154,30 +149,33 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-IP-eRc">
                             <rect key="frame" x="122" y="19" width="30" height="30"/>
-                            <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="VK">
+                            <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" backgroundImage="vk_activity.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="shareToVK:" destination="-1" eventType="touchUpInside" id="0f8-CN-uaV"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
                             <rect key="frame" x="65" y="19" width="30" height="30"/>
-                            <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="TW">
+                            <state key="normal" backgroundImage="TW.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="shareToVK:" destination="-1" eventType="touchUpInside" id="3hC-xM-p89"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
                             <rect key="frame" x="8" y="19" width="30" height="30"/>
-                            <color key="backgroundColor" red="0.38017035690000001" green="1" blue="0.57468933600000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                             <state key="normal" title="FB">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="facebookPost:" destination="-1" eventType="touchUpInside" id="c5A-qd-Pl7"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="fyz-NQ-is6"/>
                         <constraint firstAttribute="width" constant="160" id="yGc-qc-WzT"/>
@@ -187,30 +185,32 @@
                     <rect key="frame" x="0.0" y="198" width="320" height="74"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-yu-XZZ">
-                            <rect key="frame" x="0.0" y="44" width="320" height="22"/>
+                            <rect key="frame" x="0.0" y="44" width="320" height="25"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="0.74117647058823533" green="0.23921568627450979" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-p1-YKt">
-                            <rect key="frame" x="0.0" y="7" width="320" height="29"/>
+                            <rect key="frame" x="0.0" y="4" width="320" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="QcP-p1-YKt" firstAttribute="leading" secondItem="Sj4-TB-XzN" secondAttribute="leading" id="2Lb-L5-Bis"/>
                         <constraint firstItem="QcP-p1-YKt" firstAttribute="height" secondItem="QN2-yu-XZZ" secondAttribute="height" constant="7" id="3WW-Xe-S6U"/>
                         <constraint firstItem="QN2-yu-XZZ" firstAttribute="leading" secondItem="Sj4-TB-XzN" secondAttribute="leading" id="FBm-5F-qmY"/>
                         <constraint firstItem="QN2-yu-XZZ" firstAttribute="top" secondItem="QcP-p1-YKt" secondAttribute="bottom" constant="8" id="MHQ-XO-L3q"/>
                         <constraint firstAttribute="trailing" secondItem="QcP-p1-YKt" secondAttribute="trailing" id="SgS-7o-no3"/>
-                        <constraint firstAttribute="bottom" secondItem="QN2-yu-XZZ" secondAttribute="bottom" constant="8" id="jgC-9N-UDj"/>
+                        <constraint firstAttribute="bottom" secondItem="QN2-yu-XZZ" secondAttribute="bottom" constant="5" id="jgC-9N-UDj"/>
                         <constraint firstAttribute="trailing" secondItem="QN2-yu-XZZ" secondAttribute="trailing" id="kHc-qe-aBg"/>
-                        <constraint firstItem="QcP-p1-YKt" firstAttribute="top" secondItem="Sj4-TB-XzN" secondAttribute="top" constant="7" id="kvo-WK-hB5"/>
+                        <constraint firstItem="QcP-p1-YKt" firstAttribute="top" secondItem="Sj4-TB-XzN" secondAttribute="top" constant="4" id="kvo-WK-hB5"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-Bv-dbt">
+                    <rect key="frame" x="15" y="280" width="290" height="103"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -241,8 +241,10 @@
         </view>
     </objects>
     <resources>
+        <image name="TW.png" width="80" height="80"/>
         <image name="banner.png" width="931" height="119"/>
         <image name="bannerBig.png" width="932" height="551"/>
         <image name="separatorLine.png" width="768" height="3"/>
+        <image name="vk_activity.png" width="43" height="43"/>
     </resources>
 </document>

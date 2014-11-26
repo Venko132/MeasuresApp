@@ -105,7 +105,7 @@ static float const constHeigthOfTblCell = 125.0f;
     
     
     DetailNewsViewController *detailController = [[DetailNewsViewController alloc] initWithNibName:NSStringFromClass([DetailNewsViewController class]) bundle:nil];
-    [self.navigationController pushViewController:detailController animated:YES];
+    //[self.navigationController pushViewController:detailController animated:YES];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

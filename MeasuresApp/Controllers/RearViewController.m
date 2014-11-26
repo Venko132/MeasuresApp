@@ -46,7 +46,7 @@
 
 - (void)initProperties
 {
-    listOfEvents = @[@"Афиша",@"Участники",@"Спонсоры",@"Места",@"Новости",@"Instagram"];
+    listOfEvents = @[@"Афиша",@"Участники",@"Спонсоры",@"Места",@"Новости"/*,@"Instagram"*/];
     
     tblListOfEvents.dataSource = self;
     tblListOfEvents.delegate  = self;
