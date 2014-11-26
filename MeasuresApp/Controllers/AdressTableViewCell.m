@@ -39,6 +39,7 @@ static float const fontSizeBtnTitle = 10.0f;
 }
 
 - (IBAction)pressButton:(id)sender{
+    [self.delegatePlace setRowIndex:self.rowCell];
     if([sender tag] == 101){
         if([self.delegatePlace respondsToSelector:@selector(openMaps)])
             [self.delegatePlace performSelector:@selector(openMaps)];
@@ -53,6 +54,7 @@ static float const fontSizeBtnTitle = 10.0f;
     DataModel * dataModel = [DataModel Instance];
     self.lblAdress.text = [dataModel placeNameAtIndex:rowIndex];
     self.lblDate.text = [dataModel placeSubtitleAtIndex:rowIndex];
+    self.rowCell = rowIndex;
 }
 
 @end

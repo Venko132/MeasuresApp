@@ -12,6 +12,9 @@
 @protocol ProtocolPlace <NSObject>
 
 @required
+
+@property (nonatomic) NSInteger rowIndex;
+
 - (void)openMaps;
 - (void)showRoute;
 
@@ -25,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton * btnOpenRoute;
 @property (weak, nonatomic) IBOutlet UIImageView * imgPlace;
 
+@property (nonatomic) NSInteger rowCell;
 @property (weak, nonatomic) id<ProtocolPlace> delegatePlace;
 
 - (IBAction)pressButton:(id)sender;

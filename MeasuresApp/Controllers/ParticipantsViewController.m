@@ -17,6 +17,8 @@
     UIColor * notSelectedCellBGColor;
     
     BOOL isCategoriesOpen;
+    
+    DataModel * dataModel;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *cltListOfPartisipants;
@@ -48,6 +50,8 @@ static NSString * const cltMemberCellId = @"MemberCell";
 {
     self.cltListOfPartisipants.dataSource = self;
     self.cltListOfPartisipants.delegate = self;
+    
+    dataModel = [DataModel Instance];
     //[self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cltMemberCellId];
     UINib *cellNib = [UINib nibWithNibName:@"MemberCollectionViewCell" bundle:nil];
     [self.cltListOfPartisipants registerNib:cellNib forCellWithReuseIdentifier:cltMemberCellId];
@@ -67,17 +71,17 @@ static NSString * const cltMemberCellId = @"MemberCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [[collectionView cellForItemAtIndexPath:indexPath] setSelected:NO];
-    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 6;
+    return [dataModel participantsCount];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MemberCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cltMemberCellId forIndexPath:indexPath];
+    [cell uploadDataToCell:indexPath.row];
     
     return cell;
 }
@@ -85,14 +89,14 @@ static NSString * const cltMemberCellId = @"MemberCell";
 #pragma mark - TableView delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return dataModel.categorys.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
     CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    NSInteger row = indexPath.row;
+    //NSInteger row = indexPath.row;
     
     if (nil == cell)
     {
@@ -101,7 +105,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString *text = [NSString stringWithFormat:@"Category %i",row];
+    NSString *text = (NSString*)dataModel.categorys;//[NSString stringWithFormat:@"Category %i",row];
     
     cell.lblCategory.text = text;
     
@@ -145,11 +149,6 @@ static NSString * const cltMemberCellId = @"MemberCell";
             newRect.origin.y += heigthAnimation;
             self.cltListOfPartisipants.frame = newRect;
             
-            //Table
-            /*newRect = self.tblListOfCategories.frame;
-            newRect.size.height += heigthAnimation;
-            self.tblListOfCategories.frame = newRect;
-            */
         } completion:^(BOOL finished) {
             isCategoriesOpen = YES;
         }];
@@ -168,11 +167,6 @@ static NSString * const cltMemberCellId = @"MemberCell";
             newRect.origin.y += heigthAnimation;
             self.cltListOfPartisipants.frame = newRect;
             
-            //Table
-            /*newRect = self.tblListOfCategories.frame;
-            newRect.size.height += heigthAnimation;
-            self.tblListOfCategories.frame = newRect;
-            */
         } completion:^(BOOL finished) {
             isCategoriesOpen = NO;
         }];

@@ -57,7 +57,7 @@ static float const constHeigthOfTblCell = 125.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;//[[DataModel Instance] newsCount];
+    return [[DataModel Instance] newsCount];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -13,6 +13,7 @@
 @interface PlacesViewController (){
     NSMutableArray * listOfAdresses;
     DataModel * dataModel;
+    NSInteger _presentedRow;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfAdresses;
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
@@ -20,6 +21,7 @@
 @end
 
 @implementation PlacesViewController
+@synthesize rowIndex;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -116,7 +118,7 @@ static NSString * const mapsYandex = @"Yandex Maps";
     NSString * titleAlert;
     NSString * _titleApp;
     //coordinates for the place we want to display
-    CLLocationCoordinate2D locationCoordinate = CLLocationCoordinate2DMake(31.20691,121.477847);
+    CLLocationCoordinate2D locationCoordinate = [dataModel placeMapURLAtIndex:self.rowIndex].coordinate;
     
     switch (buttonIndex) {
         case 0:
