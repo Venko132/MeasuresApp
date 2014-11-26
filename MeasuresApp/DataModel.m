@@ -26,7 +26,10 @@
     NSMutableDictionary* allData;
     NSArray* participantFilter;
     NSMutableArray* selectedParticipant;
+    NSMutableArray* onDownloadImages;
+    NSMutableDictionary* loadedImages;
 }
+-(UIImage*)imageByURL:(NSString*)url;
 @end
 
 @implementation DataModel
@@ -45,6 +48,9 @@
 {
     if (self=[super init])
     {
+        onDownloadImages = [NSMutableArray array];
+        loadedImages = [NSMutableDictionary dictionary];
+        
         allData = [[NSMutableDictionary alloc]init];
         [allData setObject:[NSMutableArray array] forKey:const_Participants];
         [allData setObject:[NSMutableArray array] forKey:const_Category];
@@ -53,13 +59,12 @@
         [allData setObject:[NSMutableArray array] forKey:const_Sponsors];
         [allData setObject:[NSMutableArray array] forKey:const_Places];
         [allData setObject:[NSMutableArray array] forKey:const_News];
-        [self load];
+        // отключено до тестирования
+//        [self load];
+//        [self save];
     }
     return self;
 }
-
-
-
 
 -(id) valueForm:(NSArray*)from index:(NSInteger)index key:(id)key
 {
@@ -71,6 +76,7 @@
 
 -(void)dealloc
 {
+    [self save];
 }
 
 #pragma mark -
@@ -110,6 +116,7 @@
                           details,const_Details,
                           nil];
     [[allData objectForKey:const_Participants]addObject:newP];
+    [self imageByURL:logoURL];
 }
 
 //
@@ -152,7 +159,7 @@
 
 - (id) participantsLogoAtIndex:(NSInteger) index
 {
-    return [self valueForm:selectedParticipant index:index key:const_LogoURL];
+    return [self imageByURL:[self valueForm:selectedParticipant index:index key:const_LogoURL]];
 }
 
 - (id) participantsDetailsAtIndex:(NSInteger) index
@@ -170,6 +177,7 @@
                           details,const_Details,
                           nil];
     [[allData objectForKey:const_Sponsors]addObject:newD];
+    [self imageByURL:logoURL];
 }
 
 -(NSInteger)sponsorsCount
@@ -184,7 +192,7 @@
 
 -(id)sponsorLogoAtIndex:(NSInteger)index
 {
-    return [self valueForm:[allData objectForKey:const_Sponsors] index:index key:const_LogoURL];
+    return [self imageByURL:[self valueForm:[allData objectForKey:const_Sponsors] index:index key:const_LogoURL]];
 }
 
 -(id)sponsorDetailsAtIndex:(NSInteger)index
@@ -204,6 +212,7 @@
                           details,const_Details,
                           nil];
     [[allData objectForKey:const_Places]addObject:newD];
+    [self imageByURL:imageURL];
 }
 
 -(NSInteger) placesCount
@@ -223,7 +232,7 @@
 
 -(id) placeImageAtIndex:(NSInteger)index
 {
-    return [self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL];
+    return [self imageByURL:[self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL]];
 }
 
 -(MKPointAnnotation*) placeMapURLAtIndex:(NSInteger)index
@@ -249,6 +258,7 @@
                           nil];
     
     [[allData objectForKey:const_News]addObject:newD];
+    [self imageByURL:imageURL];
 }
 
 -(NSInteger) newsCount
@@ -266,7 +276,7 @@
 }
 -(id) newsImageAtIndex:(NSInteger) index
 {
-    return [self valueForm:[allData objectForKey:const_News] index:index key:const_LogoURL];
+    return [self imageByURL:[self valueForm:[allData objectForKey:const_News] index:index key:const_LogoURL]];
 }
 -(id) newsDetailsAtIndex:(NSInteger) index
 {
@@ -314,6 +324,82 @@
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
 //    }];
     return parsedObject;
+}
+
+-(NSString*)urlToFileName:(NSString*)url
+{
+    url = [url stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+    url = [url stringByReplacingOccurrencesOfString:@":" withString:@"_"];
+    return  url;
+}
+
+-(UIImage*)imageByURL:(NSString*)url
+{
+//    NSString* fileName = [self urlToFileName:url];
+    UIImage* answer = [loadedImages objectForKey:url];
+    if (answer)
+        return answer;
+    
+    if ([self loadImageFromDisk:url])
+    {
+        answer = [loadedImages objectForKey:url];
+        if (answer)
+            return answer;
+    }
+    
+    [self downloadImage:url];
+    
+    return nil;
+}
+
+-(void)saveImage:(UIImage*)image withURL:(NSString*)url
+{
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    
+    NSData * binaryImageData = UIImagePNGRepresentation(image);
+    
+    if(! [binaryImageData writeToFile:[basePath stringByAppendingPathComponent:[self urlToFileName:url]] atomically:YES])
+    {
+        NSLog(@"can't save file %@/%@",basePath,[self urlToFileName:url]);
+    }
+}
+
+-(BOOL)loadImageFromDisk:(NSString*)url
+{
+    NSString* filename = [self urlToFileName:url];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *outputPath = [documentsDirectory stringByAppendingPathComponent:filename ];
+    
+//    NSLog(@"outputPath: %@", outputPath);
+    UIImage *theImage = [UIImage imageWithContentsOfFile:outputPath];
+    
+    if (theImage) {
+        [loadedImages setObject:theImage forKey:url];
+        return YES;
+    }
+    return NO;
+}
+
+-(void)downloadImage:(NSString*)url
+{
+    if ([onDownloadImages indexOfObject:url]!=NSNotFound)
+        return;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                   ^{
+                       NSURL *imageURL = [NSURL URLWithString:url];
+                       NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                       
+                       dispatch_sync(dispatch_get_main_queue(), ^{
+                           if (imageData!=nil)
+                           {
+                               [onDownloadImages removeObject:url];
+                               [self saveImage: [UIImage imageWithData:imageData] withURL:url];
+                           }
+                       });
+                   });
 }
 
 -(void)load
