@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelperClass.h"
 
-@interface NewsTableViewCell : UITableViewCell
+@interface NewsTableViewCell : UITableViewCell<ProtocolUploadDataToCell>
 
 @property (weak, nonatomic) IBOutlet UILabel* lblDate;
-@property (weak, nonatomic) IBOutlet UILabel* lblInformation;
+@property (weak, nonatomic) IBOutlet UILabel* lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel* lblSubTitle;
 @property (weak, nonatomic) IBOutlet UIImageView * imgAvatar;
 
-- (void)setTitle:(NSString*)_title andInfo:(NSString*)_info;
+//- (void)setTitle:(NSString*)_title andInfo:(NSString*)_info;
 
 @end

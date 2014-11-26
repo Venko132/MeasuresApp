@@ -38,5 +38,8 @@
 + (UIColor*)appBlueColor;
 + (UIColor*)appPinkColor;
 + (UIColor*)appGrayColor;
++ (UIColor*)appPink2Color;
+
++(NSString*)convertDate:(NSDate*)_date toStringFormat:(NSString*)_stringFormat;
 
 @end

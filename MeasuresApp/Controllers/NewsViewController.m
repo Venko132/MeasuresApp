@@ -33,6 +33,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tblListOfNews reloadData];
+}
+
 - (void)initProperties
 {
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleNews
@@ -48,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;//listOfSponsors.count;
+    return [[DataModel Instance] newsCount];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +72,12 @@
              nib = [[NSBundle mainBundle] loadNibNamed:@"NewsTableViewCellR" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    [cell uploadDataToCell:row];
+    
+    self.tblListOfNews.estimatedRowHeight = 125.0f;
+    self.tblListOfNews.rowHeight = UITableViewAutomaticDimension;
+    
     return cell;
 }
 
@@ -73,10 +85,6 @@
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
     
-    /*
-    if(!navControllerForNews)
-        navControllerForNews = [[UINavigationController alloc] initWithRootViewController:];
-     */
     
     DetailNewsViewController *detailController = [[DetailNewsViewController alloc] initWithNibName:NSStringFromClass([DetailNewsViewController class]) bundle:nil];
     [self.navigationController pushViewController:detailController animated:YES];

@@ -97,12 +97,27 @@
 + (UIColor*)appBlueColor{
     return [UIColor colorWithRed:(56.0f/255.0) green:(61.0f/255.0) blue:(120.0f/255.0) alpha:1.0f];
 }
+
 + (UIColor*)appPinkColor{
     return [UIColor colorWithRed:(204.0f/255.0) green:(126.0f/255.0) blue:(186.0f/255.0) alpha:1.0f];
 }
 
++ (UIColor*)appPink2Color{
+    return [UIColor colorWithRed:(189.0f/255.0) green:(56.0f/255.0) blue:(103.0f/255.0) alpha:1.0f];
+}
+
 + (UIColor*)appGrayColor{
     return [UIColor colorWithRed:(135.0f/255.0) green:(135.0f/255.0) blue:(135.0f/255.0) alpha:1.0f];
+}
+
++(NSString*)convertDate:(NSDate*)_date toStringFormat:(NSString*)_stringFormat{
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_UA"];
+    [formatter setLocale: locale];;
+    [formatter setDateFormat:_stringFormat];
+    
+    NSString *result = [formatter stringFromDate:_date];
+    return result;
 }
 
 @end

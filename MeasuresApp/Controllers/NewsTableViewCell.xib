@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -24,18 +25,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iif-D4-qDT">
-                        <rect key="frame" x="160" y="33" width="145" height="57"/>
-                        <constraints>
-                            <constraint firstAttribute="height" priority="500" constant="57" id="d5F-MK-HwP"/>
-                            <constraint firstAttribute="width" constant="145" id="sWK-jq-qwR"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separatorLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="NRj-6A-2op">
-                        <rect key="frame" x="15" y="120" width="290" height="3"/>
+                        <rect key="frame" x="15" y="121" width="290" height="3"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-ua-n1i">
                         <rect key="frame" x="15" y="8" width="103" height="103"/>
@@ -45,26 +36,35 @@
                             <constraint firstAttribute="width" constant="103" id="Q4w-LU-DnQ"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iif-D4-qDT">
+                        <rect key="frame" x="160" y="31" width="145" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="500" constant="33" id="d5F-MK-HwP"/>
+                            <constraint firstAttribute="width" constant="145" id="sWK-jq-qwR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NRj-6A-2op" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="D8f-hp-HLr"/>
                     <constraint firstItem="gwN-27-Pnh" firstAttribute="leading" secondItem="kGT-ua-n1i" secondAttribute="trailing" constant="42" id="Gnp-gJ-OJo"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="NRj-6A-2op" secondAttribute="bottom" constant="-8" id="Ttu-tT-zbh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="NRj-6A-2op" secondAttribute="bottom" constant="-9" id="Ttu-tT-zbh"/>
                     <constraint firstItem="gwN-27-Pnh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Z6t-nP-pRN"/>
-                    <constraint firstItem="iif-D4-qDT" firstAttribute="top" secondItem="gwN-27-Pnh" secondAttribute="bottom" constant="10" id="iRy-EZ-xPF"/>
+                    <constraint firstItem="iif-D4-qDT" firstAttribute="top" secondItem="gwN-27-Pnh" secondAttribute="bottom" constant="8" id="iRy-EZ-xPF"/>
                     <constraint firstItem="kGT-ua-n1i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="jah-dq-g8U"/>
                     <constraint firstItem="gwN-27-Pnh" firstAttribute="leading" secondItem="iif-D4-qDT" secondAttribute="leading" id="rj0-71-CQA"/>
                     <constraint firstAttribute="trailingMargin" secondItem="NRj-6A-2op" secondAttribute="trailing" constant="7" id="tN8-cv-IgX"/>
                     <constraint firstItem="kGT-ua-n1i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xZD-9f-sr1"/>
-                    <constraint firstItem="iif-D4-qDT" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-25" id="yKN-gP-jKC"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imgAvatar" destination="kGT-ua-n1i" id="PWO-wy-Ei8"/>
                 <outlet property="lblDate" destination="gwN-27-Pnh" id="IFR-Dl-lOh"/>
-                <outlet property="lblInformation" destination="iif-D4-qDT" id="fac-tm-fuQ"/>
+                <outlet property="lblTitle" destination="iif-D4-qDT" id="CSy-fY-ogR"/>
             </connections>
-            <point key="canvasLocation" x="208" y="167.5"/>
+            <point key="canvasLocation" x="208" y="163"/>
         </tableViewCell>
     </objects>
     <resources>
