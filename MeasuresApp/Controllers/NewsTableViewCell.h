@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel* lblSubTitle;
 @property (weak, nonatomic) IBOutlet UIImageView * imgAvatar;
 
+@property (nonatomic) float heigthLblTitleStart;
+
 //- (void)setTitle:(NSString*)_title andInfo:(NSString*)_info;
 
 @end

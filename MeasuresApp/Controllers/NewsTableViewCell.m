@@ -37,10 +37,10 @@ static float const fontSizeInfoTitle = 16.0f;
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:allInfo];
     //Range
     NSRange rangeTitle = [allInfo rangeOfString:_title];
-    NSRange rangeInfo = [allInfo rangeOfString:_info];
+    NSRange rangeInfo = [allInfo rangeOfString:_info options:NSBackwardsSearch];
     
     //Font
-    UIFont * fontTitle = [UIFont fontWithName:constFontArial size:fontSizeInfoTitle];
+    UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:fontSizeInfoTitle];
     UIFont * fontInfo = [UIFont fontWithName:constFontArial size:fontSizeInfo];
     //Color
     if(rangeTitle.location != NSNotFound){
@@ -60,8 +60,11 @@ static float const fontSizeInfoTitle = 16.0f;
 {
     DataModel * dataModel = [DataModel Instance];
     self.lblDate.text = [HelperClass convertDate:[dataModel newsDateAtIndex:rowIndex] toStringFormat:@"dd MMMM yyyy"];
-    self.lblTitle.attributedText = [self setTitle:[dataModel newsTitleAtIndex:rowIndex]
-                                          andInfo:[dataModel newsSubtitleAtIndex:rowIndex]];
+    NSString * test = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";
+    NSString * test2 = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";
+    self.lblTitle.attributedText = [self setTitle:test/*[dataModel newsTitleAtIndex:rowIndex]*/
+                                          andInfo:test2/*[dataModel newsSubtitleAtIndex:rowIndex]*/];
+    self.heigthLblTitleStart = CGRectGetHeight(self.lblTitle.frame);
     [self.lblTitle sizeToFit];
     //self.lblSubTitle.text = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";//[dataModel newsSubtitleAtIndex:rowIndex];
 }

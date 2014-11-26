@@ -14,6 +14,7 @@
 @interface NewsViewController (){
     NSMutableArray * listOfNews;
 }
+
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfNews;
 @property (strong, nonatomic) UINavigationController * navControllerForNews;
 
@@ -52,9 +53,11 @@
 
 #pragma mark - TableView delegate
 
+static float const constHeigthOfTblCell = 125.0f;
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[DataModel Instance] newsCount];
+    return 5;//[[DataModel Instance] newsCount];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,10 +78,25 @@
     
     [cell uploadDataToCell:row];
     
-    self.tblListOfNews.estimatedRowHeight = 125.0f;
-    self.tblListOfNews.rowHeight = UITableViewAutomaticDimension;
+    self.tblListOfNews.estimatedRowHeight = constHeigthOfTblCell;
+    //self.tblListOfNews.rowHeight = UITableViewAutomaticDimension;
     
     return cell;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     NewsTableViewCell *cell = (NewsTableViewCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    float heigthCell;
+    float heigthLblTitle = CGRectGetHeight(cell.lblTitle.frame);
+    if(cell.heigthLblTitleStart >= heigthLblTitle)
+        heigthCell = constHeigthOfTblCell;
+    else {
+        heigthCell = constHeigthOfTblCell + (heigthLblTitle - cell.heigthLblTitleStart);
+    }
+    
+    return heigthCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
