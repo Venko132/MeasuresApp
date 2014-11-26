@@ -12,6 +12,8 @@
 
 @interface ParticipantsViewController (){
     NSInteger _presentedRow;
+    NSInteger numberOfCategorySection;
+    NSInteger numberOfFilterCategory;
     
     UIColor * selectedCellBGColor;
     UIColor * notSelectedCellBGColor;
@@ -25,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfCategories;
 @property (weak, nonatomic) IBOutlet UIView *vwContainerOfAnimation;
+
 
 @end
 
@@ -57,6 +60,8 @@ static NSString * const cltMemberCellId = @"MemberCell";
     [self.cltListOfPartisipants registerNib:cellNib forCellWithReuseIdentifier:cltMemberCellId];
     
     _presentedRow = -1;
+    numberOfFilterCategory = -1;
+    numberOfCategorySection = [dataModel categorys] ? [dataModel categorys].count : 0;
     
     notSelectedCellBGColor = [HelperClass appBlueColor];
     selectedCellBGColor = [HelperClass appPinkColor];
@@ -74,17 +79,27 @@ static NSString * const cltMemberCellId = @"MemberCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    [dataModel setParticipantsFilter:@[dataModel.categorys[section]]];
     return [dataModel participantsCount];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(numberOfFilterCategory != indexPath.section){
+        numberOfFilterCategory = indexPath.section;
+        [dataModel setParticipantsFilter:@[dataModel.categorys[numberOfFilterCategory]]];
+    }
     
     MemberCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cltMemberCellId forIndexPath:indexPath];
     [cell uploadDataToCell:indexPath.row];
     
     return cell;
 }
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return numberOfCategorySection;
+}
+
 
 #pragma mark - TableView delegate
 
@@ -116,6 +131,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
 {
     [[tableView cellForRowAtIndexPath:indexPath] setBackgroundColor:selectedCellBGColor];
     NSInteger row = indexPath.row;
+    numberOfCategorySection = 1;
     
     if ( row == _presentedRow )
     {
@@ -126,12 +142,24 @@ static NSString * const cltMemberCellId = @"MemberCell";
     [[tableView cellForRowAtIndexPath:indexPathDeselect] setBackgroundColor:notSelectedCellBGColor];
     
     //Filter memberships
-    
     _presentedRow = row;
+    
+    numberOfFilterCategory = 0;
+    numberOfCategorySection = 1;
+    [dataModel setParticipantsFilter:@[dataModel.categorys[_presentedRow]]];
+    [self.cltListOfPartisipants reloadData];
 }
 
 - (IBAction)animationOfListCategories:(id)sender {
-    static float heigthOfTable = 100.0f;
+    float heigthOfTable = 100.0f;
+    float heigthOfCell = 25.0f;
+    
+    if((dataModel.categorys.count * heigthOfCell) < heigthOfTable)
+        heigthOfTable = dataModel.categorys.count * heigthOfCell;
+    
+    if(heigthOfTable == 0)
+        return;
+        
     float heigthAnimation;
     if(!isCategoriesOpen)
     {

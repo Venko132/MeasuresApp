@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMessageAboutFinishAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblInfo;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleForSocialShare;
+@property (weak, nonatomic) IBOutlet UIImageView *imgBannerTop;
+@property (weak, nonatomic) IBOutlet UIView *vwContainerForMessageAboutFinish;
 
 
 @end

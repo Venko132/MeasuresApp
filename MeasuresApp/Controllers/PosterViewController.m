@@ -20,7 +20,9 @@ static float const fontSizeMessageSecondLine = 9.0f;
 static float const fontSizePlaceOfAction = 12.0f;
 static float const fontSizeDateOfAction = 24.0f;
 
-@interface PosterViewController ()
+@interface PosterViewController (){
+    DataModel * dataModel;
+}
 
 @end
 
@@ -39,6 +41,7 @@ static float const fontSizeDateOfAction = 24.0f;
 
 - (void)initProperties
 {
+    dataModel = [DataModel Instance];
     self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Афиша"
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
@@ -51,6 +54,11 @@ static float const fontSizeDateOfAction = 24.0f;
     
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
     [self initLblFateAndPlace];
+    
+    self.vwContainerForMessageAboutFinish.hidden = YES;
+    // --------
+    self.imgBannerTop.image = [UIImage imageWithData:[dataModel PosterGetBanner]];
+    self.imgPlaceOfAction.image = [UIImage imageWithData:[dataModel PosterGetBanner]];
 }
 
 #pragma mark - Other methods

@@ -10,6 +10,7 @@
                 <outlet property="btnShareFB" destination="VtD-Pz-vF2" id="mF9-tR-Z1K"/>
                 <outlet property="btnShareTW" destination="yl3-i3-dqf" id="BYm-ik-iN1"/>
                 <outlet property="btnShareVK" destination="Tv7-IP-eRc" id="hjo-kB-DBD"/>
+                <outlet property="imgBannerTop" destination="zAi-nN-q5S" id="bZ6-oO-HLN"/>
                 <outlet property="imgPlaceOfAction" destination="fRq-Bv-dbt" id="Q1y-T4-qxy"/>
                 <outlet property="lblDateOfAction" destination="QcP-p1-YKt" id="1LC-Uo-GTg"/>
                 <outlet property="lblFooter" destination="764-75-0Ut" id="cJp-tT-OSe"/>
@@ -19,6 +20,7 @@
                 <outlet property="lblTitleForSocialShare" destination="v1v-NO-HEj" id="oaZ-SD-ZHn"/>
                 <outlet property="lblTitleOfAction" destination="Hhp-DR-fga" id="WeS-Rv-0nQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwContainerForMessageAboutFinish" destination="Zq3-FB-MaZ" id="UwD-BA-LMW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
