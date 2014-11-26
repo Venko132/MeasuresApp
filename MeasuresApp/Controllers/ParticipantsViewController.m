@@ -12,7 +12,7 @@
 
 @interface ParticipantsViewController (){
     NSInteger _presentedRow;
-    NSInteger numberOfCategorySection;
+    NSInteger numberCategoriseSection;
     NSInteger numberOfFilterCategory;
     
     UIColor * selectedCellBGColor;
@@ -61,7 +61,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
     
     _presentedRow = -1;
     numberOfFilterCategory = -1;
-    numberOfCategorySection = [dataModel categorys] ? [dataModel categorys].count : 0;
+    numberCategoriseSection = [dataModel categorys] ? [dataModel categorys].count : 0;
     
     notSelectedCellBGColor = [HelperClass appBlueColor];
     selectedCellBGColor = [HelperClass appPinkColor];
@@ -97,7 +97,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return numberOfCategorySection;
+    return numberCategoriseSection;
 }
 
 
@@ -131,7 +131,6 @@ static NSString * const cltMemberCellId = @"MemberCell";
 {
     [[tableView cellForRowAtIndexPath:indexPath] setBackgroundColor:selectedCellBGColor];
     NSInteger row = indexPath.row;
-    numberOfCategorySection = 1;
     
     if ( row == _presentedRow )
     {
@@ -145,7 +144,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
     _presentedRow = row;
     
     numberOfFilterCategory = 0;
-    numberOfCategorySection = 1;
+    numberCategoriseSection = 1;
     [dataModel setParticipantsFilter:@[dataModel.categorys[_presentedRow]]];
     [self.cltListOfPartisipants reloadData];
 }

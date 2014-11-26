@@ -51,11 +51,16 @@
     tblListOfEvents.dataSource = self;
     tblListOfEvents.delegate  = self;
     
-    _presentedRow = -1;
+    _presentedRow = 0;
     
     notSelectedCellBGColor = [HelperClass appBlueColor];
     selectedCellBGColor = [HelperClass appPinkColor];
+    
+    [self.tblListOfEvents reloadData];
+    NSIndexPath * indexFirst = [NSIndexPath indexPathForRow:0 inSection:0];
+    [[self.tblListOfEvents cellForRowAtIndexPath:indexFirst] setBackgroundColor:selectedCellBGColor];
 }
+
 
 #pragma mark - TableView delegate
 
