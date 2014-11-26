@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="btnShareFB" destination="VtD-Pz-vF2" id="mF9-tR-Z1K"/>
                 <outlet property="btnShareTW" destination="yl3-i3-dqf" id="BYm-ik-iN1"/>
-                <outlet property="btnShareVK" destination="Tv7-IP-eRc" id="hjo-kB-DBD"/>
                 <outlet property="imgBannerTop" destination="zAi-nN-q5S" id="bZ6-oO-HLN"/>
                 <outlet property="imgPlaceOfAction" destination="fRq-Bv-dbt" id="Q1y-T4-qxy"/>
                 <outlet property="lblDateOfAction" destination="QcP-p1-YKt" id="1LC-Uo-GTg"/>
@@ -148,7 +147,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-IP-eRc">
-                            <rect key="frame" x="122" y="19" width="30" height="30"/>
+                            <rect key="frame" x="117" y="19" width="30" height="30"/>
                             <state key="normal" backgroundImage="VK.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -163,7 +162,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-Pz-vF2">
-                            <rect key="frame" x="8" y="19" width="30" height="30"/>
+                            <rect key="frame" x="13" y="19" width="30" height="30"/>
                             <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                             <state key="normal" title="FB">
