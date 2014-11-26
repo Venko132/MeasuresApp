@@ -60,7 +60,7 @@
         [allData setObject:[NSMutableArray array] forKey:const_Places];
         [allData setObject:[NSMutableArray array] forKey:const_News];
         // отключено до тестирования
-        //[self load];
+        [self load];
 //        [self save];
     }
     return self;
@@ -445,13 +445,14 @@
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/locations.php?command=allShow"];
     
-//    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-//        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
-//    }];
+    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
+    }];
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
         NSString* subtitle = [parsedObject objectForKey:@"description"][i];
+        NSString* image = [parsedObject objectForKey:@"image"][i];
         NSString* latitude =[parsedObject objectForKey:@"latitude"][i];
         NSString* longitude =[parsedObject objectForKey:@"longitude"][i];
         CLLocationDegrees fLatitude = [latitude doubleValue];
@@ -462,7 +463,7 @@
         newPlace.title = name;
         newPlace.subtitle = subtitle;
         
-        [self addPlaceWith:name imageURL:nil description:subtitle mapPoint:newPlace details:@""];
+        [self addPlaceWith:name imageURL:image description:subtitle mapPoint:newPlace details:@""];
     }
     
     /// Load News and other Articles
@@ -476,6 +477,9 @@
     
     for (int i=0;i<[[parsedObject objectForKey:@"id"]count];i++)
     {
+        NSString* idVal =[parsedObject objectForKey:@"id"][i];
+        if (idVal == (id)[NSNull null])
+            continue;
         NSString* title = [parsedObject objectForKey:@"title"][i];
         NSString* subtitle = [parsedObject objectForKey:@"description"][i];
         NSString* imageURL = [parsedObject objectForKey:@"image"][i];
