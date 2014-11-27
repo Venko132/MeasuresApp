@@ -239,7 +239,7 @@
     return [self imageByURL:[self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL]];
 }
 
--(MKPointAnnotation*) placeMapPointtIndex:(NSInteger)index
+-(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index
 {
     double fLatitude = [[self valueForm:[allData objectForKey:const_Places] index:index key:const_Latitude]doubleValue];
     double fLongitude = [[self valueForm:[allData objectForKey:const_Places] index:index key:const_Longitude]doubleValue];

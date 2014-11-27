@@ -85,7 +85,7 @@
     return imgBanner;
 }
 
-- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 30.0f;
 }
@@ -123,6 +123,7 @@ static NSString * const mapsYandex = @"Yandex Maps";
     NSString * titleAlert;
     NSString * _titleApp;
     //coordinates for the place we want to display
+#warning upsent selector placeMapPointAtIndex:
     CLLocationCoordinate2D locationCoordinate = [dataModel placeMapPointAtIndex:self.rowIndex].coordinate;
     
     switch (buttonIndex) {

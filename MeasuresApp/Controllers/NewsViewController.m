@@ -86,7 +86,7 @@ static float const constHeigthOfTblCell = 125.0f;
     return cell;
 }
 
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
      NewsTableViewCell *cell = (NewsTableViewCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
     
@@ -118,7 +118,7 @@ static float const constHeigthOfTblCell = 125.0f;
     return imgBanner;
 }
 
-- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 30.0f;
 }
