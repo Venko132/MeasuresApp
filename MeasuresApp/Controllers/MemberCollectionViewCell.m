@@ -22,6 +22,7 @@ static float fontSize = 10.0f;
     self.lblTitle.textColor = [HelperClass appGrayColor];
     
     self.imgAvatar.layer.cornerRadius = CGRectGetWidth(self.imgAvatar.frame)/2;
+    self.imgAvatar.clipsToBounds = YES;
 }
 
 - (void)uploadDataToCell:(NSInteger)rowIndex
