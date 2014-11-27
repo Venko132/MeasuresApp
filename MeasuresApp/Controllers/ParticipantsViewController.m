@@ -9,10 +9,11 @@
 #import "ParticipantsViewController.h"
 #import "CategoryTableViewCell.h"
 #import "MemberCollectionViewCell.h"
+#import "ParticipantsFooterCollectionReusableView.h"
 
 @interface ParticipantsViewController (){
     NSInteger _presentedRow;
-    NSInteger numberCategoriseSection;
+    NSInteger numberCategoriesSection;
     NSInteger numberOfFilterCategory;
     
     UIColor * selectedCellBGColor;
@@ -32,6 +33,7 @@
 @end
 
 static NSString * const cltMemberCellId = @"MemberCell";
+static NSString * const cltMembersFooterId = @"MembersFooter";
 
 @implementation ParticipantsViewController
 
@@ -59,9 +61,15 @@ static NSString * const cltMemberCellId = @"MemberCell";
     UINib *cellNib = [UINib nibWithNibName:@"MemberCollectionViewCell" bundle:nil];
     [self.cltListOfPartisipants registerNib:cellNib forCellWithReuseIdentifier:cltMemberCellId];
     
+    UINib *footerNib = [UINib nibWithNibName:@"ParticipantsFooterCollectionReusableView" bundle:nil];
+    [self.cltListOfPartisipants registerNib:footerNib
+                 forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                        withReuseIdentifier:cltMembersFooterId];
+    
+    
     _presentedRow = -1;
     numberOfFilterCategory = -1;
-    numberCategoriseSection = [dataModel categorys] ? [dataModel categorys].count : 0;
+    numberCategoriesSection = [dataModel categorys] ? [dataModel categorys].count : 0;
     
     notSelectedCellBGColor = [HelperClass appBlueColor];
     selectedCellBGColor = [HelperClass appPinkColor];
@@ -73,6 +81,10 @@ static NSString * const cltMemberCellId = @"MemberCell";
 }
 
 #pragma mark - CollectionView delegate
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return numberCategoriesSection;
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [[collectionView cellForItemAtIndexPath:indexPath] setSelected:NO];
@@ -96,15 +108,26 @@ static NSString * const cltMemberCellId = @"MemberCell";
     return cell;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return numberCategoriseSection;
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath
+{
+    if (kind == UICollectionElementKindSectionFooter) {
+        ParticipantsFooterCollectionReusableView *reusableview = (ParticipantsFooterCollectionReusableView*)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:cltMembersFooterId forIndexPath:indexPath];
+        return reusableview;
+    }
+    return nil;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    CGSize headerSize = CGSizeMake(CGRectGetWidth(self.cltListOfPartisipants.frame), 20.0f);
+    return headerSize;
+}
 
 #pragma mark - TableView delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return dataModel.categorys.count;
+    return [[DataModel Instance].categorys count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,7 +143,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString *text = (NSString*)dataModel.categorys;//[NSString stringWithFormat:@"Category %i",row];
+    NSString *text = (NSString*)dataModel.categorys[indexPath.row];//[NSString stringWithFormat:@"Category %i",row];
     
     cell.lblCategory.text = text;
     
@@ -144,7 +167,7 @@ static NSString * const cltMemberCellId = @"MemberCell";
     _presentedRow = row;
     
     numberOfFilterCategory = 0;
-    numberCategoriseSection = 1;
+    numberCategoriesSection = 1;
     [dataModel setParticipantsFilter:@[dataModel.categorys[_presentedRow]]];
     [self.cltListOfPartisipants reloadData];
 }

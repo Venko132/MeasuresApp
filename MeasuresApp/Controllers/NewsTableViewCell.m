@@ -60,13 +60,12 @@ static float const fontSizeInfoTitle = 16.0f;
 {
     DataModel * dataModel = [DataModel Instance];
     self.lblDate.text = [HelperClass convertDate:[dataModel newsDateAtIndex:rowIndex] toStringFormat:@"dd MMMM yyyy"];
-    NSString * test = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";
-    NSString * test2 = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";
-    self.lblTitle.attributedText = [self setTitle:test/*[dataModel newsTitleAtIndex:rowIndex]*/
-                                          andInfo:test2/*[dataModel newsSubtitleAtIndex:rowIndex]*/];
+    //NSString * test = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";
+    //NSString * test2 = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";
+    self.lblTitle.attributedText = [self setTitle:[dataModel newsTitleAtIndex:rowIndex]
+                                          andInfo:[dataModel newsSubtitleAtIndex:rowIndex]];
     self.heigthLblTitleStart = CGRectGetHeight(self.lblTitle.frame);
     [self.lblTitle sizeToFit];
-    //self.lblSubTitle.text = @"addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd addd ";//[dataModel newsSubtitleAtIndex:rowIndex];
 }
 
 @end

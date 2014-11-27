@@ -28,7 +28,7 @@ static float fontSize = 10.0f;
 {
     DataModel * dataModel = [DataModel Instance];
     self.lblTitle.text = [dataModel participantsNameAtIndex:rowIndex];
-    self.imgAvatar.image = [UIImage imageWithData:[dataModel placeImageAtIndex:rowIndex]];
+    self.imgAvatar.image = [dataModel placeImageAtIndex:rowIndex];
 }
 
 @end

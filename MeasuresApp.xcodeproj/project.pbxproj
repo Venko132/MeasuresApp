@@ -74,6 +74,8 @@
 		84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C841A1DE9E90093BDE9 /* HelperClass.m */; };
 		84E7AB9E1A26259800EB5E9A /* TW.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E7AB9C1A26259800EB5E9A /* TW.png */; };
 		84E7AB9F1A26259800EB5E9A /* VK.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E7AB9D1A26259800EB5E9A /* VK.png */; };
+		84E7ABA31A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7ABA11A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m */; };
+		84E7ABA41A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E7ABA21A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib */; };
 		BC4F42D31A23B859004A2872 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4F42D21A23B859004A2872 /* MapKit.framework */; };
 		BCA719411A1FC1AC0098F20F /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA719401A1FC1AC0098F20F /* DataModel.m */; };
 /* End PBXBuildFile section */
@@ -179,6 +181,9 @@
 		84C90C841A1DE9E90093BDE9 /* HelperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperClass.m; sourceTree = "<group>"; };
 		84E7AB9C1A26259800EB5E9A /* TW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TW.png; sourceTree = "<group>"; };
 		84E7AB9D1A26259800EB5E9A /* VK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VK.png; sourceTree = "<group>"; };
+		84E7ABA01A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantsFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		84E7ABA11A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantsFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		84E7ABA21A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		88AD94AF126C3B68A495106A /* libPods-MeasuresApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeasuresApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4F42D21A23B859004A2872 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BCA7193F1A1FC1AC0098F20F /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
@@ -487,6 +492,7 @@
 				8478FCD71A2094760022E421 /* AdressCell */,
 				84C1BA081A247D0900E087B0 /* CategoryCell */,
 				84C1BA0E1A248E7F00E087B0 /* MemberCell */,
+				84E7ABA51A27148800EB5E9A /* PartisipantsFooter */,
 			);
 			name = CostumCells;
 			sourceTree = "<group>";
@@ -519,6 +525,16 @@
 				8475FEE61A1E08D60028ED17 /* ConstantsClass.m */,
 			);
 			path = OtherClasses;
+			sourceTree = "<group>";
+		};
+		84E7ABA51A27148800EB5E9A /* PartisipantsFooter */ = {
+			isa = PBXGroup;
+			children = (
+				84E7ABA01A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.h */,
+				84E7ABA11A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m */,
+				84E7ABA21A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib */,
+			);
+			name = PartisipantsFooter;
 			sourceTree = "<group>";
 		};
 		B1C1E638A30ABCB4C3FAF920 /* Frameworks */ = {
@@ -636,6 +652,7 @@
 				843F9E401A1F6154005FA987 /* separatorLine.png in Resources */,
 				84BF5A6A1A1CC56C00EB28C6 /* bookmark_photo.jpg in Resources */,
 				84BF5A731A1CC56C00EB28C6 /* news.png in Resources */,
+				84E7ABA41A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib in Resources */,
 				843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */,
 				84AA4F761A1CD42500601CCD /* PosterViewController.xib in Resources */,
 				84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */,
@@ -736,6 +753,7 @@
 				84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */,
 				84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */,
 				8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */,
+				84E7ABA31A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m in Sources */,
 				84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
