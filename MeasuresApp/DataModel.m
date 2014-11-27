@@ -17,9 +17,13 @@
 #define const_Sponsors @"Sponsors"
 #define const_Places @"Places"
 #define const_Subtitle @"Subtitle"
-#define const_MapCoordinates @"longitude"
+#define const_MapCoordinates @"MapCoordinates"
+#define const_Latitude @"latitude"
+#define const_Longitude @"longitude"
 #define const_News @"News"
 #define const_Date @"Date"
+
+#define const_Datafile @"data.plist"
 
 @interface DataModel()
 {
@@ -61,7 +65,6 @@
         [allData setObject:[NSMutableArray array] forKey:const_News];
         // отключено до тестирования
         [self load];
-//        [self save];
     }
     return self;
 }
@@ -202,13 +205,14 @@
 
 #pragma mark Places
 
--(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description mapPoint:(MKPointAnnotation*) mapPoint details:(id)details
+-(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details
 {
     NSDictionary* newD = [NSDictionary dictionaryWithObjectsAndKeys:
                           name,const_Name,
                           description,const_Subtitle,
                           imageURL,const_LogoURL,
-                          mapPoint,const_MapCoordinates,
+                          [NSNumber numberWithDouble:latitude],const_Latitude,
+                          [NSNumber numberWithDouble:longitude],const_Longitude,
                           details,const_Details,
                           nil];
     [[allData objectForKey:const_Places]addObject:newD];
@@ -235,9 +239,15 @@
     return [self imageByURL:[self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL]];
 }
 
--(MKPointAnnotation*) placeMapURLAtIndex:(NSInteger)index
+-(MKPointAnnotation*) placeMapPointtIndex:(NSInteger)index
 {
-    return [self valueForm:[allData objectForKey:const_Places] index:index key:const_MapCoordinates];
+    double fLatitude = [[self valueForm:[allData objectForKey:const_Places] index:index key:const_Latitude]doubleValue];
+    double fLongitude = [[self valueForm:[allData objectForKey:const_Places] index:index key:const_Longitude]doubleValue];
+    MKPointAnnotation* newPlace = [[MKPointAnnotation alloc]init];
+    newPlace.coordinate = CLLocationCoordinate2DMake(fLatitude, fLongitude);
+    newPlace.title = [self placeNameAtIndex:index];
+    newPlace.subtitle = [self placeSubtitleAtIndex:index];
+    return newPlace;
 }
 
 -(id) placeDetailsURLAtIndex:(NSInteger)index
@@ -301,25 +311,21 @@
     
     NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
     
-//        if (error!=nil)
-//        {
-//            NSLog(@"Error in NSURLConnection for %@ / %@",urlString,[error description]);
-//            return nil;
-//        }
+        if (oResponseData==nil)
+        {
+            NSLog(@"Error in NSURLConnection for %@ / %@",urlString,[error description]);
+            return nil;
+        }
     
     NSError *localError = nil;
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:oResponseData options:0 error:&localError];
-    
-//    if (localError != nil)
-//    {
-//        if (error!=nil)
-//        {
-//            NSLog(@"Error in NSJSONSerialization for %@ / %@",urlString,[error description]);
-//            return nil;
-//        }
-//        return nil;
-//    }
-    
+
+    if (parsedObject==nil)
+    {
+        NSLog(@"Error in NSJSONSerialization for %@ / %@",urlString,[error description]);
+        return nil;
+    }
+
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
 //    }];
@@ -349,7 +355,7 @@
     
     [self downloadImage:url];
     
-    return nil;
+    return [UIImage imageNamed:@"photo.png"];
 }
 
 -(void)saveImage:(UIImage*)image withURL:(NSString*)url
@@ -402,11 +408,29 @@
                    });
 }
 
+-(void)loadFromDisk
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    NSString *fullPath = [documentsDir stringByAppendingPathComponent:const_Datafile];
+    NSMutableDictionary* tmp = allData;
+    allData = [[NSMutableDictionary alloc]initWithContentsOfFile:fullPath];
+//    NSLog([allData description]);
+    if (allData==nil)
+        allData = tmp;
+}
+
 -(void)load
 {
     // Load Participant and Sponsors
     
     NSDictionary *parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/members.php?command=allShow"];
+    
+    if (parsedObject==nil)
+    {
+        [self loadFromDisk];
+        return;
+    }
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
@@ -444,10 +468,10 @@
     // Load Locations
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/locations.php?command=allShow"];
-    
-    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
-    }];
+//    
+//    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
+//    }];
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
@@ -457,13 +481,8 @@
         NSString* longitude =[parsedObject objectForKey:@"longitude"][i];
         CLLocationDegrees fLatitude = [latitude doubleValue];
         CLLocationDegrees fLongitude = [longitude doubleValue];
-
-        MKPointAnnotation* newPlace = [[MKPointAnnotation alloc]init];
-        newPlace.coordinate = CLLocationCoordinate2DMake(fLatitude, fLongitude);
-        newPlace.title = name;
-        newPlace.subtitle = subtitle;
         
-        [self addPlaceWith:name imageURL:image description:subtitle mapPoint:newPlace details:@""];
+        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@""];
     }
     
     /// Load News and other Articles
@@ -518,11 +537,20 @@
         
         [self addNewsWithName:title imageURL:imageURL details:text subtitle:subtitle date:date];
     }
+    
+    [self save];
 }
 
 -(void)save
 {
-    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    NSString *fullPath = [documentsDir stringByAppendingPathComponent:const_Datafile];
+//    NSLog([allData description]);
+    if(![allData writeToFile: fullPath  atomically:YES])
+    {
+        NSLog(@"Can't write data file.");
+    }
 }
 
 @end
