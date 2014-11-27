@@ -67,6 +67,9 @@
     }
     cell.delegatePlace = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    UIImage* img =[[DataModel Instance] placeImageAtIndex:row];
+    if (img!=nil)
+        cell.imgPlace.image = img;
     
     [cell uploadDataToCell:row];
     
