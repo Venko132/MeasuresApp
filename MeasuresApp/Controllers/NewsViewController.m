@@ -49,6 +49,8 @@
     listOfNews = [[NSMutableArray alloc] initWithArray:@[@"news.png"]];
     self.tblListOfNews.dataSource = self;
     self.tblListOfNews.delegate = self;
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 #pragma mark - TableView delegate

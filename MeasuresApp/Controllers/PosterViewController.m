@@ -81,6 +81,8 @@ static float const fontSizeDateOfAction = 24.0f;
     [attString addAttribute:NSFontAttributeName value:fontTitle range:rangeTitle];
     [attString addAttribute:NSFontAttributeName value:fontInfo range:rangeInfo];
     
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
     //test
     //[attString addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bannerBig.png"]] range:rangeInfo];
     

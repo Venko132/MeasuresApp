@@ -45,6 +45,8 @@
     self.tblListOfAdresses.delegate = self;
     
     [HelperClass initLblFooter:self.lblFooter];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 #pragma mark - TableView delegate

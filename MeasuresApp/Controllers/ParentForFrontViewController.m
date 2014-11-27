@@ -31,6 +31,7 @@
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
+    [self.navigationController.navigationBar setTranslucent:NO];
     /*
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:constImageMainMenu]
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];

@@ -39,6 +39,8 @@
 {
     self.tblListOfSponsors.dataSource = self;
     self.tblListOfSponsors.delegate = self;
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 #pragma mark - TableView delegate

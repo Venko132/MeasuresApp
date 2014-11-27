@@ -78,6 +78,8 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     self.tblListOfCategories.delegate = self;
     
     [HelperClass initLblFooter:self.lblFooter];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 #pragma mark - CollectionView delegate

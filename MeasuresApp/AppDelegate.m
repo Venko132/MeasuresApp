@@ -39,6 +39,9 @@
     
     UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
     
+    [frontNavigationController.navigationBar setTranslucent:NO];
+    [rearNavigationController.navigationBar setTranslucent:NO];
+    
     SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
                                                     initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
     
@@ -205,7 +208,7 @@
 {
     UIColor * navBarTintColor = [HelperClass appBlueColor];
     [[UINavigationBar appearance] setBarTintColor:navBarTintColor];
-    [[UINavigationBar appearance] setTranslucent:NO];
+    //[[UINavigationBar appearance] setTranslucent:NO];
     /*
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
