@@ -27,9 +27,10 @@ static float fontSize = 10.0f;
 
 - (void)uploadDataToCell:(NSInteger)rowIndex
 {
-    DataModel * dataModel = [DataModel Instance];
-    self.lblTitle.text = [dataModel participantsNameAtIndex:rowIndex];
-    self.imgAvatar.image = [dataModel placeImageAtIndex:rowIndex];
+    self.lblTitle.text = [[DataModel Instance] participantsNameAtIndex:rowIndex];
+    UIImage* img = [[DataModel Instance] participantsLogoAtIndex:rowIndex];
+    if (img)
+        self.imgAvatar.image = img;
 }
 
 @end

@@ -91,13 +91,16 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    [dataModel setParticipantsFilter:@[dataModel.categorys[section]]];
+    if(_presentedRow < 0)
+        [dataModel setParticipantsFilter:@[dataModel.categorys[section]]];
+    else
+        [dataModel setParticipantsFilter:@[dataModel.categorys[numberOfFilterCategory]]];
     return [dataModel participantsCount];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(numberOfFilterCategory != indexPath.section){
+    if((_presentedRow < 0) && (numberOfFilterCategory != indexPath.section)){
         numberOfFilterCategory = indexPath.section;
         [dataModel setParticipantsFilter:@[dataModel.categorys[numberOfFilterCategory]]];
     }
@@ -166,7 +169,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     //Filter memberships
     _presentedRow = row;
     
-    numberOfFilterCategory = 0;
+    numberOfFilterCategory = _presentedRow;
     numberCategoriesSection = 1;
     [dataModel setParticipantsFilter:@[dataModel.categorys[_presentedRow]]];
     [self.cltListOfPartisipants reloadData];
