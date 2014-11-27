@@ -121,7 +121,7 @@ static NSString * const mapsYandex = @"Yandex Maps";
     NSString * titleAlert;
     NSString * _titleApp;
     //coordinates for the place we want to display
-    CLLocationCoordinate2D locationCoordinate = [dataModel placeMapURLAtIndex:self.rowIndex].coordinate;
+    CLLocationCoordinate2D locationCoordinate = [dataModel placeMapPointAtIndex:self.rowIndex].coordinate;
     
     switch (buttonIndex) {
         case 0:

@@ -39,7 +39,7 @@
 -(NSString*) placeNameAtIndex:(NSInteger)index;
 -(NSString*) placeSubtitleAtIndex:(NSInteger)index;
 -(id) placeImageAtIndex:(NSInteger)index;
--(MKPointAnnotation*) placeMapURLAtIndex:(NSInteger)index;
+-(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index;
 -(id) placeDetailsURLAtIndex:(NSInteger)index;
 
 // News
