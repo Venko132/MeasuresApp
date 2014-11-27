@@ -60,7 +60,7 @@
         [allData setObject:[NSMutableArray array] forKey:const_Places];
         [allData setObject:[NSMutableArray array] forKey:const_News];
         // отключено до тестирования
-        //[self load];
+        [self load];
 //        [self save];
     }
     return self;
@@ -486,6 +486,31 @@
         NSDate *date = [dateFormatter dateFromString:dateStr];
         
         NSString* text = [parsedObject objectForKey:@"text"][i];
+        
+        /*@try {
+            date = [dateFormatter dateFromString:dateStr];
+        }
+        @catch (NSException *exception) {
+            date = nil;
+        }
+
+
+        if(!date || [dateStr isKindOfClass:[NSNull class]])
+            date = [NSDate date];
+        
+        NSString* text = [parsedObject objectForKey:@"text"][i];
+        
+        if(!title || [title isKindOfClass:[NSNull class]])
+            title = @"title test";
+        if(!subtitle || [subtitle isKindOfClass:[NSNull class]])
+            subtitle = @"subtitle test";
+        if(!imageURL)
+            imageURL = @"http://s0.wp.com/wp-content/themes/pub/motion/images/genericlogo.png?m=1391151707g";
+        if(!dateStr || [dateStr isKindOfClass:[NSNull class]])
+            dateStr = @"11-12-2000";
+        if(!text || [text isKindOfClass:[NSNull class]])
+            text = @"text Test";
+         */
         
         [self addNewsWithName:title imageURL:imageURL details:text subtitle:subtitle date:date];
     }
