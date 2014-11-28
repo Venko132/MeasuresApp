@@ -69,6 +69,7 @@
     }
     cell.delegatePlace = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UIImage* img =[[DataModel Instance] placeImageAtIndex:row];
     if (img!=nil)
         cell.imgPlace.image = img;
@@ -123,7 +124,6 @@ static NSString * const mapsYandex = @"Yandex Maps";
     NSString * titleAlert;
     NSString * _titleApp;
     //coordinates for the place we want to display
-#warning upsent selector placeMapPointAtIndex:
     CLLocationCoordinate2D locationCoordinate = [dataModel placeMapPointAtIndex:self.rowIndex].coordinate;
     
     switch (buttonIndex) {

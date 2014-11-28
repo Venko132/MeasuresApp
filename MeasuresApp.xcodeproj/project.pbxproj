@@ -13,8 +13,8 @@
 		843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843995D51A1E43ED00B6148A /* NewsTableViewCellR.xib */; };
 		843F9E311A1E4499005FA987 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F9E2F1A1E4499005FA987 /* NewsTableViewCell.m */; };
 		843F9E321A1E4499005FA987 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E301A1E4499005FA987 /* NewsTableViewCell.xib */; };
-		843F9E361A1E5179005FA987 /* DetailNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F9E341A1E5179005FA987 /* DetailNewsViewController.m */; };
-		843F9E371A1E5179005FA987 /* DetailNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E351A1E5179005FA987 /* DetailNewsViewController.xib */; };
+		843F9E361A1E5179005FA987 /* DetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F9E341A1E5179005FA987 /* DetailArticleViewController.m */; };
+		843F9E371A1E5179005FA987 /* DetailArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E351A1E5179005FA987 /* DetailArticleViewController.xib */; };
 		843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E391A1F44A3005FA987 /* posterImage.png */; };
 		843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3B1A1F6154005FA987 /* menu@2x.png */; };
 		843F9E3F1A1F6154005FA987 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3C1A1F6154005FA987 /* banner.png */; };
@@ -25,6 +25,8 @@
 		843F9E4B1A1F770D005FA987 /* Fregat_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E461A1F770D005FA987 /* Fregat_regular.otf */; };
 		843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E471A1F770D005FA987 /* Nautilus.otf */; };
 		843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E4D1A1F9ECD005FA987 /* bannerBig.png */; };
+		84677E431A2855A30021D442 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84677E411A2855A30021D442 /* ArticleTableViewCell.m */; };
+		84677E441A2855A30021D442 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84677E421A2855A30021D442 /* ArticleTableViewCell.xib */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
 		8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */; };
 		8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEE61A1E08D60028ED17 /* ConstantsClass.m */; };
@@ -99,9 +101,9 @@
 		843F9E2E1A1E4499005FA987 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		843F9E2F1A1E4499005FA987 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		843F9E301A1E4499005FA987 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
-		843F9E331A1E5179005FA987 /* DetailNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailNewsViewController.h; sourceTree = "<group>"; };
-		843F9E341A1E5179005FA987 /* DetailNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailNewsViewController.m; sourceTree = "<group>"; };
-		843F9E351A1E5179005FA987 /* DetailNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailNewsViewController.xib; sourceTree = "<group>"; };
+		843F9E331A1E5179005FA987 /* DetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailArticleViewController.h; sourceTree = "<group>"; };
+		843F9E341A1E5179005FA987 /* DetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailArticleViewController.m; sourceTree = "<group>"; };
+		843F9E351A1E5179005FA987 /* DetailArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailArticleViewController.xib; sourceTree = "<group>"; };
 		843F9E391A1F44A3005FA987 /* posterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = posterImage.png; sourceTree = "<group>"; };
 		843F9E3B1A1F6154005FA987 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		843F9E3C1A1F6154005FA987 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
@@ -112,6 +114,9 @@
 		843F9E461A1F770D005FA987 /* Fregat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fregat_regular.otf; sourceTree = "<group>"; };
 		843F9E471A1F770D005FA987 /* Nautilus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nautilus.otf; sourceTree = "<group>"; };
 		843F9E4D1A1F9ECD005FA987 /* bannerBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bannerBig.png; sourceTree = "<group>"; };
+		84677E401A2855A30021D442 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
+		84677E411A2855A30021D442 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
+		84677E421A2855A30021D442 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
 		8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorTableViewCell.m; sourceTree = "<group>"; };
 		8475FEE01A1DF3850028ED17 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
@@ -232,14 +237,14 @@
 			name = NewsCell;
 			sourceTree = "<group>";
 		};
-		843F9E381A1E517E005FA987 /* DetailNews */ = {
+		843F9E381A1E517E005FA987 /* DetailArticle */ = {
 			isa = PBXGroup;
 			children = (
-				843F9E331A1E5179005FA987 /* DetailNewsViewController.h */,
-				843F9E341A1E5179005FA987 /* DetailNewsViewController.m */,
-				843F9E351A1E5179005FA987 /* DetailNewsViewController.xib */,
+				843F9E331A1E5179005FA987 /* DetailArticleViewController.h */,
+				843F9E341A1E5179005FA987 /* DetailArticleViewController.m */,
+				843F9E351A1E5179005FA987 /* DetailArticleViewController.xib */,
 			);
-			name = DetailNews;
+			name = DetailArticle;
 			sourceTree = "<group>";
 		};
 		843F9E411A1F770D005FA987 /* Fonts */ = {
@@ -260,6 +265,16 @@
 				843F9E461A1F770D005FA987 /* Fregat_regular.otf */,
 			);
 			path = Fregat;
+			sourceTree = "<group>";
+		};
+		84677E451A2855AA0021D442 /* ArticleCell */ = {
+			isa = PBXGroup;
+			children = (
+				84677E401A2855A30021D442 /* ArticleTableViewCell.h */,
+				84677E411A2855A30021D442 /* ArticleTableViewCell.m */,
+				84677E421A2855A30021D442 /* ArticleTableViewCell.xib */,
+			);
+			name = ArticleCell;
 			sourceTree = "<group>";
 		};
 		8475FEE31A1DF3900028ED17 /* SponsorCell */ = {
@@ -458,7 +473,7 @@
 				84AA4F951A1CD5FF00601CCD /* Sponsors */,
 				84C90C791A1CDB120093BDE9 /* CostumCells */,
 				84C90C7E1A1CE0A30093BDE9 /* ParentFront */,
-				843F9E381A1E517E005FA987 /* DetailNews */,
+				843F9E381A1E517E005FA987 /* DetailArticle */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -486,6 +501,7 @@
 		84C90C791A1CDB120093BDE9 /* CostumCells */ = {
 			isa = PBXGroup;
 			children = (
+				84677E451A2855AA0021D442 /* ArticleCell */,
 				843995D41A1E43C900B6148A /* NewsCell */,
 				8475FEE31A1DF3900028ED17 /* SponsorCell */,
 				84C90C7A1A1CDB200093BDE9 /* RearCell */,
@@ -638,6 +654,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84677E441A2855A30021D442 /* ArticleTableViewCell.xib in Resources */,
 				843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */,
 				84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */,
 				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
@@ -674,7 +691,7 @@
 				84BF5A771A1CC56C00EB28C6 /* wishlist.png in Resources */,
 				843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */,
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
-				843F9E371A1E5179005FA987 /* DetailNewsViewController.xib in Resources */,
+				843F9E371A1E5179005FA987 /* DetailArticleViewController.xib in Resources */,
 				843F9E491A1F770D005FA987 /* Fregat_bold_italic.otf in Resources */,
 				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,
 				843F9E321A1E4499005FA987 /* NewsTableViewCell.xib in Resources */,
@@ -739,7 +756,7 @@
 				8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */,
 				84AA4F8D1A1CD5D300601CCD /* PlacesViewController.m in Sources */,
 				84A195F01A1CCF2200066790 /* SWRevealViewController.m in Sources */,
-				843F9E361A1E5179005FA987 /* DetailNewsViewController.m in Sources */,
+				843F9E361A1E5179005FA987 /* DetailArticleViewController.m in Sources */,
 				BCA719411A1FC1AC0098F20F /* DataModel.m in Sources */,
 				849E268F1A1BAC9E00C56951 /* AppDelegate.m in Sources */,
 				8478FCD51A2094700022E421 /* AdressTableViewCell.m in Sources */,
@@ -749,6 +766,7 @@
 				84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */,
 				84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */,
 				849E268C1A1BAC9E00C56951 /* main.m in Sources */,
+				84677E431A2855A30021D442 /* ArticleTableViewCell.m in Sources */,
 				843F9E311A1E4499005FA987 /* NewsTableViewCell.m in Sources */,
 				84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */,
 				84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */,

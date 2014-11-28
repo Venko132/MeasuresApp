@@ -8,7 +8,7 @@
 
 #import "NewsViewController.h"
 #import "NewsTableViewCell.h"
-#import "DetailNewsViewController.h"
+#import "DetailArticleViewController.h"
 #import "HelperClass.h"
 
 @interface NewsViewController (){
@@ -107,7 +107,7 @@ static float const constHeigthOfTblCell = 125.0f;
     
     NSString * news = (NSString*)[[DataModel Instance] newsDetailsAtIndex:indexPath.row];
     
-    DetailNewsViewController *detailController = [[DetailNewsViewController alloc] initWithNibName:NSStringFromClass([DetailNewsViewController class]) bundle:nil];
+    DetailArticleViewController *detailController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
     //[self.navigationController pushViewController:detailController animated:YES];
 }
 

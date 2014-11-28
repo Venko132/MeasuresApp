@@ -18,6 +18,6 @@
 
 @property (nonatomic) float heigthLblTitleStart;
 
-//- (void)setTitle:(NSString*)_title andInfo:(NSString*)_info;
+- (NSMutableAttributedString*)setTitle:(NSString*)_title andInfo:(NSString*)_info;
 
 @end
