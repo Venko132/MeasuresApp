@@ -13,6 +13,7 @@
 
 @interface NewsViewController (){
     NSMutableArray * listOfNews;
+    DataModel * dataModel;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfNews;
@@ -105,10 +106,18 @@ static float const constHeigthOfTblCell = 125.0f;
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
     
-    NSString * news = (NSString*)[[DataModel Instance] newsDetailsAtIndex:indexPath.row];
+    NSInteger row = indexPath.row;
+    dataModel = [DataModel Instance];
     
-    DetailArticleViewController *detailController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
-    //[self.navigationController pushViewController:detailController animated:YES];
+    DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
+    
+    articleController.articleAvatar = [dataModel newsImageAtIndex:row];
+    articleController.articleTitle = [dataModel newsTitleAtIndex:row];
+    articleController.articleSubtitle = [dataModel newsSubtitleAtIndex:row];
+    articleController.articleInfo = [dataModel newsDetailsAtIndex:row];
+    articleController.articleDate = [dataModel newsDateAtIndex:row];
+    
+    [self.navigationController pushViewController:articleController animated:YES];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

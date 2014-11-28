@@ -87,8 +87,9 @@ static float const constHeigthOfTopPartCell = 120.0f;
     self.lblTopInfo = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.vwLeftContainer.frame), [self calculationOfPosYTopLblOnfo], (CGRectGetWidth(self.vwLeftContainer.frame)*2), 20.0f)];
     [self setLblInfoAttribute:self.lblTopInfo];
     self.lblTopInfo.text = strTop;
-    [self.lblTopInfo sizeToFit];
+    self.lblTopInfo.backgroundColor = [UIColor redColor];
     [self addSubview:self.lblTopInfo];
+    [self.lblTopInfo sizeToFit];
     
     // Banner image
     [self setBannerImage:_imgBannerSet];
@@ -99,7 +100,7 @@ static float const constHeigthOfTopPartCell = 120.0f;
     
     float lblInfoBottomPosY = 0;
     if(!self.imgBanner)
-        lblInfoBottomPosY = CGRectGetMaxY(self.lblTopInfo.frame) + spaceBetweenView;
+        lblInfoBottomPosY = CGRectGetMaxY(self.lblTopInfo.frame);
     else
         lblInfoBottomPosY = CGRectGetMaxY(self.imgBanner.frame) + spaceBetweenView;
     
@@ -130,7 +131,7 @@ static float const constHeigthOfTopPartCell = 120.0f;
 - (void)setLblInfoAttribute:(UILabel*)_lblInfo{
     [_lblInfo setFont:[UIFont fontWithName:constFontArial size:fontSizeInfo]];
     _lblInfo.textAlignment = NSTextAlignmentLeft;
-    _lblInfo.textColor = [UIColor blackColor];
+    [_lblInfo setTextColor:[UIColor blackColor]];
     _lblInfo.tag = tagView;
 }
 

@@ -77,6 +77,7 @@
                     <constraint firstItem="Dii-Pd-gjn" firstAttribute="top" secondItem="dpf-Yy-8he" secondAttribute="top" id="IxP-Uu-25p"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="0.52856979930000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="imgAvatar" destination="Tls-QA-HYK" id="70c-v3-VQa"/>
                 <outlet property="lblDate" destination="fLg-FH-RPw" id="Nhr-lh-I9C"/>

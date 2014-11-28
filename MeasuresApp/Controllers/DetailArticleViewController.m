@@ -26,6 +26,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+   // [self viewDidAppear:animated];
+    [self.tblArticle reloadData];
+}
 
 - (void)initProperties
 {
@@ -43,6 +48,9 @@
     self.navigationItem.titleView = [HelperClass setNavBarTitle:self.titleOfNavBar
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
+    
+    self.tblArticle.delegate = self;
+    self.tblArticle.dataSource = self;
 }
 
 - (void)returnToPreview
@@ -59,7 +67,6 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = self.indexChoosenRow;
     static NSString *simpleTableIdentifier = @"ArticleCell";
     
     ArticleTableViewCell *cell = (ArticleTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -70,9 +77,21 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    [cell setFieldsDate:<#(NSDate *)#> title:<#(NSString *)#> subtitle:<#(NSString *)#> imgAvatar:<#(UIImage *)#> info:<#(NSString *)#> imgBanner:<#(UIImage *)#>];
+    [cell setFieldsDate:self.articleDate
+                  title:self.articleTitle
+               subtitle:self.articleSubtitle
+              imgAvatar:self.articleAvatar
+                   info:self.articleInfo
+              imgBanner:self.articleBanner];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   // ArticleTableViewCell *cell = (ArticleTableViewCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    return 200.0f;//cell.cellHeight;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
