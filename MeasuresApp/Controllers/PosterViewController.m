@@ -53,7 +53,11 @@ static float const fontSizeTitleOfAction = 24.0f;
     dataModel = [DataModel Instance];
     indexOfAction = [dataModel GetNearestAction];
     
-    self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Афиша"
+    NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
+    if(!nameAction)
+        nameAction = constImagePoster;
+    
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:nameAction
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
     [self setCornerRadiusForView:self.btnShareFB];

@@ -46,7 +46,11 @@
 
 - (void)initProperties
 {
-    listOfEvents = @[@"Афиша",@"Участники",@"Спонсоры",@"Места",@"Новости"/*,@"Instagram"*/];
+    NSInteger indexOfAction =  [[DataModel Instance] GetNearestAction];
+    NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
+    if(!nameAction)
+        nameAction = constImagePoster;
+    listOfEvents = @[nameAction,@"Участники",@"Спонсоры",@"Места",@"Новости"/*,@"Instagram"*/];
     
     tblListOfEvents.dataSource = self;
     tblListOfEvents.delegate  = self;
