@@ -110,7 +110,7 @@ static float const constHeigthOfTblCell = 125.0f;
     dataModel = [DataModel Instance];
     
     DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
-    
+    articleController.titleOfNavBar = constViewTitleNews;
     articleController.articleAvatar = [dataModel newsImageAtIndex:row];
     articleController.articleTitle = [dataModel newsTitleAtIndex:row];
     articleController.articleSubtitle = [dataModel newsSubtitleAtIndex:row];

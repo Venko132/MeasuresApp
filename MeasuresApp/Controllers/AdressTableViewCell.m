@@ -44,7 +44,7 @@ static float const fontSizeBtnTitle = 10.0f;
         if([self.delegatePlace respondsToSelector:@selector(openMaps)])
             [self.delegatePlace performSelector:@selector(openMaps)];
     } else {
-        if([self.delegatePlace respondsToSelector:@selector(showRoute)])
+        if([self.delegatePlace respondsToSelector:@selector(showRoute) ])
             [self.delegatePlace performSelector:@selector(showRoute)];
     }
 }
@@ -55,6 +55,7 @@ static float const fontSizeBtnTitle = 10.0f;
     self.lblAdress.text = [dataModel placeNameAtIndex:rowIndex];
     self.lblDate.text = [dataModel placeSubtitleAtIndex:rowIndex];
     self.rowCell = rowIndex;
+    [self.delegatePlace setRowIndex:rowIndex];
 }
 
 @end

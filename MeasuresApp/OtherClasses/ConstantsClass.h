@@ -28,5 +28,6 @@ extern NSString * const constViewTitlePlaces;
 extern NSString * const constViewTitleParticipants;
 
 extern NSString * const constFootterString;
+extern NSString *const VKApiID;
 
 @end

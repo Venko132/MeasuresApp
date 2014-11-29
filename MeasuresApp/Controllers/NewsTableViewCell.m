@@ -8,7 +8,7 @@
 
 #import "NewsTableViewCell.h"
 
-static float const fontSizeDate = 10.0f;
+static float const fontSizeDate = 12.0f;
 static float const fontSizeInfo = 10.0f;
 static float const fontSizeInfoTitle = 16.0f;
 
@@ -16,7 +16,7 @@ static float const fontSizeInfoTitle = 16.0f;
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblDate setFont:[UIFont fontWithName:constFontArial size:fontSizeDate]];
+    [self.lblDate setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDate]];
     self.lblDate.textColor = [HelperClass appGrayColor];
     
     self.lblTitle.textColor = [HelperClass appPink2Color];

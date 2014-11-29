@@ -13,7 +13,7 @@
 static NSString *const TOKEN_KEY    = @"my_application_access_token";
 static NSString *const SHARE_DIALOG = @"Test share dialog";
 static NSArray  * SCOPE = nil;
-static NSString *const VKApiID      = @"4642356";
+//static NSString *const VKApiID      = @"4642356";
 
 static float const fontSizeMessageFirstLine = 19.0f;
 static float const fontSizeMessageSecondLine = 9.0f;

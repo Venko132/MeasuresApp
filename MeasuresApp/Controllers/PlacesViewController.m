@@ -9,6 +9,7 @@
 #import "PlacesViewController.h"
 #import "HelperClass.h"
 #import <MapKit/MapKit.h>
+#import "DetailArticleViewController.h"
 
 @interface PlacesViewController (){
     NSMutableArray * listOfAdresses;
@@ -95,6 +96,17 @@
 
 - (void)showRoute{
     NSLog(@"Show route");
+    dataModel = [DataModel Instance];
+    
+    DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
+    articleController.titleOfNavBar = [dataModel placeNameAtIndex:rowIndex];
+    articleController.articleAvatar = [dataModel placeImageAtIndex:rowIndex];
+    articleController.articleTitle = [dataModel placeNameAtIndex:rowIndex];
+    articleController.articleSubtitle = [dataModel placeSubtitleAtIndex:rowIndex];
+    articleController.articleInfo = [dataModel placeDetailsURLAtIndex:rowIndex];
+    articleController.articleDate = [dataModel placeDateAtIndex:rowIndex];
+    
+    [self.navigationController pushViewController:articleController animated:NO];
 }
 
 - (void)openMaps{
