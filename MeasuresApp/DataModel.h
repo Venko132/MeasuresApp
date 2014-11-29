@@ -49,4 +49,7 @@
 -(id) newsImageAtIndex:(NSInteger) index;
 -(id) newsDetailsAtIndex:(NSInteger) index;
 -(NSDate*)newsDateAtIndex:(NSInteger)index;
+
+// Articles
+-(NSString*)articlesByKey:(NSString*)key;
 @end
