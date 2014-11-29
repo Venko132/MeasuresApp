@@ -153,6 +153,9 @@
                             <state key="normal" backgroundImage="VK.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="shareToVK:" destination="-1" eventType="touchUpInside" id="Zvk-vo-9ah"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-i3-dqf">
                             <rect key="frame" x="65" y="19" width="30" height="30"/>

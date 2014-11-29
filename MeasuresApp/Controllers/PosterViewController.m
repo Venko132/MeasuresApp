@@ -153,7 +153,7 @@ static float const fontSizeDateOfAction = 24.0f;
 {
     VKShareDialogController * shareDialog = [VKShareDialogController new];
     shareDialog.text = @"Your share text here";
-    shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[UIImage imageNamed:@"apple"]
+    shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[UIImage imageNamed:@"news.png"]
                                                            andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
     //shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
     [shareDialog presentIn:self];
@@ -206,9 +206,8 @@ static float const fontSizeDateOfAction = 24.0f;
         controller.completionHandler = myBlock;
         //Adding the Text to the facebook post value from iOS
         [controller setInitialText:@"My test post"];
-        //Adding the URL to the facebook post value from iOS
+        [controller addImage:[UIImage imageNamed:@"news.png"]];
         //[controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
-        //Adding the Text to the facebook post value from iOS
         [self presentViewController:controller animated:YES completion:nil];
     } else {
         [HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
@@ -216,16 +215,12 @@ static float const fontSizeDateOfAction = 24.0f;
 }
 
 -(IBAction)twitterPost:(id)sender{
-    /*
-     SLComposeViewController *tweetSheet = [SLComposeViewController
-     composeViewControllerForServiceType:SLServiceTypeTwitter];
-     [tweetSheet setInitialText:@"My test tweet"];
-     [self presentViewController:tweetSheet animated:YES completion:nil];
-     */
+
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:@"My test tweet"];
+        [tweetSheet addImage:[UIImage imageNamed:@"news.png"]];
         [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result)
          {
              if (result == SLComposeViewControllerResultCancelled)
