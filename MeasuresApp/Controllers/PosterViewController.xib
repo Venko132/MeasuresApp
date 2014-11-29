@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -8,6 +9,7 @@
             <connections>
                 <outlet property="btnShareFB" destination="VtD-Pz-vF2" id="mF9-tR-Z1K"/>
                 <outlet property="btnShareTW" destination="yl3-i3-dqf" id="BYm-ik-iN1"/>
+                <outlet property="btnShareVK" destination="Tv7-IP-eRc" id="lME-FJ-uxE"/>
                 <outlet property="imgBannerTop" destination="zAi-nN-q5S" id="bZ6-oO-HLN"/>
                 <outlet property="imgPlaceOfAction" destination="fRq-Bv-dbt" id="Q1y-T4-qxy"/>
                 <outlet property="lblDateOfAction" destination="QcP-p1-YKt" id="1LC-Uo-GTg"/>
@@ -18,6 +20,7 @@
                 <outlet property="lblTitleForSocialShare" destination="v1v-NO-HEj" id="oaZ-SD-ZHn"/>
                 <outlet property="lblTitleOfAction" destination="Hhp-DR-fga" id="WeS-Rv-0nQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwContainerDateAndPlace" destination="Sj4-TB-XzN" id="hrI-tA-QUe"/>
                 <outlet property="vwContainerForMessageAboutFinish" destination="Zq3-FB-MaZ" id="UwD-BA-LMW"/>
             </connections>
         </placeholder>
@@ -181,29 +184,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sj4-TB-XzN">
                     <rect key="frame" x="0.0" y="198" width="320" height="74"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Test Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-yu-XZZ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Test Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN2-yu-XZZ">
                             <rect key="frame" x="0.0" y="44" width="320" height="25"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.74117647058823533" green="0.23921568627450979" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-p1-YKt">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-p1-YKt">
                             <rect key="frame" x="0.0" y="4" width="320" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="QcP-p1-YKt" firstAttribute="leading" secondItem="Sj4-TB-XzN" secondAttribute="leading" id="2Lb-L5-Bis"/>
-                        <constraint firstItem="QcP-p1-YKt" firstAttribute="height" secondItem="QN2-yu-XZZ" secondAttribute="height" constant="7" id="3WW-Xe-S6U"/>
-                        <constraint firstItem="QN2-yu-XZZ" firstAttribute="leading" secondItem="Sj4-TB-XzN" secondAttribute="leading" id="FBm-5F-qmY"/>
-                        <constraint firstItem="QN2-yu-XZZ" firstAttribute="top" secondItem="QcP-p1-YKt" secondAttribute="bottom" constant="8" id="MHQ-XO-L3q"/>
-                        <constraint firstAttribute="trailing" secondItem="QcP-p1-YKt" secondAttribute="trailing" id="SgS-7o-no3"/>
-                        <constraint firstAttribute="bottom" secondItem="QN2-yu-XZZ" secondAttribute="bottom" constant="5" id="jgC-9N-UDj"/>
-                        <constraint firstAttribute="trailing" secondItem="QN2-yu-XZZ" secondAttribute="trailing" id="kHc-qe-aBg"/>
-                        <constraint firstItem="QcP-p1-YKt" firstAttribute="top" secondItem="Sj4-TB-XzN" secondAttribute="top" constant="4" id="kvo-WK-hB5"/>
-                    </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="fRq-Bv-dbt">
                     <rect key="frame" x="15" y="280" width="290" height="103"/>

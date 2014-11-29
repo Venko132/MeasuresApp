@@ -41,6 +41,11 @@ static float const fontSizeDateOfAction = 24.0f;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self initLblDateAndPlace];
+}
+
 - (void)initProperties
 {
     dataModel = [DataModel Instance];
@@ -53,9 +58,10 @@ static float const fontSizeDateOfAction = 24.0f;
     [HelperClass initLblFooter:self.lblFooter];
     
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
-    [self initLblFateAndPlace];
     
     self.vwContainerForMessageAboutFinish.hidden = YES;
+    
+    //[self initLblDateAndPlace];
     // --------
     //self.imgBannerTop.image = [UIImage imageWithData:[dataModel PosterGetBanner]];
     //self.imgPlaceOfAction.image = [UIImage imageWithData:[dataModel PosterGetBanner]];
@@ -95,18 +101,32 @@ static float const fontSizeDateOfAction = 24.0f;
     //[self.lblMessageAboutFinishAction setAttributedText:<#(NSAttributedString *)#>];NSForegroundColorAttributeName
 }
 
-- (void)initLblFateAndPlace
+- (void)initLblDateAndPlace
 {
     [self.lblPlaceOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizePlaceOfAction]];
     [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDateOfAction]];
-    self.lblDateOfAction.text = @"New position";
-    self.lblDateOfAction.minimumScaleFactor = 0.5;
+    self.lblDateOfAction.text = [HelperClass convertDate:[dataModel PosterStartDate] toStringFormat:@"dd MMMM yyyy"];
+    //self.lblDateOfAction.minimumScaleFactor = 0.5;
+    //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
     
-    [self.lblDateOfAction setContentScaleFactor:0.5];
-    [self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
+    //self.lblPlaceOfAction.minimumScaleFactor = 0.5;
+    //[self.lblPlaceOfAction setAdjustsFontSizeToFitWidth:YES];
     
-    [self.lblPlaceOfAction setContentScaleFactor:0.5];
-    [self.lblPlaceOfAction setAdjustsFontSizeToFitWidth:YES];
+    // Set position
+    
+    float posYCenterContainer = (CGRectGetMaxY(self.vwContainerDateAndPlace.frame) - CGRectGetMinY(self.vwContainerDateAndPlace.frame))/2;
+    
+    CGRect frameDate = self.lblDateOfAction.frame;
+    frameDate.origin.y = posYCenterContainer - frameDate.size.height + 5.0f;
+    self.lblDateOfAction.frame = frameDate;
+    
+    float width = CGRectGetWidth(self.lblPlaceOfAction.frame);
+    [self.lblPlaceOfAction sizeToFit];
+    CGRect framePlace = self.lblPlaceOfAction.frame;
+    framePlace.origin.y = posYCenterContainer + 9.0f;
+    framePlace.size.width = width;
+    self.lblPlaceOfAction.frame = framePlace;
+    [self.lblPlaceOfAction updateConstraintsIfNeeded];
 }
 
 - (void)setCornerRadiusForView:(UIView*)_viewS

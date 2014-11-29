@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleForSocialShare;
 @property (weak, nonatomic) IBOutlet UIImageView *imgBannerTop;
 @property (weak, nonatomic) IBOutlet UIView *vwContainerForMessageAboutFinish;
+@property (weak, nonatomic) IBOutlet UIView *vwContainerDateAndPlace;
 
 
 @end
