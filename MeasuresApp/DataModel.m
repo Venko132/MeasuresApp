@@ -22,6 +22,9 @@
 #define const_Longitude @"longitude"
 #define const_News @"News"
 #define const_Date @"Date"
+#define const_Link @"Link"
+#define const_Articles @"Articles"
+#define const_ID @"ID"
 
 #define const_Datafile @"data.plist"
 
@@ -63,6 +66,7 @@
         [allData setObject:[NSMutableArray array] forKey:const_Sponsors];
         [allData setObject:[NSMutableArray array] forKey:const_Places];
         [allData setObject:[NSMutableArray array] forKey:const_News];
+        [allData setObject:[NSMutableArray array] forKey:const_Articles];
         // отключено до тестирования
         [self load];
     }
@@ -110,13 +114,14 @@
 
 #pragma mark Participants
 
--(void) addParticipantWithName:(NSString*)name logo:(NSString*)logoURL category:(NSArray*)cats details:(id)details
+-(void) addParticipantWithName:(NSString*)name logo:(NSString*)logoURL category:(NSArray*)cats details:(id)details link:(NSString*)link
 {
     NSDictionary* newP = [NSDictionary dictionaryWithObjectsAndKeys:
                           name,const_Name,
                           logoURL,const_LogoURL,
                           cats,const_Category,
                           details,const_Details,
+                          link,const_Link,
                           nil];
     [[allData objectForKey:const_Participants]addObject:newP];
     [self imageByURL:logoURL];
@@ -205,7 +210,7 @@
 
 #pragma mark Places
 
--(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details
+-(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details link:(NSString*)link
 {
     NSDictionary* newD = [NSDictionary dictionaryWithObjectsAndKeys:
                           name,const_Name,
@@ -214,6 +219,7 @@
                           [NSNumber numberWithDouble:latitude],const_Latitude,
                           [NSNumber numberWithDouble:longitude],const_Longitude,
                           details,const_Details,
+                          link,const_Link,
                           nil];
     [[allData objectForKey:const_Places]addObject:newD];
     [self imageByURL:imageURL];
@@ -239,7 +245,8 @@
     return [self imageByURL:[self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL]];
 }
 
--(MKPointAnnotation*) placeMapPointtIndex:(NSInteger)index
+-(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index
+
 {
     double fLatitude = [[self valueForm:[allData objectForKey:const_Places] index:index key:const_Latitude]doubleValue];
     double fLongitude = [[self valueForm:[allData objectForKey:const_Places] index:index key:const_Longitude]doubleValue];
@@ -295,6 +302,33 @@
 -(NSDate*)newsDateAtIndex:(NSInteger)index
 {
     return [self valueForm:[allData objectForKey:const_News] index:index key:const_Date];
+}
+
+#pragma mark Articles
+
+-(void) addArticleWithID:(NSString*)IDval text:(NSString*) test
+{
+    NSDictionary* newD = [NSDictionary dictionaryWithObjectsAndKeys:
+                          IDval,const_ID,
+                          test,const_Details,
+                          nil];
+    
+    [[allData objectForKey:const_Articles] addObject:newD];
+}
+-(NSString*)articlesByKey:(NSString*)key
+{
+    if (key == nil)
+        return @"";
+    
+    for (NSDictionary* art in [allData objectForKey:const_Articles])
+    {
+        if ([[art objectForKey:const_ID]isEqualToString:key])
+        {
+            return [art objectForKey:const_Details];
+        }
+    }
+    
+    return @"empty";
 }
 
 #pragma mark -
@@ -388,6 +422,25 @@
     return NO;
 }
 
+-(BOOL)isDataImage:(NSData*)data
+{
+    uint8_t c;
+    [data getBytes:&c length:1];
+    
+    switch (c) {
+        case 0xFF:
+            return YES;
+        case 0x89:
+            return YES;
+        case 0x47:
+            return YES;
+        case 0x49:
+        case 0x4D:
+            return YES;
+    }
+    return  NO;
+}
+
 -(void)downloadImage:(NSString*)url
 {
     if ([onDownloadImages indexOfObject:url]!=NSNotFound)
@@ -396,13 +449,25 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
                        NSURL *imageURL = [NSURL URLWithString:url];
-                       NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                       NSError* error;
+                       NSData *imageData = [NSData dataWithContentsOfURL:imageURL options:NSDataReadingUncached error:&error];
                        
                        dispatch_sync(dispatch_get_main_queue(), ^{
-                           if (imageData!=nil)
-                           {
-                               [onDownloadImages removeObject:url];
-                               [self saveImage: [UIImage imageWithData:imageData] withURL:url];
+                           if (error) {
+                               NSLog(@"%@", [error localizedDescription]);
+                           } else {
+                               NSLog(@"Data has loaded successfully.");
+                               
+                               if (imageData!=nil)
+                               {
+                                   NSLog (@"%@",url);
+                                   if ([self isDataImage:imageData])
+                                   {
+                                       NSLog(@"Load image compele: %@",imageURL);
+                                       [onDownloadImages removeObject:url];
+                                       [self saveImage: [UIImage imageWithData:imageData] withURL:url];
+                                   }
+                               }
                            }
                        });
                    });
@@ -432,12 +497,17 @@
         return;
     }
     
+//    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
+//    }];
+    
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
         NSString* logoURL = [parsedObject objectForKey:@"logo"][i];
         NSString* categorys = [parsedObject objectForKey:@"category"][i];
         NSArray* categotysArr = [categorys componentsSeparatedByString:@", "];
         NSString* details =[parsedObject objectForKey:@"description"][i];
+        NSString* link = [parsedObject objectForKey:@"link"][i];
         
         int indexOfSponsorCat = [categotysArr indexOfObject:@"спонсоры"];
         
@@ -449,17 +519,18 @@
             [tmpArr removeObjectAtIndex:indexOfSponsorCat];
             categotysArr = tmpArr;
         }
-        
-        [self addParticipantWithName:name logo:logoURL category:categotysArr details:details];
+        [self addParticipantWithName:name logo:logoURL category:categotysArr details:details link:link];
     }
     
     // Load Categorys
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/category.php?command=allShow"];
+//    NSLog(@" == Parse url: categoy");
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
 //    }];
     NSArray* cats = [parsedObject objectForKey:@"cat_name"];
+//    NSString* link =[parsedObject objectForKey:@"link"][0];
     for (NSString* cat in cats) {
         if (![cat isEqualToString:@"спонсоры"])
             [self addCategory:cat];
@@ -468,7 +539,7 @@
     // Load Locations
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/locations.php?command=allShow"];
-//    
+    
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
 //    }];
@@ -481,15 +552,16 @@
         NSString* longitude =[parsedObject objectForKey:@"longitude"][i];
         CLLocationDegrees fLatitude = [latitude doubleValue];
         CLLocationDegrees fLongitude = [longitude doubleValue];
+        NSString* link = [parsedObject objectForKey:@"link"][i];
         
-        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@""];
+        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@"" link:link];
     }
     
     /// Load News and other Articles
     
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/articles.php?command=allShow"];
-    
+//    NSLog(@" == articles");
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
 //    }];
@@ -505,10 +577,17 @@
         NSString* dateStr = [parsedObject objectForKey:@"date"][i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
         NSDate *date = [dateFormatter dateFromString:dateStr];
         
+        if (date == nil)
+            date = [NSDate dateWithTimeIntervalSince1970:0];
+        
         NSString* text = [parsedObject objectForKey:@"text"][i];
+        NSString* link = [parsedObject objectForKey:@"link"][i];
+        NSString* section = [parsedObject objectForKey:@"section"][i];
+        
+        NSLog(@"%@ %@",link,section);
         
         /*@try {
             date = [dateFormatter dateFromString:dateStr];
@@ -535,7 +614,11 @@
             text = @"text Test";
          */
         
-        [self addNewsWithName:title imageURL:imageURL details:text subtitle:subtitle date:date];
+        if ([section isEqualToString:@"news"])
+        {
+            [self addNewsWithName:title imageURL:imageURL details:text subtitle:subtitle date:date];
+        }
+        [self addArticleWithID:link text:text];
     }
     
     [self save];
