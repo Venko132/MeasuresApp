@@ -537,9 +537,9 @@
         NSString* details =[parsedObject objectForKey:@"description"][i];
         NSString* link = [parsedObject objectForKey:@"link"][i];
         
-        int indexOfSponsorCat = [categotysArr indexOfObject:@"спонсоры"];
+        NSInteger indexOfSponsorCat = [categotysArr indexOfObject:@"спонсоры"];
         
-        if (indexOfSponsorCat!=NSNotFound)
+        if ((indexOfSponsorCat!=NSNotFound))
         {
             [self addSponsorWithName:name logoURL:logoURL details:details];
             
