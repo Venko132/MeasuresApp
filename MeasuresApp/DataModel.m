@@ -493,6 +493,26 @@
         allData = tmp;
 }
 
+-(NSInteger) GetNearestAction
+{
+    NSInteger answer = -1;
+    NSDate* bestDate = [NSDate dateWithTimeIntervalSinceNow:MAXFLOAT];
+    
+    for (int i=0; i<[[allData objectForKey:const_Places]count]; i++) {
+        NSDictionary* place = [allData objectForKey:const_Places][i];
+        NSDate* date = [place objectForKey:const_Date];
+        if ([date compare:[NSDate dateWithTimeIntervalSinceNow:0]] == NSOrderedDescending) {
+            if ([date compare:bestDate] == NSOrderedAscending)
+            {
+                bestDate = date;
+                answer = i;
+            }
+        }
+    }
+    
+    return answer;
+}
+
 -(void)load
 {
     // Load Participant and Sponsors
@@ -635,6 +655,8 @@
         }
         [self addArticleWithID:link text:text];
     }
+    
+    [self GetNearestAction];
     
     [self save];
 }

@@ -14,9 +14,9 @@
 
 //  ВНИМАНИЕ! картинок еще нет!
 
-// Poster - пока пустое
-- (NSDate*) PosterStartDate;
-- (id) PosterGetBanner;
+// Poster
+-(NSInteger) GetNearestAction;
+// остальные данные извлекать из Places
 
 // Categorys
 -(NSArray*)categorys;
