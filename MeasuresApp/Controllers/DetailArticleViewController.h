@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailArticleViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface DetailArticleViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) NSString * titleOfNavBar;
 @property (assign, nonatomic) NSInteger indexChoosenRow;
-
-@property (weak, nonatomic) IBOutlet UITableView *tblArticle;
 
 @property (strong, nonatomic) NSDate *      articleDate;
 @property (strong, nonatomic) NSString *    articleTitle;
@@ -21,5 +19,17 @@
 @property (strong, nonatomic) NSString *    articleInfo;
 @property (strong, nonatomic) UIImage *     articleAvatar;
 @property (strong, nonatomic) UIImage *     articleBanner;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtVwInfo;
+@property (weak, nonatomic) IBOutlet UIWebView *wbVwInfo;
+@property (weak, nonatomic) IBOutlet UILabel *lblDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitleForSocialShare;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareFB;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareTW;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareVK;
 
 @end

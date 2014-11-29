@@ -44,10 +44,17 @@ static float const constHeigthOfTopPartCell = 120.0f;
     self.heigthLblTitleStart = CGRectGetHeight(self.lblTitle.frame);
     [self.lblTitle sizeToFit];
     
-    [self divideInfoBetweenTopAnBottomPart:_infoSet andBannerImage:_imgBannerSet];
+    //[self divideInfoBetweenTopAnBottomPart:_infoSet andBannerImage:_imgBannerSet];
     
-    self.cellHeight = [self calculationOfPosYTopLblOnfo];
-    [self setHeightOfCell];
+    //self.cellHeight = [self calculationOfPosYTopLblOnfo];
+    //[self setHeightOfCell];
+    //CGRect testR = self.lblTopInfo.frame;
+    //testR.origin.y = [self calculationOfPosYTopLblOnfo];
+   //self.lblTopInfo.frame = testR;
+    //[self setLblInfoAttribute:self.lblTopInfo];
+    self.lblTopInfo.text = _infoSet;
+    [self.lblTopInfo sizeToFit];
+    //[self setHeightOfCell];
 }
 
 - (float)calculationOfPosYTopLblOnfo
@@ -84,15 +91,15 @@ static float const constHeigthOfTopPartCell = 120.0f;
     }
     
     // Top Info Label
-    self.lblTopInfo = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.vwLeftContainer.frame), [self calculationOfPosYTopLblOnfo], (CGRectGetWidth(self.vwLeftContainer.frame)*2), 20.0f)];
+    self.lblTopInfo.frame = /*[[UILabel alloc] initWithFrame:*/CGRectMake(CGRectGetMinX(self.vwLeftContainer.frame), [self calculationOfPosYTopLblOnfo], (CGRectGetWidth(self.vwLeftContainer.frame)*2), 20.0f);//];
     [self setLblInfoAttribute:self.lblTopInfo];
     self.lblTopInfo.text = strTop;
     self.lblTopInfo.backgroundColor = [UIColor redColor];
-    [self addSubview:self.lblTopInfo];
+    //[self addSubview:self.lblTopInfo];
     [self.lblTopInfo sizeToFit];
     
     // Banner image
-    [self setBannerImage:_imgBannerSet];
+    //[self setBannerImage:_imgBannerSet];
     
     // Bottom Info Label
     if(!strBottom)
@@ -108,7 +115,7 @@ static float const constHeigthOfTopPartCell = 120.0f;
     [self setLblInfoAttribute:self.lblBottomInfo];
     self.lblBottomInfo.text = strBottom;
     [self.lblBottomInfo sizeToFit];
-    [self addSubview:self.lblBottomInfo];
+    //[self addSubview:self.lblBottomInfo];
 }
 
 - (void)setBannerImage:(UIImage*)_imgBannerSet
@@ -136,7 +143,7 @@ static float const constHeigthOfTopPartCell = 120.0f;
 }
 
 - (void)setHeightOfCell{
-    NSMutableArray * arr = [NSMutableArray new];
+   /* NSMutableArray * arr = [NSMutableArray new];
     
     for (UIView * vw in self.subviews) {
         if(vw.tag == tagView)
@@ -147,6 +154,8 @@ static float const constHeigthOfTopPartCell = 120.0f;
         return;
     
     self.cellHeight = CGRectGetMaxY(((UIView*)[arr lastObject]).frame) + spaceBetweenView;
+    */
+    self.cellHeight = CGRectGetMaxY(self.lblTopInfo.frame) + spaceBetweenView;
 }
 
 @end

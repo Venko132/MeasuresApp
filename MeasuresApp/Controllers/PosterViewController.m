@@ -47,9 +47,7 @@ static float const fontSizeDateOfAction = 24.0f;
     self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Афиша"
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
-    //[self setCornerRadiusForView:self.btnShareTW];
     [self setCornerRadiusForView:self.btnShareFB];
-    //[self setCornerRadiusForView:self.btnShareVK];
     
     [self initLblMessageAbouteFinishAction];
     [HelperClass initLblFooter:self.lblFooter];

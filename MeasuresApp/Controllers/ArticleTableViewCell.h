@@ -11,8 +11,8 @@
 
 @interface ArticleTableViewCell : NewsTableViewCell
 
-@property (strong, nonatomic) UILabel *lblTopInfo;
-@property (strong, nonatomic) UILabel *lblBottomInfo;
+@property (strong, nonatomic) IBOutlet UILabel *lblTopInfo;
+@property (strong, nonatomic) IBOutlet UILabel *lblBottomInfo;
 @property (strong, nonatomic) UIImageView *imgBanner;
 
 @property (weak, nonatomic) IBOutlet UIView * vwLeftContainer;
@@ -26,5 +26,6 @@
             imgAvatar:(UIImage*)_imgAvatarSet
                  info:(NSString*)_infoSet
             imgBanner:(UIImage*)_imgBannerSet;
+- (void)setLblInfoAttribute:(UILabel*)_lblInfo;
 
 @end

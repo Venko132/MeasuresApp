@@ -12,7 +12,17 @@
 
 @interface DetailArticleViewController ()
 
+//@property (assign, nonatomic) float heigthLblTitleStart;
+@property (assign, nonatomic) float posYLblTitleStartMax;
+
 @end
+
+static float const fontSizeDate = 12.0f;
+static float const fontSizeInfo = 12.0f;
+static float const fontSizeInfoTitle = 18.0f;
+
+static NSString * const strHtmlTagH1 = @"<h1>";
+static NSString * const strHtmlTagSpan = @"</span>";
 
 @implementation DetailArticleViewController
 
@@ -20,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initProperties];
+    [self setInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +40,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
    // [self viewDidAppear:animated];
-    [self.tblArticle reloadData];
+    //[self.tblArticle reloadData];
 }
 
 - (void)initProperties
@@ -48,9 +59,10 @@
     self.navigationItem.titleView = [HelperClass setNavBarTitle:self.titleOfNavBar
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
+    [self setBackButton];
     
-    self.tblArticle.delegate = self;
-    self.tblArticle.dataSource = self;
+    [HelperClass initLblFooter:self.lblFooter];
+    [self chooseContainerForInfo];
 }
 
 - (void)returnToPreview
@@ -60,51 +72,130 @@
 
 #pragma mark - TableView delegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
+- (void)setInfo{
+    [self.lblDate setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDate]];
+    self.lblDate.textColor = [HelperClass appGrayColor];
+    
+    self.lblTitle.textColor = [HelperClass appPink2Color];
+    [self.lblTitle setFont:[UIFont fontWithName:constFontFregatBold size:fontSizeInfoTitle]];
+    
+    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:fontSizeInfo]];
+    
+    [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
+
+    // set Info
+    self.lblDate.text = [HelperClass convertDate:self.articleDate toStringFormat:@"dd MMMM yyyy"];
+    
+    if(self.articleAvatar)
+        self.imgAvatar.image = self.articleAvatar;
+    
+    self.lblTitle.attributedText = [self setTitle:self.articleTitle
+                                          andInfo:self.articleSubtitle];
+    self.posYLblTitleStartMax = CGRectGetMaxY(self.lblTitle.frame);
+    [self.lblTitle sizeToFit];
+    
+    [self calculationOfPosYLblTitle];
+    [self setNewPositionOfTxtVw];
+    
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSMutableAttributedString*)setTitle:(NSString*)_titleS andInfo:(NSString*)_infoS
 {
-    static NSString *simpleTableIdentifier = @"ArticleCell";
+    NSString * allInfo = [NSString stringWithFormat:@"%@\n%@",_titleS,_infoS];
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:allInfo];
+    //Range
+    NSRange rangeTitle = [allInfo rangeOfString:_titleS];
+    NSRange rangeInfo = [allInfo rangeOfString:_infoS options:NSBackwardsSearch];
     
-    ArticleTableViewCell *cell = (ArticleTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ArticleTableViewCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+    //Font
+    UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:fontSizeInfoTitle];
+    UIFont * fontInfo = [UIFont fontWithName:constFontArial size:fontSizeInfo];
+    //Color
+    if(rangeTitle.location != NSNotFound){
+        [attString addAttribute:NSForegroundColorAttributeName value:[HelperClass appPink2Color] range:rangeTitle];
+        [attString addAttribute:NSFontAttributeName value:fontTitle range:rangeTitle];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if(rangeInfo.location != NSNotFound){
+        [attString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:rangeInfo];
+        [attString addAttribute:NSFontAttributeName value:fontInfo range:rangeInfo];
+    }
     
-    [cell setFieldsDate:self.articleDate
-                  title:self.articleTitle
-               subtitle:self.articleSubtitle
-              imgAvatar:self.articleAvatar
-                   info:self.articleInfo
-              imgBanner:self.articleBanner];
+    return attString;
     
-    return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-   // ArticleTableViewCell *cell = (ArticleTableViewCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+- (void)setBackButton{
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0.0, 0.0, 24.0, 23.0);
+    button.backgroundColor = [UIColor clearColor];
+    UIImage * btnImage = [UIImage imageNamed:constImageMainMenu];
+    [button addTarget:self action:@selector(returnToPreview) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundImage:btnImage forState:UIControlStateNormal];
+    [button setBackgroundImage:btnImage forState:UIControlStateHighlighted];
     
-    return 200.0f;//cell.cellHeight;
+    UIBarButtonItem* revealButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    self.navigationItem.leftBarButtonItem = revealButtonItem;
 }
 
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (void)calculationOfPosYLblTitle
 {
-    UIImageView * imgBanner = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), 30.0f)];
-    imgBanner.image = [UIImage imageNamed:constImageBanner];
-    return imgBanner;
+    if(!self.articleDate){
+        self.lblDate.text = @"";
+    
+        CGRect lblTitleRect = self.lblTitle.frame;
+        lblTitleRect.origin.y = CGRectGetMinY(self.lblDate.frame) +10.0f;
+        self.lblTitle.frame = lblTitleRect;
+    }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (float)calculationOfPosYTxtInfo
 {
-    return 30.0f;
+    float dif = 0;
+    if(self.posYLblTitleStartMax >= CGRectGetMaxY(self.lblTitle.frame))
+        dif = 0;
+    else {
+        dif = CGRectGetMaxY(self.lblTitle.frame) - self.posYLblTitleStartMax;
+    }
+    return dif;
 }
+
+- (void)setNewPositionOfTxtVw
+{
+    CGRect frameInfo = self.txtVwInfo.frame;
+    float dif = [self calculationOfPosYTxtInfo];
+    if(dif != 0){
+        frameInfo.origin.y += dif;
+        frameInfo.size.height -= dif;
+        self.txtVwInfo.frame = frameInfo;
+        self.wbVwInfo.frame = frameInfo;
+    }
+}
+
+- (void)chooseContainerForInfo
+{
+    if(self.articleInfo){
+        NSRange rangeH1 = [self.articleInfo rangeOfString:strHtmlTagH1 options:(NSCaseInsensitiveSearch)];
+        NSRange rangeSpan = [self.articleInfo rangeOfString:strHtmlTagSpan options:(NSCaseInsensitiveSearch)];
+        BOOL isHaveHtmlContent = NO;
+        if((rangeH1.location != NSNotFound) || (rangeSpan.location != NSNotFound)){
+            isHaveHtmlContent = YES;
+            
+            [self.wbVwInfo loadHTMLString:self.articleInfo baseURL:nil];
+        } else
+            self.txtVwInfo.text = self.articleInfo;
+        
+        self.txtVwInfo.hidden = isHaveHtmlContent;
+        self.wbVwInfo.hidden = !isHaveHtmlContent;
+        
+    } else {
+        self.txtVwInfo.hidden = YES;
+        self.wbVwInfo.hidden = YES;
+    }
+}
+
+#pragma mark - WebView delegate
+
 
 /*
 #pragma mark - Navigation

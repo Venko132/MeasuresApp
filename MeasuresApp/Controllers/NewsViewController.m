@@ -117,7 +117,7 @@ static float const constHeigthOfTblCell = 125.0f;
     articleController.articleInfo = [dataModel newsDetailsAtIndex:row];
     articleController.articleDate = [dataModel newsDateAtIndex:row];
     
-    [self.navigationController pushViewController:articleController animated:YES];
+    [self.navigationController pushViewController:articleController animated:NO];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
