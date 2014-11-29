@@ -139,9 +139,11 @@ static float const fontSizeTitleOfAction = 24.0f;
     // Set position
     
     float posYCenterContainer = (CGRectGetMaxY(self.vwContainerDateAndPlace.frame) - CGRectGetMinY(self.vwContainerDateAndPlace.frame))/2;
+    float widthContainer = CGRectGetWidth(self.vwContainerDateAndPlace.frame);
     
     CGRect frameDate = self.lblDateOfAction.frame;
     frameDate.origin.y = posYCenterContainer - frameDate.size.height + 5.0f;
+    frameDate.size.width = widthContainer;
     self.lblDateOfAction.frame = frameDate;
     
     float width = CGRectGetWidth(self.lblPlaceOfAction.frame);
@@ -150,6 +152,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     framePlace.origin.y = posYCenterContainer + 9.0f;
     framePlace.size.width = width;
     framePlace.size.height += 4.0f;
+    framePlace.size.width = widthContainer;
     self.lblPlaceOfAction.frame = framePlace;
     [self.lblPlaceOfAction updateConstraintsIfNeeded];
 }

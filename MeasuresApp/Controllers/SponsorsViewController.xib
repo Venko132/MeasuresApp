@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SponsorsViewController">
             <connections>
+                <outlet property="lblFooter" destination="94s-kc-9Pl" id="kfE-ph-tfY"/>
                 <outlet property="tblListOfSponsors" destination="SX5-4q-wjn" id="Jgi-QA-8Nj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,17 +17,35 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFp-jo-idV">
+                    <rect key="frame" x="0.0" y="448" width="320" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94s-kc-9Pl">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="Mc9-kv-d9D"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SX5-4q-wjn">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="TFp-jo-idV" secondAttribute="bottom" id="0D8-D2-Xdw"/>
                 <constraint firstItem="SX5-4q-wjn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0to-nf-aBe"/>
+                <constraint firstItem="TFp-jo-idV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dyj-TM-EPf"/>
                 <constraint firstAttribute="trailing" secondItem="SX5-4q-wjn" secondAttribute="trailing" id="LYQ-bm-gMZ"/>
+                <constraint firstItem="TFp-jo-idV" firstAttribute="top" secondItem="SX5-4q-wjn" secondAttribute="bottom" id="PHv-tZ-BRu"/>
                 <constraint firstItem="SX5-4q-wjn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ecr-cN-ffw"/>
-                <constraint firstAttribute="bottom" secondItem="SX5-4q-wjn" secondAttribute="bottom" id="sOV-oc-2Yr"/>
+                <constraint firstAttribute="trailing" secondItem="TFp-jo-idV" secondAttribute="trailing" id="xnB-LN-f03"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

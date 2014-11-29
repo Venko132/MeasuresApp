@@ -42,6 +42,7 @@
     self.tblListOfSponsors.delegate = self;
     
     [self.navigationController.navigationBar setTranslucent:NO];
+    [HelperClass initLblFooter:self.lblFooter];
 }
 
 #pragma mark - TableView delegate

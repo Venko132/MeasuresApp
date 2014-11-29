@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfCategories;
 @property (weak, nonatomic) IBOutlet UIView *vwContainerOfAnimation;
+@property (weak, nonatomic) IBOutlet UIButton *btnCategory;
 
 
 @end
@@ -188,6 +189,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     numberCategoriesSection = 1;
     [dataModel setParticipantsFilter:@[dataModel.categorys[_presentedRow]]];
     [self.cltListOfPartisipants reloadData];
+    [self.btnCategory setTitle:(NSString*)dataModel.categorys[indexPath.row] forState:UIControlStateNormal];
 }
 
 - (IBAction)animationOfListCategories:(id)sender {
