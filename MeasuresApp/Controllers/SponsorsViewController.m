@@ -9,6 +9,7 @@
 #import "SponsorsViewController.h"
 #import "HelperClass.h"
 #import "SponsorTableViewCell.h"
+#import "DetailArticleViewController.h"
 
 @interface SponsorsViewController (){
     NSMutableArray * listOfSponsors;
@@ -71,6 +72,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
+    
+    NSInteger rowIndex = indexPath.row;
+    DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
+    
+    articleController.titleOfNavBar = constViewTitleSponsors;
+    articleController.articleAvatar = [dataModel sponsorLogoAtIndex:rowIndex];
+    articleController.articleTitle = [dataModel sponsorNameAtIndex:rowIndex];
+    articleController.articleSubtitle = nil;
+    articleController.articleInfo = [dataModel sponsorDetailsAtIndex:rowIndex];
+    articleController.articleDate = nil;
+    
+    [self.navigationController pushViewController:articleController animated:NO];
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
