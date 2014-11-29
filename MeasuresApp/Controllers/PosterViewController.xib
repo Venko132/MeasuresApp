@@ -51,6 +51,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-lo-q6A">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="zAi-nN-q5S">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhp-DR-fga">
                             <rect key="frame" x="15" y="15" width="290" height="70"/>
                             <constraints>
@@ -60,9 +63,6 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="zAi-nN-q5S">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
-                        </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="zAi-nN-q5S" secondAttribute="bottom" constant="-5" id="8Uu-Yu-eJx"/>
@@ -87,7 +87,7 @@
                                         <constraint firstAttribute="height" constant="3" id="RMr-WX-T1k"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-Ic-dui">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-Ic-dui">
                                     <rect key="frame" x="25" y="5" width="270" height="63"/>
                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <VKSdk.h>
 
-@interface DetailArticleViewController : UIViewController <UIWebViewDelegate>
+@interface DetailArticleViewController : UIViewController <UIWebViewDelegate,VKSdkDelegate>
 
 @property (strong, nonatomic) NSString * titleOfNavBar;
 @property (assign, nonatomic) NSInteger indexChoosenRow;

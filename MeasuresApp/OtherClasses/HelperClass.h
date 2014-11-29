@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "ConstantsClass.h"
 #import "DataModel.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
 @interface UIImage (Helpers)
 
@@ -24,7 +26,7 @@
 
 @end
 
-@interface HelperClass : NSObject
+@interface HelperClass : NSObject 
 
 //@property (strong, nonatomic) UIColor * appBlueColor;
 //@property (strong, nonatomic) UIColor * appPinkColor;
@@ -41,5 +43,9 @@
 + (UIColor*)appPink2Color;
 
 +(NSString*)convertDate:(NSDate*)_date toStringFormat:(NSString*)_stringFormat;
+
++(void)sheerFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
++(void)sheerTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
+
 
 @end

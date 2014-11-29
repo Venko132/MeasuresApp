@@ -10,7 +10,6 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
-
 static NSString *const TOKEN_KEY    = @"my_application_access_token";
 static NSString *const SHARE_DIALOG = @"Test share dialog";
 static NSArray  * SCOPE = nil;
@@ -24,6 +23,7 @@ static float const fontSizeDateOfAction = 24.0f;
 
 @interface PosterViewController (){
     DataModel * dataModel;
+    NSInteger indexOfAction;
 }
 
 @end
@@ -49,6 +49,8 @@ static float const fontSizeDateOfAction = 24.0f;
 - (void)initProperties
 {
     dataModel = [DataModel Instance];
+    indexOfAction = [dataModel GetNearestAction];
+    
     self.navigationItem.titleView = [HelperClass setNavBarTitle:@"Афиша"
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
@@ -61,10 +63,11 @@ static float const fontSizeDateOfAction = 24.0f;
     
     self.vwContainerForMessageAboutFinish.hidden = YES;
     
-    //[self initLblDateAndPlace];
-    // --------
-    //self.imgBannerTop.image = [UIImage imageWithData:[dataModel PosterGetBanner]];
-    //self.imgPlaceOfAction.image = [UIImage imageWithData:[dataModel PosterGetBanner]];
+    self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
+    
+    self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
+    
+    self.lblInfo.text = [dataModel placeSubtitleAtIndex:indexOfAction];
 }
 
 #pragma mark - Other methods
@@ -105,12 +108,11 @@ static float const fontSizeDateOfAction = 24.0f;
 {
     [self.lblPlaceOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizePlaceOfAction]];
     [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDateOfAction]];
-    self.lblDateOfAction.text = [HelperClass convertDate:[dataModel PosterStartDate] toStringFormat:@"dd MMMM yyyy"];
+    
+    self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
+    self.lblPlaceOfAction.text = [dataModel placeSubtitleAtIndex:indexOfAction];
     //self.lblDateOfAction.minimumScaleFactor = 0.5;
     //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
-    
-    //self.lblPlaceOfAction.minimumScaleFactor = 0.5;
-    //[self.lblPlaceOfAction setAdjustsFontSizeToFitWidth:YES];
     
     // Set position
     
@@ -125,6 +127,7 @@ static float const fontSizeDateOfAction = 24.0f;
     CGRect framePlace = self.lblPlaceOfAction.frame;
     framePlace.origin.y = posYCenterContainer + 9.0f;
     framePlace.size.width = width;
+    framePlace.size.height += 4.0f;
     self.lblPlaceOfAction.frame = framePlace;
     [self.lblPlaceOfAction updateConstraintsIfNeeded];
 }
@@ -152,9 +155,10 @@ static float const fontSizeDateOfAction = 24.0f;
 - (void)startWorkingWithVK
 {
     VKShareDialogController * shareDialog = [VKShareDialogController new];
-    shareDialog.text = @"Your share text here";
-    shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[UIImage imageNamed:@"news.png"]
-                                                           andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
+    shareDialog.text = [dataModel placeNameAtIndex:indexOfAction];
+    if([dataModel placeImageAtIndex:indexOfAction])
+        shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[dataModel placeImageAtIndex:indexOfAction]
+                                                               andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
     //shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
     [shareDialog presentIn:self];
 }
@@ -186,58 +190,12 @@ static float const fontSizeDateOfAction = 24.0f;
 #pragma mark - Share message in social networks
 
 -(IBAction)facebookPost:(id)sender{
-    
-    SLComposeViewController *controller = [SLComposeViewController
-                                           composeViewControllerForServiceType:SLServiceTypeFacebook];
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-    {
-        SLComposeViewControllerCompletionHandler myBlock =
-        ^(SLComposeViewControllerResult result){
-            if (result == SLComposeViewControllerResultCancelled)
-            {
-                NSLog(@"Cancelled");
-            }
-            else
-            {
-                NSLog(@"Done");
-            }
-            [controller dismissViewControllerAnimated:YES completion:nil];
-        };
-        controller.completionHandler = myBlock;
-        //Adding the Text to the facebook post value from iOS
-        [controller setInitialText:@"My test post"];
-        [controller addImage:[UIImage imageNamed:@"news.png"]];
-        //[controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
-        [self presentViewController:controller animated:YES completion:nil];
-    } else {
-        [HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
-    }
+    [HelperClass sheerFacebook:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
 }
 
 -(IBAction)twitterPost:(id)sender{
 
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"My test tweet"];
-        [tweetSheet addImage:[UIImage imageNamed:@"news.png"]];
-        [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result)
-         {
-             if (result == SLComposeViewControllerResultCancelled)
-             {
-                 NSLog(@"The user cancelled.");
-             }
-             else if (result == SLComposeViewControllerResultDone)
-             {
-                 NSLog(@"The user sent the tweet");
-             }
-         }];
-        [self presentViewController:tweetSheet animated:YES completion:nil];
-    }
-    else
-    {
-        [HelperClass showMessage:@"Twitter integration is not available.  A Twitter account must be set up on your device." withTitle:@"Error"];
-    }
+    [HelperClass sheerTwitter:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
 }
 
 /*

@@ -120,5 +120,63 @@
     return result;
 }
 
++(void)sheerFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+    SLComposeViewController *controller = [SLComposeViewController
+                                           composeViewControllerForServiceType:SLServiceTypeFacebook];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewControllerCompletionHandler myBlock =
+        ^(SLComposeViewControllerResult result){
+            if (result == SLComposeViewControllerResultCancelled)
+            {
+                NSLog(@"Cancelled");
+            }
+            else
+            {
+                NSLog(@"Done");
+            }
+            [controller dismissViewControllerAnimated:YES completion:nil];
+        };
+        controller.completionHandler = myBlock;
+        //Adding the Text to the facebook post value from iOS
+        [controller setInitialText:_textSheer];
+        if(_imgSheer)
+            [controller addImage:_imgSheer];
+        //[controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
+        [_controllerCall presentViewController:controller animated:YES completion:nil];
+    } else {
+        [HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
+    }
+}
+
++(void)sheerTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:_textSheer];
+        if(_imgSheer)
+            [tweetSheet addImage:_imgSheer];
+        [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result)
+         {
+             if (result == SLComposeViewControllerResultCancelled)
+             {
+                 NSLog(@"The user cancelled.");
+             }
+             else if (result == SLComposeViewControllerResultDone)
+             {
+                 NSLog(@"The user sent the tweet");
+             }
+         }];
+        [_controllerCall presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        [HelperClass showMessage:@"Twitter integration is not available.  A Twitter account must be set up on your device." withTitle:@"Error"];
+    }
+}
+
++(void)sheerVkontakte:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+    
+}
 
 @end
