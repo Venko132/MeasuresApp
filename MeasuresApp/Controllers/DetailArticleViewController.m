@@ -27,6 +27,7 @@ static NSArray  * SCOPE = nil;
 
 static float const fontSizeDate = 12.0f;
 static float const fontSizeInfo = 12.0f;
+static float const fontSizeInfoSubtitle = 10.0f;
 static float const fontSizeInfoTitle = 18.0f;
 
 static NSString * const strHtmlTagH1 = @"<h1>";
@@ -89,7 +90,7 @@ static NSString * const strHtmlTagSpan = @"</span>";
     self.lblTitle.textColor = [HelperClass appPink2Color];
     [self.lblTitle setFont:[UIFont fontWithName:constFontFregatBold size:fontSizeInfoTitle]];
     
-    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:fontSizeInfo]];
+    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:fontSizeInfoSubtitle]];
     
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
 

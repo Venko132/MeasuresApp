@@ -9,6 +9,7 @@
 #import "PosterViewController.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "AppDelegate.h"
 
 static NSString *const TOKEN_KEY    = @"my_application_access_token";
 static NSString *const SHARE_DIALOG = @"Test share dialog";
@@ -83,13 +84,14 @@ static float const fontSizeTitleOfAction = 24.0f;
     self.lblTitleOfAction.textColor = [UIColor whiteColor];
     self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
     // 2
-    NSString * name = [dataModel placeNameAtIndex:indexOfAction];
+   /* NSString * name = [dataModel placeNameAtIndex:indexOfAction];
     if(name){
         NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:name];
         NSRange rangeTitle = [name rangeOfString:name];
         [attString addAttribute:NSBackgroundColorAttributeName value:[HelperClass appPinkColor] range:rangeTitle];
         self.lblTitleOfAction.attributedText = attString;
     }
+    */
 }
 
 - (void)initLblMessageAbouteFinishAction
@@ -174,6 +176,8 @@ static float const fontSizeTitleOfAction = 24.0f;
 
 - (void)startWorkingWithVK
 {
+    //AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+    
     VKShareDialogController * shareDialog = [VKShareDialogController new];
     shareDialog.text = [dataModel placeNameAtIndex:indexOfAction];
     if([dataModel placeImageAtIndex:indexOfAction])
@@ -193,6 +197,7 @@ static float const fontSizeTitleOfAction = 24.0f;
 }
 
 - (void)vkSdkReceivedNewToken:(VKAccessToken *)newToken {
+    
     [self startWorkingWithVK];
 }
 
