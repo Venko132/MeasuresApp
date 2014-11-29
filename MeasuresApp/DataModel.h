@@ -41,6 +41,7 @@
 -(id) placeImageAtIndex:(NSInteger)index;
 -(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index;
 -(id) placeDetailsURLAtIndex:(NSInteger)index;
+-(NSDate*) placeDateAtIndex:(NSInteger)index;
 
 // News
 -(NSInteger) newsCount;
