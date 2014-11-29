@@ -10,6 +10,7 @@
 #import "CategoryTableViewCell.h"
 #import "MemberCollectionViewCell.h"
 #import "ParticipantsFooterCollectionReusableView.h"
+#import "DetailArticleViewController.h"
 
 @interface ParticipantsViewController (){
     NSInteger _presentedRow;
@@ -90,6 +91,18 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [[collectionView cellForItemAtIndexPath:indexPath] setSelected:NO];
+    
+    DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
+    NSInteger rowIndex = indexPath.row;
+    
+    articleController.titleOfNavBar = constViewTitleParticipants;
+    articleController.articleAvatar = [dataModel participantsLogoAtIndex:rowIndex];
+    articleController.articleTitle = [dataModel participantsNameAtIndex:rowIndex];
+    articleController.articleSubtitle = nil;
+    articleController.articleInfo = [dataModel participantsDetailsAtIndex:rowIndex];
+    articleController.articleDate = nil;
+    
+    [self.navigationController pushViewController:articleController animated:NO];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

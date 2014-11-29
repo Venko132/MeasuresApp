@@ -22,7 +22,9 @@
 
 - (void)uploadDataToCell:(NSInteger)rowIndex{
     DataModel * dataModel = [DataModel Instance];
-    self.imgSponsorAvatar.image = [UIImage imageWithData:[dataModel sponsorLogoAtIndex:rowIndex]];
+    UIImage* img = [[DataModel Instance]sponsorDetailsAtIndex:rowIndex];
+    if (img)
+        self.imgSponsorAvatar.image = [UIImage imageWithData:[dataModel sponsorLogoAtIndex:rowIndex]];
 }
 
 @end

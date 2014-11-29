@@ -62,9 +62,6 @@
         cell = [nib objectAtIndex:0];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    UIImage* img = [[DataModel Instance]sponsorDetailsAtIndex:row];
-    if (img)
-        cell.imgSponsorAvatar.image = img;
     
     [cell uploadDataToCell:row];
     

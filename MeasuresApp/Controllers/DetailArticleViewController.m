@@ -111,6 +111,15 @@ static NSString * const strHtmlTagSpan = @"</span>";
 
 - (NSMutableAttributedString*)setTitle:(NSString*)_titleS andInfo:(NSString*)_infoS
 {
+    if(!_titleS && !_infoS){
+        NSMutableAttributedString * str =[[NSMutableAttributedString alloc] initWithString: @" "];
+        return str;
+    }
+    if(!_titleS)
+        _titleS = @" ";
+    if(!_infoS)
+        _infoS = @" ";
+    
     NSString * allInfo = [NSString stringWithFormat:@"%@\n%@",_titleS,_infoS];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:allInfo];
     //Range
