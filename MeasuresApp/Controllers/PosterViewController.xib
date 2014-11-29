@@ -235,7 +235,7 @@
         <image name="TW.png" width="80" height="80"/>
         <image name="VK.png" width="80" height="80"/>
         <image name="banner.png" width="931" height="119"/>
-        <image name="bannerBig.png" width="932" height="551"/>
+        <image name="bannerBig.png" width="932" height="420"/>
         <image name="fb.png" width="80" height="80"/>
         <image name="separatorLine.png" width="768" height="3"/>
     </resources>

@@ -250,7 +250,9 @@ static NSString * const strHtmlTagSpan = @"</span>";
 }
 
 - (void)vkSdkReceivedNewToken:(VKAccessToken *)newToken {
-    [self startWorkingWithVK];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self startWorkingWithVK];
+    }];
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
@@ -258,7 +260,9 @@ static NSString * const strHtmlTagSpan = @"</span>";
 }
 
 - (void)vkSdkAcceptedUserToken:(VKAccessToken *)token {
-    [self startWorkingWithVK];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self startWorkingWithVK];
+    }];
 }
 - (void)vkSdkUserDeniedAccess:(VKError *)authorizationError {
     [[[UIAlertView alloc] initWithTitle:nil message:@"Access denied" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];

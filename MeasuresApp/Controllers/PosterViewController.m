@@ -146,10 +146,10 @@ static float const fontSizeTitleOfAction = 24.0f;
     frameDate.size.width = widthContainer;
     self.lblDateOfAction.frame = frameDate;
     
-    float width = CGRectGetWidth(self.lblPlaceOfAction.frame);
+    float width = CGRectGetWidth(self.vwContainerDateAndPlace.frame);
     [self.lblPlaceOfAction sizeToFit];
     CGRect framePlace = self.lblPlaceOfAction.frame;
-    framePlace.origin.y = posYCenterContainer + 9.0f;
+    framePlace.origin.y = posYCenterContainer + 5.0f;
     framePlace.size.width = width;
     framePlace.size.height += 4.0f;
     framePlace.size.width = widthContainer;
@@ -200,8 +200,9 @@ static float const fontSizeTitleOfAction = 24.0f;
 }
 
 - (void)vkSdkReceivedNewToken:(VKAccessToken *)newToken {
-    
-    [self startWorkingWithVK];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self startWorkingWithVK];
+    }];
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
@@ -209,7 +210,9 @@ static float const fontSizeTitleOfAction = 24.0f;
 }
 
 - (void)vkSdkAcceptedUserToken:(VKAccessToken *)token {
-    [self startWorkingWithVK];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self startWorkingWithVK];
+    }];
 }
 - (void)vkSdkUserDeniedAccess:(VKError *)authorizationError {
     [[[UIAlertView alloc] initWithTitle:nil message:@"Access denied" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
