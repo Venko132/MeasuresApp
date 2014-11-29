@@ -210,7 +210,7 @@
 
 #pragma mark Places
 
--(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details link:(NSString*)link
+-(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details link:(NSString*)link date:(NSDate*) date
 {
     NSDictionary* newD = [NSDictionary dictionaryWithObjectsAndKeys:
                           name,const_Name,
@@ -220,14 +220,22 @@
                           [NSNumber numberWithDouble:longitude],const_Longitude,
                           details,const_Details,
                           link,const_Link,
+                          date,const_Date,
                           nil];
     [[allData objectForKey:const_Places]addObject:newD];
     [self imageByURL:imageURL];
 }
 
+
+
 -(NSInteger) placesCount
 {
     return [[allData objectForKey:const_Places]count];
+}
+
+-(NSDate*) placeDateAtIndex:(NSInteger)index
+{
+    return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Date];
 }
 
 -(NSString*) placeNameAtIndex:(NSInteger)index
@@ -485,6 +493,26 @@
         allData = tmp;
 }
 
+-(NSInteger) GetNearestAction
+{
+    NSInteger answer = -1;
+    NSDate* bestDate = [NSDate dateWithTimeIntervalSinceNow:MAXFLOAT];
+    
+    for (int i=0; i<[[allData objectForKey:const_Places]count]; i++) {
+        NSDictionary* place = [allData objectForKey:const_Places][i];
+        NSDate* date = [place objectForKey:const_Date];
+        if ([date compare:[NSDate dateWithTimeIntervalSinceNow:0]] == NSOrderedDescending) {
+            if ([date compare:bestDate] == NSOrderedAscending)
+            {
+                bestDate = date;
+                answer = i;
+            }
+        }
+    }
+    
+    return answer;
+}
+
 -(void)load
 {
     // Load Participant and Sponsors
@@ -540,9 +568,9 @@
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/locations.php?command=allShow"];
     
-//    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-//        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
-//    }];
+    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
+    }];
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
@@ -553,8 +581,15 @@
         CLLocationDegrees fLatitude = [latitude doubleValue];
         CLLocationDegrees fLongitude = [longitude doubleValue];
         NSString* link = [parsedObject objectForKey:@"link"][i];
+        NSString* dateString = [parsedObject objectForKey:@"date_row"][i];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate *date = [dateFormatter dateFromString:dateString];
         
-        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@"" link:link];
+        if (date == nil)
+            date = [NSDate dateWithTimeIntervalSince1970:0];
+        
+        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@"" link:link date:date];
     }
     
     /// Load News and other Articles
@@ -587,7 +622,7 @@
         NSString* link = [parsedObject objectForKey:@"link"][i];
         NSString* section = [parsedObject objectForKey:@"section"][i];
         
-        NSLog(@"%@ %@",link,section);
+//        NSLog(@"%@ %@",link,section);
         
         /*@try {
             date = [dateFormatter dateFromString:dateStr];
@@ -620,6 +655,8 @@
         }
         [self addArticleWithID:link text:text];
     }
+    
+    [self GetNearestAction];
     
     [self save];
 }

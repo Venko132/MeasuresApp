@@ -14,9 +14,9 @@
 
 //  ВНИМАНИЕ! картинок еще нет!
 
-// Poster - пока пустое
-- (NSDate*) PosterStartDate;
-- (id) PosterGetBanner;
+// Poster
+-(NSInteger) GetNearestAction;
+// остальные данные извлекать из Places
 
 // Categorys
 -(NSArray*)categorys;
@@ -41,6 +41,7 @@
 -(id) placeImageAtIndex:(NSInteger)index;
 -(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index;
 -(id) placeDetailsURLAtIndex:(NSInteger)index;
+-(NSDate*) placeDateAtIndex:(NSInteger)index;
 
 // News
 -(NSInteger) newsCount;
