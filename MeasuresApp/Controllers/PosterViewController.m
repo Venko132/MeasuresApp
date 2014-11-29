@@ -21,6 +21,8 @@ static float const fontSizeMessageSecondLine = 9.0f;
 static float const fontSizePlaceOfAction = 12.0f;
 static float const fontSizeDateOfAction = 24.0f;
 
+static float const fontSizeTitleOfAction = 24.0f;
+
 @interface PosterViewController (){
     DataModel * dataModel;
     NSInteger indexOfAction;
@@ -63,7 +65,7 @@ static float const fontSizeDateOfAction = 24.0f;
     
     self.vwContainerForMessageAboutFinish.hidden = YES;
     
-    self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
+    [self initLblTitleOfAction];
     
     self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
     
@@ -71,6 +73,20 @@ static float const fontSizeDateOfAction = 24.0f;
 }
 
 #pragma mark - Other methods
+
+- (void)initLblTitleOfAction{
+    [self.lblTitleOfAction setFont:[UIFont fontWithName:constFontFregatBold size:fontSizeTitleOfAction]];
+    self.lblTitleOfAction.textColor = [UIColor whiteColor];
+    self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
+    // 2
+    NSString * name = [dataModel placeNameAtIndex:indexOfAction];
+    if(name){
+        NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:name];
+        NSRange rangeTitle = [name rangeOfString:name];
+        [attString addAttribute:NSBackgroundColorAttributeName value:[HelperClass appPinkColor] range:rangeTitle];
+        self.lblTitleOfAction.attributedText = attString;
+    }
+}
 
 - (void)initLblMessageAbouteFinishAction
 {
