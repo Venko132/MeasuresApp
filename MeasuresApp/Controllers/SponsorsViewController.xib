@@ -20,7 +20,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFp-jo-idV">
                     <rect key="frame" x="0.0" y="448" width="320" height="32"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94s-kc-9Pl">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94s-kc-9Pl">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -29,7 +29,11 @@
                     </subviews>
                     <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="94s-kc-9Pl" firstAttribute="top" secondItem="TFp-jo-idV" secondAttribute="top" id="KMI-Mi-SWx"/>
                         <constraint firstAttribute="height" constant="32" id="Mc9-kv-d9D"/>
+                        <constraint firstAttribute="trailing" secondItem="94s-kc-9Pl" secondAttribute="trailing" id="VoQ-gA-tFF"/>
+                        <constraint firstAttribute="bottom" secondItem="94s-kc-9Pl" secondAttribute="bottom" id="gKd-Yr-ZkK"/>
+                        <constraint firstItem="94s-kc-9Pl" firstAttribute="leading" secondItem="TFp-jo-idV" secondAttribute="leading" id="yQh-Gc-BXL"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SX5-4q-wjn">

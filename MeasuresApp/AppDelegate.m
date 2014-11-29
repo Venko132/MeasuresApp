@@ -31,6 +31,8 @@
     // NavigationBar instance
     [self initNavigationBar];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // SiderBar insatance
     PosterViewController *frontViewController = [[PosterViewController alloc] init];
     RearViewController *rearViewController = [[RearViewController alloc] init];
