@@ -12,6 +12,23 @@
 #import "ParticipantsFooterCollectionReusableView.h"
 #import "DetailArticleViewController.h"
 
+@interface UIButton (swapImageText)
+- (void)swapImageText;
+@end
+
+@implementation UIButton (swapImageText)
+
+- (void)swapImageText
+{
+    self.transform = CGAffineTransformScale(self.transform, -1.0f, 1.0f);
+    self.titleLabel.transform = CGAffineTransformScale(self.titleLabel.transform, -1.0f, 1.0f);
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, -1.0f, 1.0f);
+}
+
+@end
+
+#pragma mark - ParticipantsViewController
+
 @interface ParticipantsViewController (){
     NSInteger _presentedRow;
     NSInteger numberCategoriesSection;
@@ -82,6 +99,8 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [HelperClass initLblFooter:self.lblFooter];
     
     [self.navigationController.navigationBar setTranslucent:NO];
+    
+    [self.btnCategory swapImageText];
 }
 
 #pragma mark - CollectionView delegate
@@ -221,8 +240,11 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             
         } completion:^(BOOL finished) {
             isCategoriesOpen = YES;
+            
+            [self.btnCategory setImage:[UIImage imageNamed:constImageArrowUp] forState:UIControlStateNormal];
         }];
     } else {
+        
         heigthAnimation = -heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
         [UIView animateWithDuration:0.1f animations:^{
@@ -239,6 +261,8 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             
         } completion:^(BOOL finished) {
             isCategoriesOpen = NO;
+            
+            [self.btnCategory setImage:[UIImage imageNamed:constImageArrowDown] forState:UIControlStateNormal];
         }];
     }
 }

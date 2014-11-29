@@ -19,8 +19,10 @@ NSString * const constFontFregatRegular     = @"Fregat";
 NSString * const constFontNautilusPompilius = @"NautilusPompilius";
 
 NSString * const constImageMainMenu = @"menu.png";
-NSString * const constImagePoster = @"posterImage.png";
-NSString * const constImageBanner = @"banner.png";
+NSString * const constImagePoster   = @"posterImage.png";
+NSString * const constImageBanner   = @"banner.png";
+NSString * const constImageArrowUp  = @"mbUp.png";
+NSString * const constImageArrowDown = @"mbDown.png";
 
 NSString * const constViewTitleSponsors = @"Спонсоры";
 NSString * const constViewTitleNews = @"Новости";

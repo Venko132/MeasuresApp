@@ -21,6 +21,8 @@ extern NSString * const constFontNautilusPompilius;
 extern NSString * const constImageMainMenu;
 extern NSString * const constImagePoster;
 extern NSString * const constImageBanner;
+extern NSString * const constImageArrowUp;
+extern NSString * const constImageArrowDown;
 
 extern NSString * const constViewTitleSponsors;
 extern NSString * const constViewTitleNews;

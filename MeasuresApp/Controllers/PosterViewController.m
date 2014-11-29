@@ -27,6 +27,9 @@ static float const fontSizeTitleOfAction = 24.0f;
 @interface PosterViewController (){
     DataModel * dataModel;
     NSInteger indexOfAction;
+    
+    
+    int countDidAppear;
 }
 
 @end
@@ -46,7 +49,11 @@ static float const fontSizeTitleOfAction = 24.0f;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self initLblDateAndPlace];
+    
+    if(countDidAppear == 0){
+        [self initLblDateAndPlace];
+        countDidAppear++;
+    }
 }
 
 - (void)initProperties
@@ -75,6 +82,8 @@ static float const fontSizeTitleOfAction = 24.0f;
     self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
     
     self.lblInfo.text = [dataModel placeSubtitleAtIndex:indexOfAction];
+    
+    countDidAppear = 0;
 }
 
 #pragma mark - Other methods
@@ -151,10 +160,10 @@ static float const fontSizeTitleOfAction = 24.0f;
     CGRect framePlace = self.lblPlaceOfAction.frame;
     framePlace.origin.y = posYCenterContainer + 5.0f;
     framePlace.size.width = width;
-    framePlace.size.height += 4.0f;
+    //framePlace.size.height += 4.0f;
     framePlace.size.width = widthContainer;
     self.lblPlaceOfAction.frame = framePlace;
-    [self.lblPlaceOfAction updateConstraintsIfNeeded];
+    //[self.lblPlaceOfAction updateConstraintsIfNeeded];
 }
 
 - (void)setCornerRadiusForView:(UIView*)_viewS
