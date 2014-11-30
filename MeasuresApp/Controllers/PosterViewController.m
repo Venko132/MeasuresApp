@@ -68,7 +68,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     
     //Show Alert of End Action
     NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
-    if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] == NSOrderedAscending)
+    if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
         self.vwContainerForMessageAboutFinish.hidden = YES;
     
     [self initLblTitleOfAction];

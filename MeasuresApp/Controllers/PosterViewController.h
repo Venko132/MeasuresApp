@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDateOfAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblPlaceOfAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleOfAction;
-@property (weak, nonatomic) IBOutlet UILabel *lblMessageAboutFinishAction;
 @property (weak, nonatomic) IBOutlet UILabel *lblInfo;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitleForSocialShare;
 @property (weak, nonatomic) IBOutlet UIImageView *imgBannerTop;
