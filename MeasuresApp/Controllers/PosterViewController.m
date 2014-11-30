@@ -147,22 +147,29 @@ static float const fontSizeTitleOfAction = 24.0f;
     
     // Set position
     
-    float posYCenterContainer = (CGRectGetMaxY(self.vwContainerDateAndPlace.frame) - CGRectGetMinY(self.vwContainerDateAndPlace.frame))/2;
+    float posYCenterContainer = /*(CGRectGetMaxY(self.vwContainerDateAndPlace.frame) - CGRectGetMinY(self.vwContainerDateAndPlace.frame))/2;*/CGRectGetMidY(self.vwContainerDateAndPlace.bounds);
+   /* NSLog(@"posYCenterContainer : %f",posYCenterContainer);
+    NSLog(@"h : %f",CGRectGetHeight(self.vwContainerDateAndPlace.frame));
     float widthContainer = CGRectGetWidth(self.vwContainerDateAndPlace.frame);
     
     CGRect frameDate = self.lblDateOfAction.frame;
     frameDate.origin.y = posYCenterContainer - frameDate.size.height + 5.0f;
     frameDate.size.width = widthContainer;
     self.lblDateOfAction.frame = frameDate;
+    //
+    frameDate = self.lblDateOfAction.frame;
     
     float width = CGRectGetWidth(self.vwContainerDateAndPlace.frame);
     [self.lblPlaceOfAction sizeToFit];
     CGRect framePlace = self.lblPlaceOfAction.frame;
     framePlace.origin.y = posYCenterContainer + 5.0f;
     framePlace.size.width = width;
-    //framePlace.size.height += 4.0f;
+    framePlace.size.height += 4.0f;
     framePlace.size.width = widthContainer;
     self.lblPlaceOfAction.frame = framePlace;
+    
+    //
+    framePlace = self.lblPlaceOfAction.frame;*/
     //[self.lblPlaceOfAction updateConstraintsIfNeeded];
 }
 
