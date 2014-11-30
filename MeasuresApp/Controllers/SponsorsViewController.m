@@ -78,7 +78,10 @@
     DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
     
     articleController.titleOfNavBar = constViewTitleSponsors;
-    articleController.articleAvatar = [dataModel sponsorLogoAtIndex:rowIndex];
+    
+    UIImage* img = [[DataModel Instance]sponsorLogoAtIndex:rowIndex];
+    if (img)
+        articleController.articleAvatar = img;
     articleController.articleTitle = [dataModel sponsorNameAtIndex:rowIndex];
     articleController.articleSubtitle = nil;
     articleController.articleInfo = [dataModel sponsorDetailsAtIndex:rowIndex];
