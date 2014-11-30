@@ -11,10 +11,7 @@
 #import <Social/Social.h>
 #import "AppDelegate.h"
 
-static NSString *const TOKEN_KEY    = @"my_application_access_token";
-static NSString *const SHARE_DIALOG = @"Test share dialog";
 static NSArray  * SCOPE = nil;
-//static NSString *const VKApiID      = @"4642356";
 
 static float const fontSizeMessageFirstLine = 19.0f;
 static float const fontSizeMessageSecondLine = 9.0f;
@@ -27,9 +24,6 @@ static float const fontSizeTitleOfAction = 24.0f;
 @interface PosterViewController (){
     DataModel * dataModel;
     NSInteger indexOfAction;
-    
-    
-    int countDidAppear;
 }
 
 @end
@@ -49,11 +43,6 @@ static float const fontSizeTitleOfAction = 24.0f;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    if(countDidAppear == 0){
-        [self initLblDateAndPlace];
-        countDidAppear++;
-    }
 }
 
 - (void)initProperties
@@ -83,7 +72,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     
     self.lblInfo.text = [dataModel placeSubtitleAtIndex:indexOfAction];
     
-    countDidAppear = 0;
+    [self initLblDateAndPlace];
 }
 
 #pragma mark - Other methods
@@ -144,33 +133,6 @@ static float const fontSizeTitleOfAction = 24.0f;
     self.lblPlaceOfAction.text = [dataModel placeSubtitleAtIndex:indexOfAction];
     //self.lblDateOfAction.minimumScaleFactor = 0.5;
     //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
-    
-    // Set position
-    
-    float posYCenterContainer = /*(CGRectGetMaxY(self.vwContainerDateAndPlace.frame) - CGRectGetMinY(self.vwContainerDateAndPlace.frame))/2;*/CGRectGetMidY(self.vwContainerDateAndPlace.bounds);
-   /* NSLog(@"posYCenterContainer : %f",posYCenterContainer);
-    NSLog(@"h : %f",CGRectGetHeight(self.vwContainerDateAndPlace.frame));
-    float widthContainer = CGRectGetWidth(self.vwContainerDateAndPlace.frame);
-    
-    CGRect frameDate = self.lblDateOfAction.frame;
-    frameDate.origin.y = posYCenterContainer - frameDate.size.height + 5.0f;
-    frameDate.size.width = widthContainer;
-    self.lblDateOfAction.frame = frameDate;
-    //
-    frameDate = self.lblDateOfAction.frame;
-    
-    float width = CGRectGetWidth(self.vwContainerDateAndPlace.frame);
-    [self.lblPlaceOfAction sizeToFit];
-    CGRect framePlace = self.lblPlaceOfAction.frame;
-    framePlace.origin.y = posYCenterContainer + 5.0f;
-    framePlace.size.width = width;
-    framePlace.size.height += 4.0f;
-    framePlace.size.width = widthContainer;
-    self.lblPlaceOfAction.frame = framePlace;
-    
-    //
-    framePlace = self.lblPlaceOfAction.frame;*/
-    //[self.lblPlaceOfAction updateConstraintsIfNeeded];
 }
 
 - (void)setCornerRadiusForView:(UIView*)_viewS
