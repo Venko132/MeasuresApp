@@ -13,8 +13,8 @@
 
 static NSArray  * SCOPE = nil;
 
-static float const fontSizeMessageFirstLine = 19.0f;
-static float const fontSizeMessageSecondLine = 9.0f;
+static float const fontSizeMessageFirstLine = 24.0f;
+static float const fontSizeMessageSecondLine = 10.0f;
 
 static float const fontSizePlaceOfAction = 12.0f;
 static float const fontSizeDateOfAction = 24.0f;
@@ -57,14 +57,19 @@ static float const fontSizeTitleOfAction = 24.0f;
     self.navigationItem.titleView = [HelperClass setNavBarTitle:nameAction
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
     [self setCornerRadiusForView:self.btnShareFB];
     
-    [self initLblMessageAbouteFinishAction];
+    [self initAlertMessageAbouteFinishAction];
     [HelperClass initLblFooter:self.lblFooter];
     
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
     
-    self.vwContainerForMessageAboutFinish.hidden = YES;
+    //Show Alert of End Action
+    NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
+    if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] == NSOrderedAscending)
+        self.vwContainerForMessageAboutFinish.hidden = YES;
     
     [self initLblTitleOfAction];
     
@@ -92,36 +97,22 @@ static float const fontSizeTitleOfAction = 24.0f;
     */
 }
 
-- (void)initLblMessageAbouteFinishAction
+- (void)initAlertMessageAbouteFinishAction
 {
-    NSString * firstLine = @"Это мероприятие уже закончилось\n";
+    NSString * firstLine = @"Это мероприятие уже закончилось";
     NSString * secondLine = @"  но мы обязательно придумаем что-нибудь еще";
-    
-    NSString * allInfo = [NSString stringWithFormat:@"%@\n%@",firstLine,secondLine];
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:allInfo];
-    //Range
-    NSRange rangeTitle = [allInfo rangeOfString:firstLine];
-    NSRange rangeInfo = [allInfo rangeOfString:secondLine];
     //Font
     UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:fontSizeMessageFirstLine];
     UIFont * fontInfo = [UIFont fontWithName:constFontNautilusPompilius size:fontSizeMessageSecondLine];
-    [attString addAttribute:NSFontAttributeName value:fontTitle range:rangeTitle];
-    [attString addAttribute:NSFontAttributeName value:fontInfo range:rangeInfo];
     
+    [self.lblAlertFinishFirstLine setFont:fontTitle];
+    [self.lblAlertSecondLine setFont:fontInfo];
     
-    [self.navigationController.navigationBar setTranslucent:NO];
-    //test
-    //[attString addAttribute:NSBackgroundColorAttributeName value:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bannerBig.png"]] range:rangeInfo];
+    self.lblAlertFinishFirstLine.text = firstLine;
+    self.lblAlertSecondLine.text = secondLine;
     
-    //NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
-    //[paragrahStyle setLineSpacing:0.75];
-    //[attString addAttribute:NSParagraphStyleAttributeName value:paragrahStyle range:rangeTitle];
-    //[attString addAttribute:NSBaselineOffsetAttributeName value:@10.0 range:rangeInfo];
-    self.lblMessageAboutFinishAction.attributedText = attString;
-    //self.lblMessageAboutFinishAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bannerBig.png"]];
-    //[self.lblMessageAboutFinishAction setContentScaleFactor:0.5];
-    //[self.lblMessageAboutFinishAction setAdjustsFontSizeToFitWidth:YES];
-    //[self.lblMessageAboutFinishAction setAttributedText:<#(NSAttributedString *)#>];NSForegroundColorAttributeName
+    [self.lblAlertFinishFirstLine sizeToFit];
+ 
 }
 
 - (void)initLblDateAndPlace

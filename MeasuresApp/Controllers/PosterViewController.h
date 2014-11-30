@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgBannerTop;
 @property (weak, nonatomic) IBOutlet UIView *vwContainerForMessageAboutFinish;
 @property (weak, nonatomic) IBOutlet UIView *vwContainerDateAndPlace;
+@property (weak, nonatomic) IBOutlet UILabel *lblAlertFinishFirstLine;
+@property (weak, nonatomic) IBOutlet UILabel *lblAlertSecondLine;
 
 
 @end
