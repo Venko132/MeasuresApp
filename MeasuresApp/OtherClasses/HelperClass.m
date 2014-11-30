@@ -55,18 +55,19 @@
 }
 
 + (UIView*)setNavBarTitle:(NSString*)title andWith:(float)_width fontSize:(float)_fontSize{
-    CGRect rectOfView = CGRectMake(0,0,_width,40);
+    CGRect rectOfView = CGRectMake(0,0,_width - 150.0f,44);
     UILabel* lblNavTitle = [[UILabel alloc] initWithFrame:rectOfView];
     lblNavTitle.textAlignment = NSTextAlignmentLeft;
     lblNavTitle.backgroundColor = [UIColor clearColor];
-    lblNavTitle.lineBreakMode = NSLineBreakByWordWrapping;
+    //lblNavTitle.lineBreakMode = NSLineBreakByWordWrapping;
     [lblNavTitle setFont:[UIFont fontWithName:constFontFregatBold size:16.0f]];
     lblNavTitle.numberOfLines = 0;
     lblNavTitle.textColor = [UIColor whiteColor];
+    lblNavTitle.minimumScaleFactor = 0.5;
     lblNavTitle.adjustsFontSizeToFitWidth=YES;
     lblNavTitle.text = title;
-    lblNavTitle.minimumScaleFactor = 0.5;
     
+    rectOfView.size.width = _width;
     UIView * vwCustom = [[UIView alloc] initWithFrame:rectOfView];
     [vwCustom addSubview:lblNavTitle];
     
