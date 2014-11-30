@@ -55,25 +55,58 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="zAi-nN-q5S">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hhp-DR-fga">
-                            <rect key="frame" x="15" y="15" width="290" height="70"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQe-Nv-S4S">
+                            <rect key="frame" x="15" y="34" width="290" height="32"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ribbonRight" translatesAutoresizingMaskIntoConstraints="NO" id="OaG-CN-QNg">
+                                    <rect key="frame" x="166" y="0.0" width="13" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="13" id="Yft-tP-1In"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hhp-DR-fga">
+                                    <rect key="frame" x="124" y="0.0" width="42" height="32"/>
+                                    <color key="backgroundColor" red="0.93725490196078431" green="0.43529411764705883" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="500" constant="42" id="WNv-61-FO2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ribbonLeft" translatesAutoresizingMaskIntoConstraints="NO" id="Pkw-pC-Rm5">
+                                    <rect key="frame" x="111" y="0.0" width="13" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="13" id="J1G-1p-Kvy"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="70" id="RfO-ek-aVY"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OaG-CN-QNg" secondAttribute="trailing" id="AkB-9Z-bn8"/>
+                                <constraint firstAttribute="bottom" secondItem="Pkw-pC-Rm5" secondAttribute="bottom" id="D68-mY-SQz"/>
+                                <constraint firstAttribute="height" constant="32" id="KLl-sg-HlJ"/>
+                                <constraint firstItem="OaG-CN-QNg" firstAttribute="leading" secondItem="Hhp-DR-fga" secondAttribute="trailing" id="LW3-n6-ShJ"/>
+                                <constraint firstItem="OaG-CN-QNg" firstAttribute="top" secondItem="kQe-Nv-S4S" secondAttribute="top" id="RYn-I4-IJv"/>
+                                <constraint firstAttribute="bottom" secondItem="Hhp-DR-fga" secondAttribute="bottom" id="eoU-T9-wLF"/>
+                                <constraint firstItem="Pkw-pC-Rm5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kQe-Nv-S4S" secondAttribute="leading" id="k6V-TQ-QRv"/>
+                                <constraint firstAttribute="centerX" secondItem="Hhp-DR-fga" secondAttribute="centerX" id="k88-WH-qls"/>
+                                <constraint firstItem="Hhp-DR-fga" firstAttribute="top" secondItem="kQe-Nv-S4S" secondAttribute="top" id="lgQ-BA-gXt"/>
+                                <constraint firstItem="Pkw-pC-Rm5" firstAttribute="top" secondItem="kQe-Nv-S4S" secondAttribute="top" id="rZz-pM-NtK"/>
+                                <constraint firstAttribute="bottom" secondItem="OaG-CN-QNg" secondAttribute="bottom" id="vgz-Nq-q0b"/>
+                                <constraint firstItem="Hhp-DR-fga" firstAttribute="leading" secondItem="Pkw-pC-Rm5" secondAttribute="trailing" id="zUo-XJ-Kl3"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kQe-Nv-S4S" secondAttribute="trailing" constant="15" id="5Ot-ls-5X8"/>
                         <constraint firstAttribute="bottom" secondItem="zAi-nN-q5S" secondAttribute="bottom" constant="-5" id="8Uu-Yu-eJx"/>
+                        <constraint firstItem="kQe-Nv-S4S" firstAttribute="leading" secondItem="S1P-lo-q6A" secondAttribute="leading" constant="15" id="FpP-KA-Qba"/>
                         <constraint firstAttribute="height" constant="100" id="M62-4Q-WaS"/>
-                        <constraint firstItem="Hhp-DR-fga" firstAttribute="leading" secondItem="S1P-lo-q6A" secondAttribute="leading" constant="15" id="OZi-Lf-E1a"/>
-                        <constraint firstAttribute="trailing" secondItem="Hhp-DR-fga" secondAttribute="trailing" constant="15" id="YXD-6Z-szW"/>
                         <constraint firstItem="zAi-nN-q5S" firstAttribute="top" secondItem="S1P-lo-q6A" secondAttribute="top" id="anx-dg-Izh"/>
                         <constraint firstAttribute="trailing" secondItem="zAi-nN-q5S" secondAttribute="trailing" id="jlT-u2-0Cr"/>
                         <constraint firstItem="zAi-nN-q5S" firstAttribute="leading" secondItem="S1P-lo-q6A" secondAttribute="leading" id="mu6-Oh-MB7"/>
-                        <constraint firstAttribute="bottom" secondItem="Hhp-DR-fga" secondAttribute="bottom" constant="15" id="zLg-Lh-PwG"/>
+                        <constraint firstAttribute="centerY" secondItem="kQe-Nv-S4S" secondAttribute="centerY" id="xpD-pc-LZr"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" restorationIdentifier="ddd" translatesAutoresizingMaskIntoConstraints="NO" id="qm1-qz-l3Q">
@@ -283,6 +316,8 @@
         <image name="banner.png" width="931" height="119"/>
         <image name="bannerBig.png" width="932" height="420"/>
         <image name="fb.png" width="80" height="80"/>
+        <image name="ribbonLeft" width="13" height="32"/>
+        <image name="ribbonRight" width="13" height="32"/>
         <image name="separatorLine.png" width="768" height="3"/>
     </resources>
 </document>

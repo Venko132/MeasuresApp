@@ -86,6 +86,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self.lblTitleOfAction setFont:[UIFont fontWithName:constFontFregatBold size:fontSizeTitleOfAction]];
     self.lblTitleOfAction.textColor = [UIColor whiteColor];
     self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
+    self.lblTitleOfAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ribbonBg.png"]];
     // 2
    /* NSString * name = [dataModel placeNameAtIndex:indexOfAction];
     if(name){
