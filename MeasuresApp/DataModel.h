@@ -42,7 +42,7 @@
 -(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index;
 -(id) placeDetailsURLAtIndex:(NSInteger)index;
 -(NSDate*) placeDateAtIndex:(NSInteger)index;
--(NSString*) placeDateRowAtIndex:(NSInteger)index;
+-(NSString*) placeDateTextAtIndex:(NSInteger)index;
 
 // News
 -(NSInteger) newsCount;

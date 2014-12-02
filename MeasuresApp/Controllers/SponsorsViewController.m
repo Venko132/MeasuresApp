@@ -82,9 +82,9 @@
     UIImage* img = [[DataModel Instance]sponsorLogoAtIndex:rowIndex];
     if (img)
         articleController.articleAvatar = img;
-    articleController.articleTitle = [dataModel sponsorNameAtIndex:rowIndex];
+    articleController.articleTitle = [[DataModel Instance] sponsorNameAtIndex:rowIndex];
     articleController.articleSubtitle = nil;
-    articleController.articleInfo = [dataModel sponsorDetailsAtIndex:rowIndex];
+    articleController.articleInfo = [[DataModel Instance] sponsorDetailsAtIndex:rowIndex];
     articleController.articleDate = nil;
     
     [self.navigationController pushViewController:articleController animated:NO];

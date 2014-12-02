@@ -70,6 +70,8 @@
         [allData setObject:[NSMutableArray array] forKey:const_Articles];
         // отключено до тестирования
         [self load];
+        
+//        NSLog(@"%@ %@",[self sponsorNameAtIndex:0],[self sponsorDetailsAtIndex:0]);
     }
     return self;
 }
@@ -211,7 +213,7 @@
 
 #pragma mark Places
 
--(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details link:(NSString*)link date:(NSDate*) date
+-(void)addPlaceWith:(NSString*)name imageURL:(NSString*)imageURL description:(NSString*)description latitude:(double) latitude longitude:(double)longitude details:(id)details link:(NSString*)link date:(NSDate*) date dateText:(NSString*)dateText
 {
     NSDictionary* newD = [NSDictionary dictionaryWithObjectsAndKeys:
                           name,const_Name,
@@ -222,6 +224,7 @@
                           details,const_Details,
                           link,const_Link,
                           date,const_Date,
+                          dateText,const_Date_Row,
                           nil];
     [[allData objectForKey:const_Places]addObject:newD];
     [self imageByURL:imageURL];
@@ -239,7 +242,7 @@
     return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Date];
 }
 
--(NSString*) placeDateRowAtIndex:(NSInteger)index
+-(NSString*) placeDateTextAtIndex:(NSInteger)index
 {
     return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Date_Row];
 }
@@ -573,10 +576,10 @@
     // Load Locations
     parsedObject = nil;
     parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/locations.php?command=allShow"];
-    
-    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
-    }];
+//    
+//    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+//        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
+//    }];
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
@@ -592,10 +595,12 @@
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *date = [dateFormatter dateFromString:dateString];
         
+        NSString* dateTextString = [parsedObject objectForKey:@"date"][i];
+        
         if (date == nil)
             date = [NSDate dateWithTimeIntervalSince1970:0];
         
-        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@"" link:link date:date];
+        [self addPlaceWith:name imageURL:image description:subtitle latitude:fLatitude longitude:fLongitude details:@"" link:link date:date dateText:dateTextString];
     }
     
     /// Load News and other Articles
