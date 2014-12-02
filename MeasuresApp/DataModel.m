@@ -22,6 +22,7 @@
 #define const_Longitude @"longitude"
 #define const_News @"News"
 #define const_Date @"Date"
+#define const_Date_Row @"date_row"
 #define const_Link @"Link"
 #define const_Articles @"Articles"
 #define const_ID @"ID"
@@ -236,6 +237,11 @@
 -(NSDate*) placeDateAtIndex:(NSInteger)index
 {
     return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Date];
+}
+
+-(NSString*) placeDateRowAtIndex:(NSInteger)index
+{
+    return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Date_Row];
 }
 
 -(NSString*) placeNameAtIndex:(NSInteger)index

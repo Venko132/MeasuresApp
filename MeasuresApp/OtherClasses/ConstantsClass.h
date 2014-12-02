@@ -29,6 +29,8 @@ extern NSString * const constViewTitleNews;
 extern NSString * const constViewTitlePlaces;
 extern NSString * const constViewTitleParticipants;
 
+extern NSString * const constMessageFinish;//это мероприятие уже закончилось
+
 extern NSString * const constFootterString;
 extern NSString *const VKApiID;
 

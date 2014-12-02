@@ -48,7 +48,7 @@ static float const fontSizeTitleOfAction = 24.0f;
 - (void)initProperties
 {
     dataModel = [DataModel Instance];
-    indexOfAction = [dataModel GetNearestAction];
+    indexOfAction = 4;//[dataModel GetNearestAction];
     
     NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
     if(!nameAction)
@@ -67,6 +67,8 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
     
     //Show Alert of End Action
+   // NSString * alert = [dataModel placeDateRowAtIndex:indexOfAction];
+    
     NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
     if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
         self.vwContainerForMessageAboutFinish.hidden = YES;
