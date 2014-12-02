@@ -10,8 +10,6 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "AppDelegate.h"
-#import "GTMNSString+HTML.h"
-#import "NSString+HTML.h"
 
 static NSArray  * SCOPE = nil;
 

@@ -12,6 +12,8 @@
 #import "DataModel.h"
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "GTMNSString+HTML.h"
+#import "NSString+HTML.h"
 
 @interface UIImage (Helpers)
 
