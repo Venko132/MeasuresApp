@@ -113,6 +113,8 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [[collectionView cellForItemAtIndexPath:indexPath] setSelected:NO];
     
     DetailArticleViewController *articleController = [[DetailArticleViewController alloc] initWithNibName:NSStringFromClass([DetailArticleViewController class]) bundle:nil];
+    if(numberCategoriesSection > 1)
+        [dataModel setParticipantsFilter:@[dataModel.categorys[indexPath.section]]];
     NSInteger rowIndex = indexPath.row;
     
     articleController.titleOfNavBar = constViewTitleParticipants;
@@ -195,6 +197,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     
     if ( row == _presentedRow )
     {
+        [self animationOfListCategories:nil];
         return;
     }
     
@@ -209,6 +212,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [dataModel setParticipantsFilter:@[dataModel.categorys[_presentedRow]]];
     [self.cltListOfPartisipants reloadData];
     [self.btnCategory setTitle:(NSString*)dataModel.categorys[indexPath.row] forState:UIControlStateNormal];
+    [self animationOfListCategories:nil];
 }
 
 - (IBAction)animationOfListCategories:(id)sender {
