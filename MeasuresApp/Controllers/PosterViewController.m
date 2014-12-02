@@ -50,7 +50,7 @@ static float const fontSizeTitleOfAction = 24.0f;
 - (void)initProperties
 {
     dataModel = [DataModel Instance];
-    indexOfAction = 4;//[dataModel GetNearestAction];
+    indexOfAction = [dataModel GetNearestAction];
     
     NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
     if(!nameAction)
@@ -136,7 +136,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDateOfAction]];
     
     self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
-    self.lblPlaceOfAction.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];;//[[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
+    self.lblPlaceOfAction.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];//[[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
     //self.lblDateOfAction.minimumScaleFactor = 0.5;
     //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
 }
