@@ -73,6 +73,7 @@
 		84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C7C1A1CE08C0093BDE9 /* ParentForFrontViewController.m */; };
 		84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C841A1DE9E90093BDE9 /* HelperClass.m */; };
 		84E210691A2DB75000886661 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E210681A2DB75000886661 /* GTMNSString+HTML.m */; };
+		84E2106C1A2DB8B000886661 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E2106B1A2DB8B000886661 /* NSString+HTML.m */; };
 		84E7AB9E1A26259800EB5E9A /* TW.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E7AB9C1A26259800EB5E9A /* TW.png */; };
 		84E7AB9F1A26259800EB5E9A /* VK.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E7AB9D1A26259800EB5E9A /* VK.png */; };
 		84E7ABA31A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7ABA11A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.m */; };
@@ -184,6 +185,8 @@
 		84C90C841A1DE9E90093BDE9 /* HelperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperClass.m; sourceTree = "<group>"; };
 		84E210671A2DB75000886661 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		84E210681A2DB75000886661 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		84E2106A1A2DB8B000886661 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		84E2106B1A2DB8B000886661 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		84E7AB9C1A26259800EB5E9A /* TW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TW.png; sourceTree = "<group>"; };
 		84E7AB9D1A26259800EB5E9A /* VK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VK.png; sourceTree = "<group>"; };
 		84E7ABA01A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantsFooterCollectionReusableView.h; sourceTree = "<group>"; };
@@ -535,6 +538,8 @@
 		84C90C821A1DE9980093BDE9 /* OtherClasses */ = {
 			isa = PBXGroup;
 			children = (
+				84E2106A1A2DB8B000886661 /* NSString+HTML.h */,
+				84E2106B1A2DB8B000886661 /* NSString+HTML.m */,
 				84E210671A2DB75000886661 /* GTMNSString+HTML.h */,
 				84E210681A2DB75000886661 /* GTMNSString+HTML.m */,
 				84C90C831A1DE9E90093BDE9 /* HelperClass.h */,
@@ -770,6 +775,7 @@
 				84C90C7D1A1CE08C0093BDE9 /* ParentForFrontViewController.m in Sources */,
 				849E268C1A1BAC9E00C56951 /* main.m in Sources */,
 				84677E431A2855A30021D442 /* ArticleTableViewCell.m in Sources */,
+				84E2106C1A2DB8B000886661 /* NSString+HTML.m in Sources */,
 				843F9E311A1E4499005FA987 /* NewsTableViewCell.m in Sources */,
 				84C90C851A1DE9E90093BDE9 /* HelperClass.m in Sources */,
 				84AA4F931A1CD5FB00601CCD /* SponsorsViewController.m in Sources */,

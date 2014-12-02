@@ -11,6 +11,7 @@
 #import <Social/Social.h>
 #import "AppDelegate.h"
 #import "GTMNSString+HTML.h"
+#import "NSString+HTML.h"
 
 static NSArray  * SCOPE = nil;
 
@@ -49,7 +50,7 @@ static float const fontSizeTitleOfAction = 24.0f;
 - (void)initProperties
 {
     dataModel = [DataModel Instance];
-    indexOfAction = [dataModel GetNearestAction];
+    indexOfAction = 4;//[dataModel GetNearestAction];
     
     NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
     if(!nameAction)
@@ -78,11 +79,21 @@ static float const fontSizeTitleOfAction = 24.0f;
     
     self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
     
-    self.lblInfo.text = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
+    self.lblInfo.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];//[dataModel placeSubtitleAtIndex:indexOfAction];
+    //Test
+    //[self testDecodeHtml];
     
     [self initLblDateAndPlace];
 }
-
+/*
+- (void)testDecodeHtml{
+    NSString * s = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByEscapingForAsciiHTML];
+    NSString * s1 = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
+    NSString * s2 = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByEscapingForHTML];
+   // NSString * as = [[[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags] stringByRemovingNewLinesAndWhitespace] stringByDecodingHTMLEntities];
+    NSString * as = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
+}
+*/
 #pragma mark - Other methods
 
 - (void)initLblTitleOfAction{
@@ -125,7 +136,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDateOfAction]];
     
     self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
-    self.lblPlaceOfAction.text = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
+    self.lblPlaceOfAction.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];;//[[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
     //self.lblDateOfAction.minimumScaleFactor = 0.5;
     //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
 }
