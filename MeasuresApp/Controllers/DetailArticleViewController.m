@@ -32,6 +32,7 @@ static float const fontSizeInfoTitle = 18.0f;
 
 static NSString * const strHtmlTagH1 = @"<h1>";
 static NSString * const strHtmlTagSpan = @"</span>";
+static NSString * const strHtmlTagP = @"<p>";
 
 @implementation DetailArticleViewController
 
@@ -100,6 +101,7 @@ static NSString * const strHtmlTagSpan = @"</span>";
     if(self.articleAvatar)
         self.imgAvatar.image = self.articleAvatar;
     
+    self.articleSubtitle = [[self.articleSubtitle stringByStrippingTags]  stringByDecodingHTMLEntities];
     self.lblTitle.attributedText = [self setTitle:self.articleTitle
                                           andInfo:self.articleSubtitle];
     self.posYLblTitleStartMax = CGRectGetMaxY(self.lblTitle.frame);
@@ -197,8 +199,9 @@ static NSString * const strHtmlTagSpan = @"</span>";
     if(self.articleInfo){
         NSRange rangeH1 = [self.articleInfo rangeOfString:strHtmlTagH1 options:(NSCaseInsensitiveSearch)];
         NSRange rangeSpan = [self.articleInfo rangeOfString:strHtmlTagSpan options:(NSCaseInsensitiveSearch)];
+        NSRange rangeP = [self.articleInfo rangeOfString:strHtmlTagP options:(NSCaseInsensitiveSearch)];
         BOOL isHaveHtmlContent = NO;
-        if((rangeH1.location != NSNotFound) || (rangeSpan.location != NSNotFound)){
+        if((rangeH1.location != NSNotFound) || (rangeSpan.location != NSNotFound)|| (rangeP.location != NSNotFound)){
             isHaveHtmlContent = YES;
             
             [self.wbVwInfo loadHTMLString:self.articleInfo baseURL:nil];
