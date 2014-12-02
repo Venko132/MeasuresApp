@@ -67,17 +67,18 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
     
     //Show Alert of End Action
-   // NSString * alert = [dataModel placeDateRowAtIndex:indexOfAction];
+    NSString * alert = [dataModel placeDateTextAtIndex:indexOfAction];
     
-    NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
-    if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
+    //NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
+    //if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
+    if(![alert isEqualToString:constMessageFinish])
         self.vwContainerForMessageAboutFinish.hidden = YES;
     
     [self initLblTitleOfAction];
     
     self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
     
-    self.lblInfo.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];//[dataModel placeSubtitleAtIndex:indexOfAction];
+    self.lblInfo.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
     //Test
     //[self testDecodeHtml];
     
@@ -134,7 +135,8 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDateOfAction]];
     
     self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
-    self.lblPlaceOfAction.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];//[[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
+    self.lblPlaceOfAction.text = [[[dataModel placeDateTextAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
+    //[[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
     //self.lblDateOfAction.minimumScaleFactor = 0.5;
     //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
 }
@@ -153,7 +155,9 @@ static float const fontSizeTitleOfAction = 24.0f;
     [VKSdk initializeWithDelegate:self andAppId:VKApiID];
     if ([VKSdk wakeUpSession])
     {
-        [self startWorkingWithVK];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self startWorkingWithVK];
+        }];
     } else {
         [VKSdk authorize:SCOPE revokeAccess:YES];
     }

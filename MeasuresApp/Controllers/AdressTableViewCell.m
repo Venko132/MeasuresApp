@@ -53,7 +53,7 @@ static float const fontSizeBtnTitle = 10.0f;
 {
     DataModel * dataModel = [DataModel Instance];
     self.lblAdress.text = [dataModel placeNameAtIndex:rowIndex];
-    self.lblDate.text = [dataModel placeSubtitleAtIndex:rowIndex];
+    self.lblDate.text = [dataModel placeDateTextAtIndex:rowIndex];
     self.rowCell = rowIndex;
     [self.delegatePlace setRowIndex:rowIndex];
 }
