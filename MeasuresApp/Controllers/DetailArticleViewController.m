@@ -274,12 +274,12 @@ static NSString * const strHtmlTagP = @"<p>";
 #pragma mark - Share message in social networks
 
 -(IBAction)facebookPost:(id)sender{
-    [HelperClass sheerFacebook:self.articleTitle image:self.articleAvatar forController:self];
+    [[HelperClass sharedHelper] shareFacebook:self.articleTitle image:self.articleAvatar forController:self];
 }
 
 -(IBAction)twitterPost:(id)sender{
     
-    [HelperClass sheerTwitter:self.articleTitle image:self.articleAvatar forController:self];
+    [[HelperClass sharedHelper] shareTwitter:self.articleTitle image:self.articleAvatar forController:self];
 }
 
 /*

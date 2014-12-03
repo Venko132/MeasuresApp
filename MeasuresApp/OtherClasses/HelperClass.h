@@ -49,5 +49,6 @@
 -(void)shareFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
 -(void)shareTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
 
+- (float)selectSizePhone:(float)_sizePhone andSizePad:(float)_sizePad;
 
 @end

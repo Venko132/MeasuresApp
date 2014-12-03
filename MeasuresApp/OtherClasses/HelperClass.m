@@ -89,7 +89,13 @@
 
 + (void)initLblFooter:(UILabel*)lblFooter
 {
-    float fontSize = 9.0f;
+    float fontSizePhone = 9.0f;
+    float fontSizePad = 18.0f;
+    
+    float fontSize = fontSizePhone;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        fontSize = fontSizePad;
+    
     lblFooter.text = constFootterString;
     UIFont * lblFont = [UIFont fontWithName:constFontArial size:fontSize];
     [lblFooter setFont:lblFont];
@@ -178,8 +184,17 @@
     }
 }
 
--(void)shareVkontakte:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
-    
+-(BOOL)detectIsDeviceIPad{
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        return YES;
+    return NO;
+}
+
+- (float)selectSizePhone:(float)_sizePhone andSizePad:(float)_sizePad
+{
+    if([self detectIsDeviceIPad])
+        return _sizePad;
+    else return _sizePhone;
 }
 
 @end

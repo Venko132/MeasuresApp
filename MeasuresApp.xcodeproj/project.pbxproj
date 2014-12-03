@@ -28,6 +28,7 @@
 		843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E4D1A1F9ECD005FA987 /* bannerBig.png */; };
 		8440AE471A2EDDC600CF81B2 /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440AE451A2EDDC600CF81B2 /* FacebookHelper.m */; };
 		8440AE491A2EDE8000CF81B2 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440AE481A2EDE8000CF81B2 /* FacebookSDK.framework */; };
+		8440AE4B1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */; };
 		84677E431A2855A30021D442 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84677E411A2855A30021D442 /* ArticleTableViewCell.m */; };
 		84677E441A2855A30021D442 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84677E421A2855A30021D442 /* ArticleTableViewCell.xib */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
@@ -121,6 +122,7 @@
 		8440AE451A2EDDC600CF81B2 /* FacebookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHelper.m; sourceTree = "<group>"; };
 		8440AE461A2EDDC600CF81B2 /* FacebookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHelper.h; sourceTree = "<group>"; };
 		8440AE481A2EDE8000CF81B2 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = MeasuresApp/FacebookSDK.framework; sourceTree = "<group>"; };
+		8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RearTableViewCell~ipad.xib"; sourceTree = "<group>"; };
 		84677E401A2855A30021D442 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		84677E411A2855A30021D442 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		84677E421A2855A30021D442 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				84C90C741A1CDB0B0093BDE9 /* RearTableViewCell.h */,
 				84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */,
 				84C90C761A1CDB0B0093BDE9 /* RearTableViewCell.xib */,
+				8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */,
 			);
 			name = RearCell;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				84E7AB9F1A26259800EB5E9A /* VK.png in Resources */,
 				84AA4F881A1CD5B400601CCD /* InstagramViewController.xib in Resources */,
 				84BF5A741A1CC56C00EB28C6 /* photo.png in Resources */,
+				8440AE4B1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib in Resources */,
 				84BF5A6E1A1CC56C00EB28C6 /* comments_photo.jpg in Resources */,
 				84BF5A761A1CC56C00EB28C6 /* tag_photo.jpg in Resources */,
 				84028F381A1CD68000A6D297 /* RearViewController.xib in Resources */,
