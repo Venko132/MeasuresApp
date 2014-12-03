@@ -14,13 +14,23 @@
 
 static NSArray  * SCOPE = nil;
 
-static float const fontSizeMessageFirstLine = 24.0f;
-static float const fontSizeMessageSecondLine = 10.0f;
+//Phone
+static float const fontSizeMessageFirstLinePhone = 24.0f;
+static float const fontSizeMessageSecondLinePhone = 10.0f;
 
-static float const fontSizePlaceOfAction = 12.0f;
-static float const fontSizeDateOfAction = 24.0f;
+static float const fontSizePlaceOfActionPhone = 12.0f;
+static float const fontSizeDateOfActionPhone = 24.0f;
 
-static float const fontSizeTitleOfAction = 24.0f;
+static float const fontSizeTitleOfActionPhone = 24.0f;
+
+//Pad
+static float const fontSizeMessageFirstLinePad = 48.0f;
+static float const fontSizeMessageSecondLinePad = 20.0f;
+
+static float const fontSizePlaceOfActionPad = 24.0f;
+static float const fontSizeDateOfActionPad = 48.0f;
+
+static float const fontSizeTitleOfActionPad = 48.0f;
 
 @interface PosterViewController (){
     DataModel * dataModel;
@@ -65,7 +75,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     [self initAlertMessageAbouteFinishAction];
     [HelperClass initLblFooter:self.lblFooter];
     
-    [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
+    [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:12.0f andSizePad:24.0f]]];
     
     //Show Alert of End Action
     NSString * alert = [dataModel placeDateTextAtIndex:indexOfAction];
@@ -73,7 +83,7 @@ static float const fontSizeTitleOfAction = 24.0f;
     //NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
     //if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
     if(![alert isEqualToString:constMessageFinish])
-        self.vwContainerForMessageAboutFinish.hidden = YES;
+        self.vwContainerForMessageAboutFinish.hidden = NO;
     
     [self initLblTitleOfAction];
     
@@ -97,7 +107,7 @@ static float const fontSizeTitleOfAction = 24.0f;
 #pragma mark - Other methods
 
 - (void)initLblTitleOfAction{
-    [self.lblTitleOfAction setFont:[UIFont fontWithName:constFontFregatBold size:fontSizeTitleOfAction]];
+    [self.lblTitleOfAction setFont:[UIFont fontWithName:constFontFregatBold size:[[HelperClass sharedHelper] selectSizePhone:fontSizeTitleOfActionPhone andSizePad:fontSizeTitleOfActionPad]]];
     self.lblTitleOfAction.textColor = [UIColor whiteColor];
     self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
     self.lblTitleOfAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ribbonBg.png"]];
@@ -117,8 +127,8 @@ static float const fontSizeTitleOfAction = 24.0f;
     NSString * firstLine = @"Это мероприятие уже закончилось";
     NSString * secondLine = @"  но мы обязательно придумаем что-нибудь еще";
     //Font
-    UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:fontSizeMessageFirstLine];
-    UIFont * fontInfo = [UIFont fontWithName:constFontNautilusPompilius size:fontSizeMessageSecondLine];
+    UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:[[HelperClass sharedHelper] selectSizePhone:fontSizeMessageFirstLinePhone andSizePad:fontSizeMessageFirstLinePad]];
+    UIFont * fontInfo = [UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizeMessageSecondLinePhone andSizePad:fontSizeMessageSecondLinePad]];
     
     [self.lblAlertFinishFirstLine setFont:fontTitle];
     [self.lblAlertSecondLine setFont:fontInfo];
@@ -132,8 +142,8 @@ static float const fontSizeTitleOfAction = 24.0f;
 
 - (void)initLblDateAndPlace
 {
-    [self.lblPlaceOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizePlaceOfAction]];
-    [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDateOfAction]];
+    [self.lblPlaceOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizePlaceOfActionPhone andSizePad:fontSizePlaceOfActionPad]]];
+    [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizeDateOfActionPhone andSizePad:fontSizeDateOfActionPad]]];
     
     self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
     self.lblPlaceOfAction.text = [[[dataModel placeDateTextAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
@@ -166,8 +176,6 @@ static float const fontSizeTitleOfAction = 24.0f;
 
 - (void)startWorkingWithVK
 {
-    //AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
-    
     VKShareDialogController * shareDialog = [VKShareDialogController new];
     shareDialog.text = [dataModel placeNameAtIndex:indexOfAction];
     if([dataModel placeImageAtIndex:indexOfAction])

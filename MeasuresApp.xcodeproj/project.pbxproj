@@ -45,7 +45,7 @@
 		849E26A91A1BAC9E00C56951 /* MeasuresAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E26A81A1BAC9E00C56951 /* MeasuresAppTests.m */; };
 		84A195F01A1CCF2200066790 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A195EE1A1CCF2200066790 /* SWRevealViewController.m */; };
 		84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F731A1CD42500601CCD /* PosterViewController.m */; };
-		84AA4F761A1CD42500601CCD /* PosterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F741A1CD42500601CCD /* PosterViewController.xib */; };
+		84AA4F761A1CD42500601CCD /* PosterViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F741A1CD42500601CCD /* PosterViewController~iphone.xib */; };
 		84AA4F7A1A1CD4AB00601CCD /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */; };
 		84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */; };
 		84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F7D1A1CD4BF00601CCD /* NewsViewController.m */; };
@@ -151,7 +151,7 @@
 		84A195EE1A1CCF2200066790 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		84AA4F721A1CD42500601CCD /* PosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterViewController.h; sourceTree = "<group>"; };
 		84AA4F731A1CD42500601CCD /* PosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterViewController.m; sourceTree = "<group>"; };
-		84AA4F741A1CD42500601CCD /* PosterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PosterViewController.xib; sourceTree = "<group>"; };
+		84AA4F741A1CD42500601CCD /* PosterViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PosterViewController~iphone.xib"; sourceTree = "<group>"; };
 		84AA4F771A1CD4AB00601CCD /* ParticipantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantsViewController.h; sourceTree = "<group>"; };
 		84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantsViewController.m; sourceTree = "<group>"; };
 		84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsViewController.xib; sourceTree = "<group>"; };
@@ -410,7 +410,7 @@
 			children = (
 				84AA4F721A1CD42500601CCD /* PosterViewController.h */,
 				84AA4F731A1CD42500601CCD /* PosterViewController.m */,
-				84AA4F741A1CD42500601CCD /* PosterViewController.xib */,
+				84AA4F741A1CD42500601CCD /* PosterViewController~iphone.xib */,
 				8440AE4C1A2EE8F000CF81B2 /* PosterViewController~ipad.xib */,
 			);
 			name = Poster;
@@ -697,7 +697,7 @@
 				84BF5A731A1CC56C00EB28C6 /* news.png in Resources */,
 				84E7ABA41A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib in Resources */,
 				843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */,
-				84AA4F761A1CD42500601CCD /* PosterViewController.xib in Resources */,
+				84AA4F761A1CD42500601CCD /* PosterViewController~iphone.xib in Resources */,
 				84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */,
 				843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */,
 				84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */,
