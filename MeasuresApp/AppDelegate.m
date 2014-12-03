@@ -13,6 +13,7 @@
 #import <VKSdk.h>
 #import "ConstantsClass.h"
 #import "DataModel.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -30,8 +31,12 @@
     
     // NavigationBar instance
     [self initNavigationBar];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    //Facebook
+    FBSession * session = [[FBSession alloc] init];
+    // Set the active session
+    [FBSession setActiveSession:session];
     
     // SiderBar insatance
     PosterViewController *frontViewController = [[PosterViewController alloc] init];
@@ -73,6 +78,7 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     [VKSdk processOpenURL:url fromApplication:sourceApplication];
+    [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     
     return YES;
 }
@@ -93,6 +99,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // Logs 'install' and 'app activate' App Events.
+    [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

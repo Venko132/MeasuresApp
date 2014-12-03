@@ -10,6 +10,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "AppDelegate.h"
+#import "FacebookHelper.h"
 
 static NSArray  * SCOPE = nil;
 
@@ -207,12 +208,12 @@ static float const fontSizeTitleOfAction = 24.0f;
 #pragma mark - Share message in social networks
 
 -(IBAction)facebookPost:(id)sender{
-    [HelperClass sheerFacebook:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
+    [[HelperClass sharedHelper] shareFacebook:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
 }
 
 -(IBAction)twitterPost:(id)sender{
 
-    [HelperClass sheerTwitter:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
+    [[HelperClass sharedHelper] shareTwitter:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
 }
 
 /*

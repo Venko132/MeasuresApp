@@ -46,8 +46,8 @@
 
 +(NSString*)convertDate:(NSDate*)_date toStringFormat:(NSString*)_stringFormat;
 
-+(void)sheerFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
-+(void)sheerTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
+-(void)shareFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
+-(void)shareTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
 
 
 @end

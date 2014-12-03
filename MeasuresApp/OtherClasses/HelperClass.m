@@ -7,6 +7,7 @@
 //
 
 #import "HelperClass.h"
+#import "FacebookHelper.h"
 
 #pragma mark - UIImage (Helpers)
 
@@ -121,7 +122,7 @@
     return result;
 }
 
-+(void)sheerFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+-(void)shareFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
     SLComposeViewController *controller = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeFacebook];
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
@@ -146,11 +147,12 @@
         //[controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
         [_controllerCall presentViewController:controller animated:YES completion:nil];
     } else {
-        [HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
+        //[HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
+        [[FacebookHelper sharedHelper] shareToFB:_textSheer andImage:_imgSheer];
     }
 }
 
-+(void)sheerTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+-(void)shareTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
@@ -176,7 +178,7 @@
     }
 }
 
-+(void)sheerVkontakte:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+-(void)shareVkontakte:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
     
 }
 

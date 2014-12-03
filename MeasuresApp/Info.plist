@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<key>FacebookAppID</key>
+	<string>401556666673592</string>
+	<key>FacebookDisplayName</key>
+	<string>Don&apos;t take fake!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -27,12 +29,32 @@
 			<string>vk4642356</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb401556666673592</string>
 				<string>vk4642356</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.2</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>81b5a477bbb6731977fd4f94ee6b549ccdcdfedc</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>t3Q6FU824XBZ2bTug3eloEN2r</string>
+					<key>consumerSecret</key>
+					<string>FIaxEBxIDiuRTARcWCvxtuONd0nisb8HJ2mFhhYZDQ0W0i1vjh</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
@@ -55,5 +77,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
