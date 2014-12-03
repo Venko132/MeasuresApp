@@ -42,18 +42,6 @@
     DataModel * dataModel;
 }
 
-@property (weak, nonatomic) IBOutlet UICollectionView *cltListOfPartisipants;
-@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
-@property (weak, nonatomic) IBOutlet UITableView *tblListOfCategories;
-@property (weak, nonatomic) IBOutlet UIView *vwContainerOfAnimation;
-@property (weak, nonatomic) IBOutlet UIButton *btnCategory;
-@property (weak, nonatomic) IBOutlet UIView *vwContainerFooter;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHFooter;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHContainerTbl;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constHContainerBtnCategory;
-
-
 @end
 
 static NSString * const cltMemberCellId = @"MemberCell";
@@ -75,13 +63,15 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 
 -(void) viewDidLayoutSubviews{
 
-    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
     //[self.view layoutIfNeeded];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.constHContainerBtnCategory.constant = [[HelperClass sharedHelper] selectSizePhone:40.0f andSizePad:80.0f];
+    self.constHContainerBtnCategory.constant = [[HelperClass sharedHelper] selectSizePhone:40.0f andSizePad:60.0f];
+    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
+    
+    [self.view layoutIfNeeded];
 }
 
 - (void)initProperties
@@ -118,6 +108,11 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     
     [self.navigationController.navigationBar setTranslucent:NO];
     
+    if([[HelperClass sharedHelper] detectIsDeviceIPad])
+    {
+        UIFont * fontBtnCategory = self.btnCategory.titleLabel.font;
+        [self.btnCategory.titleLabel setFont:[UIFont fontWithName:fontBtnCategory.fontName size:20.0f]];
+    }
     [self.btnCategory swapImageText];
 }
 
@@ -233,10 +228,15 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [self animationOfListCategories:nil];
 }
 
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
+}
+
 
 - (IBAction)animationOfListCategories:(id)sender {
-    float heigthOfTable = 100.0f;
-    float heigthOfCell = 25.0f;
+    float heigthOfTable = [[HelperClass sharedHelper] selectSizePhone:100.0f andSizePad:200.0f];
+    float heigthOfCell = [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
     
     if((dataModel.categorys.count * heigthOfCell) < heigthOfTable)
         heigthOfTable = dataModel.categorys.count * heigthOfCell;

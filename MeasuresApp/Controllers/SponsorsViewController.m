@@ -16,8 +16,6 @@
     DataModel * dataModel;
 }
 
-@property (weak, nonatomic) IBOutlet UITableView *tblListOfSponsors;
-
 @end
 
 @implementation SponsorsViewController
@@ -34,6 +32,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
+    [self.view layoutIfNeeded];
 }
 
 - (void)initProperties

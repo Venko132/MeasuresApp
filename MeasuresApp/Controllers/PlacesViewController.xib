@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlacesViewController">
             <connections>
+                <outlet property="constrHFooter" destination="LTg-XK-zZ5" id="sfG-mN-hJJ"/>
                 <outlet property="lblFooter" destination="gw6-xV-IfS" id="0Hf-dZ-UXf"/>
                 <outlet property="tblListOfAdresses" destination="T9c-Dg-F98" id="87T-hb-sOc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

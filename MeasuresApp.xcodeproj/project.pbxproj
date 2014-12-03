@@ -31,6 +31,8 @@
 		8440AE4B1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */; };
 		8440AE4D1A2EE8F000CF81B2 /* PosterViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE4C1A2EE8F000CF81B2 /* PosterViewController~ipad.xib */; };
 		8440AE531A2F119800CF81B2 /* ParticipantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE521A2F119800CF81B2 /* ParticipantsViewController.xib */; };
+		8440AE561A2F31F400CF81B2 /* CategoryTableViewCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE541A2F31F400CF81B2 /* CategoryTableViewCell~ipad.xib */; };
+		8440AE571A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */; };
 		84677E431A2855A30021D442 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84677E411A2855A30021D442 /* ArticleTableViewCell.m */; };
 		84677E441A2855A30021D442 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84677E421A2855A30021D442 /* ArticleTableViewCell.xib */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
@@ -69,7 +71,6 @@
 		84BF5A741A1CC56C00EB28C6 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A641A1CC56C00EB28C6 /* photo.png */; };
 		84BF5A761A1CC56C00EB28C6 /* tag_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */; };
 		84C1BA061A247D0500E087B0 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */; };
-		84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */; };
 		84C1BA0C1A248E7A00E087B0 /* MemberCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1BA0A1A248E7A00E087B0 /* MemberCollectionViewCell.m */; };
 		84C1BA0D1A248E7A00E087B0 /* MemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1BA0B1A248E7A00E087B0 /* MemberCollectionViewCell.xib */; };
 		84C90C771A1CDB0B0093BDE9 /* RearTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C90C751A1CDB0B0093BDE9 /* RearTableViewCell.m */; };
@@ -126,6 +127,8 @@
 		8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RearTableViewCell~ipad.xib"; sourceTree = "<group>"; };
 		8440AE4C1A2EE8F000CF81B2 /* PosterViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PosterViewController~ipad.xib"; sourceTree = "<group>"; };
 		8440AE521A2F119800CF81B2 /* ParticipantsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsViewController.xib; sourceTree = "<group>"; };
+		8440AE541A2F31F400CF81B2 /* CategoryTableViewCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CategoryTableViewCell~ipad.xib"; sourceTree = "<group>"; };
+		8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CategoryTableViewCell~iphone.xib"; sourceTree = "<group>"; };
 		84677E401A2855A30021D442 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		84677E411A2855A30021D442 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		84677E421A2855A30021D442 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -181,7 +184,6 @@
 		84BF5A661A1CC56C00EB28C6 /* tag_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tag_photo.jpg; sourceTree = "<group>"; };
 		84C1BA031A247D0500E087B0 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
 		84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
-		84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		84C1BA091A248E7A00E087B0 /* MemberCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberCollectionViewCell.h; sourceTree = "<group>"; };
 		84C1BA0A1A248E7A00E087B0 /* MemberCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberCollectionViewCell.m; sourceTree = "<group>"; };
 		84C1BA0B1A248E7A00E087B0 /* MemberCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -495,9 +497,10 @@
 		84C1BA081A247D0900E087B0 /* CategoryCell */ = {
 			isa = PBXGroup;
 			children = (
+				8440AE541A2F31F400CF81B2 /* CategoryTableViewCell~ipad.xib */,
+				8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */,
 				84C1BA031A247D0500E087B0 /* CategoryTableViewCell.h */,
 				84C1BA041A247D0500E087B0 /* CategoryTableViewCell.m */,
-				84C1BA051A247D0500E087B0 /* CategoryTableViewCell.xib */,
 			);
 			name = CategoryCell;
 			sourceTree = "<group>";
@@ -679,7 +682,6 @@
 			files = (
 				84677E441A2855A30021D442 /* ArticleTableViewCell.xib in Resources */,
 				843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */,
-				84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */,
 				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
 				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
 				843F9E4B1A1F770D005FA987 /* Fregat_regular.otf in Resources */,
@@ -716,6 +718,7 @@
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
 				843F9E371A1E5179005FA987 /* DetailArticleViewController.xib in Resources */,
 				843F9E491A1F770D005FA987 /* Fregat_bold_italic.otf in Resources */,
+				8440AE571A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib in Resources */,
 				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,
 				843F9E321A1E4499005FA987 /* NewsTableViewCell.xib in Resources */,
 				8475FEE21A1DF3850028ED17 /* SponsorTableViewCell.xib in Resources */,
@@ -724,6 +727,7 @@
 				8478FCD61A2094700022E421 /* AdressTableViewCell.xib in Resources */,
 				84AA4F801A1CD4EC00601CCD /* NewsViewController.xib in Resources */,
 				843F9E481A1F770D005FA987 /* Fregat_bold.otf in Resources */,
+				8440AE561A2F31F400CF81B2 /* CategoryTableViewCell~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

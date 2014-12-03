@@ -16,8 +16,6 @@
     DataModel * dataModel;
     NSInteger _presentedRow;
 }
-@property (weak, nonatomic) IBOutlet UITableView *tblListOfAdresses;
-@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
 
 @end
 
@@ -36,6 +34,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
+    [self.view layoutIfNeeded];
 }
 
 - (void)initProperties

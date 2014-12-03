@@ -11,6 +11,9 @@
 
 @interface NewsViewController : ParentForFrontViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfNews;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHFooter;
 
 @end

@@ -12,4 +12,8 @@
 
 @interface PlacesViewController : ParentForFrontViewController<UITableViewDataSource, UITableViewDelegate, ProtocolPlace, UIActionSheetDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfAdresses;
+@property (weak, nonatomic) IBOutlet UILabel *lblFooter;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHFooter;
+
 @end

@@ -16,13 +16,9 @@
     DataModel * dataModel;
 }
 
-@property (weak, nonatomic) IBOutlet UITableView *tblListOfNews;
-@property (strong, nonatomic) UINavigationController * navControllerForNews;
-
 @end
 
 @implementation NewsViewController
-@synthesize navControllerForNews;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +35,9 @@
 {
     [super viewDidAppear:animated];
     [self.tblListOfNews reloadData];
+    
+    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
+    [self.view layoutIfNeeded];
 }
 
 - (void)initProperties

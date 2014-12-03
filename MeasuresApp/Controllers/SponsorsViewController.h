@@ -12,5 +12,7 @@
 @interface SponsorsViewController : ParentForFrontViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *lblFooter;
+@property (weak, nonatomic) IBOutlet UITableView *tblListOfSponsors;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHFooter;
 
 @end
