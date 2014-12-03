@@ -230,6 +230,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     {
         heigthAnimation = heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
+        [self.tblListOfCategories reloadData];
         [UIView animateWithDuration:0.1f animations:^{
             //Container
             CGRect newRect = self.vwContainerOfAnimation.frame;

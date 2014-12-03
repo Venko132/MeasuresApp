@@ -83,7 +83,7 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     //NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
     //if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
     if(![alert isEqualToString:constMessageFinish])
-        self.vwContainerForMessageAboutFinish.hidden = NO;
+        self.vwContainerForMessageAboutFinish.hidden = YES;
     
     [self initLblTitleOfAction];
     
