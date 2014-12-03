@@ -49,6 +49,7 @@
 -(void)shareFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
 -(void)shareTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
 
+- (BOOL)detectIsDeviceIPad;
 - (float)selectSizePhone:(float)_sizePhone andSizePad:(float)_sizePad;
 
 @end

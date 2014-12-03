@@ -47,6 +47,11 @@
 @property (weak, nonatomic) IBOutlet UITableView *tblListOfCategories;
 @property (weak, nonatomic) IBOutlet UIView *vwContainerOfAnimation;
 @property (weak, nonatomic) IBOutlet UIButton *btnCategory;
+@property (weak, nonatomic) IBOutlet UIView *vwContainerFooter;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHFooter;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHContainerTbl;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constHContainerBtnCategory;
 
 
 @end
@@ -59,15 +64,24 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleParticipants
-                                                        andWith:CGRectGetWidth(self.view.bounds)
-                                                       fontSize:12.0f];
+
     [self initProperties];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewDidLayoutSubviews{
+
+    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
+    //[self.view layoutIfNeeded];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.constHContainerBtnCategory.constant = [[HelperClass sharedHelper] selectSizePhone:40.0f andSizePad:80.0f];
 }
 
 - (void)initProperties
@@ -77,6 +91,10 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     
     dataModel = [DataModel Instance];
     //[self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cltMemberCellId];
+    self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleParticipants
+                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                       fontSize:12.0f];
+    
     UINib *cellNib = [UINib nibWithNibName:@"MemberCollectionViewCell" bundle:nil];
     [self.cltListOfPartisipants registerNib:cellNib forCellWithReuseIdentifier:cltMemberCellId];
     
@@ -215,6 +233,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [self animationOfListCategories:nil];
 }
 
+
 - (IBAction)animationOfListCategories:(id)sender {
     float heigthOfTable = 100.0f;
     float heigthOfCell = 25.0f;
@@ -228,9 +247,10 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     float heigthAnimation;
     if(!isCategoriesOpen)
     {
+        self.tblListOfCategories.hidden = YES;
+        self.tblListOfCategories.hidden = NO;
         heigthAnimation = heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
-        [self.tblListOfCategories reloadData];
         [UIView animateWithDuration:0.1f animations:^{
             //Container
             CGRect newRect = self.vwContainerOfAnimation.frame;
@@ -245,6 +265,9 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             
         } completion:^(BOOL finished) {
             isCategoriesOpen = YES;
+            
+            self.constrHContainerTbl.constant += heigthAnimation;
+            //[self.view updateConstraintsIfNeeded];
             
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowUp] forState:UIControlStateNormal];
         }];
@@ -266,7 +289,8 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             
         } completion:^(BOOL finished) {
             isCategoriesOpen = NO;
-            
+            self.constrHContainerTbl.constant -= heigthOfTable;
+            //[self.view updateConstraintsIfNeeded];
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowDown] forState:UIControlStateNormal];
         }];
     }

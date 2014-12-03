@@ -30,6 +30,7 @@
 		8440AE491A2EDE8000CF81B2 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8440AE481A2EDE8000CF81B2 /* FacebookSDK.framework */; };
 		8440AE4B1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */; };
 		8440AE4D1A2EE8F000CF81B2 /* PosterViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE4C1A2EE8F000CF81B2 /* PosterViewController~ipad.xib */; };
+		8440AE531A2F119800CF81B2 /* ParticipantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE521A2F119800CF81B2 /* ParticipantsViewController.xib */; };
 		84677E431A2855A30021D442 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84677E411A2855A30021D442 /* ArticleTableViewCell.m */; };
 		84677E441A2855A30021D442 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84677E421A2855A30021D442 /* ArticleTableViewCell.xib */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
@@ -47,7 +48,6 @@
 		84AA4F751A1CD42500601CCD /* PosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F731A1CD42500601CCD /* PosterViewController.m */; };
 		84AA4F761A1CD42500601CCD /* PosterViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F741A1CD42500601CCD /* PosterViewController~iphone.xib */; };
 		84AA4F7A1A1CD4AB00601CCD /* ParticipantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */; };
-		84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */; };
 		84AA4F7E1A1CD4BF00601CCD /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F7D1A1CD4BF00601CCD /* NewsViewController.m */; };
 		84AA4F801A1CD4EC00601CCD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F7F1A1CD4EC00601CCD /* NewsViewController.xib */; };
 		84AA4F871A1CD5B400601CCD /* InstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AA4F851A1CD5B400601CCD /* InstagramViewController.m */; };
@@ -125,6 +125,7 @@
 		8440AE481A2EDE8000CF81B2 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = MeasuresApp/FacebookSDK.framework; sourceTree = "<group>"; };
 		8440AE4A1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RearTableViewCell~ipad.xib"; sourceTree = "<group>"; };
 		8440AE4C1A2EE8F000CF81B2 /* PosterViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PosterViewController~ipad.xib"; sourceTree = "<group>"; };
+		8440AE521A2F119800CF81B2 /* ParticipantsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsViewController.xib; sourceTree = "<group>"; };
 		84677E401A2855A30021D442 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		84677E411A2855A30021D442 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		84677E421A2855A30021D442 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -154,7 +155,6 @@
 		84AA4F741A1CD42500601CCD /* PosterViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PosterViewController~iphone.xib"; sourceTree = "<group>"; };
 		84AA4F771A1CD4AB00601CCD /* ParticipantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantsViewController.h; sourceTree = "<group>"; };
 		84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantsViewController.m; sourceTree = "<group>"; };
-		84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsViewController.xib; sourceTree = "<group>"; };
 		84AA4F7C1A1CD4BF00601CCD /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		84AA4F7D1A1CD4BF00601CCD /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		84AA4F7F1A1CD4EC00601CCD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -398,9 +398,9 @@
 		84AA4F821A1CD58800601CCD /* Participants */ = {
 			isa = PBXGroup;
 			children = (
+				8440AE521A2F119800CF81B2 /* ParticipantsViewController.xib */,
 				84AA4F771A1CD4AB00601CCD /* ParticipantsViewController.h */,
 				84AA4F781A1CD4AB00601CCD /* ParticipantsViewController.m */,
-				84AA4F791A1CD4AB00601CCD /* ParticipantsViewController.xib */,
 			);
 			name = Participants;
 			sourceTree = "<group>";
@@ -681,7 +681,6 @@
 				843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */,
 				84C1BA071A247D0500E087B0 /* CategoryTableViewCell.xib in Resources */,
 				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
-				84AA4F7B1A1CD4AB00601CCD /* ParticipantsViewController.xib in Resources */,
 				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
 				843F9E4B1A1F770D005FA987 /* Fregat_regular.otf in Resources */,
 				84E7AB9F1A26259800EB5E9A /* VK.png in Resources */,
@@ -706,6 +705,7 @@
 				843F9E4A1A1F770D005FA987 /* Fregat_italic.otf in Resources */,
 				84BF5A6F1A1CC56C00EB28C6 /* map.png in Resources */,
 				84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */,
+				8440AE531A2F119800CF81B2 /* ParticipantsViewController.xib in Resources */,
 				843F9E3F1A1F6154005FA987 /* banner.png in Resources */,
 				84BF5A6D1A1CC56C00EB28C6 /* comments.png in Resources */,
 				84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */,

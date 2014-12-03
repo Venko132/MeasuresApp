@@ -67,9 +67,11 @@
     lblNavTitle.minimumScaleFactor = 0.5;
     lblNavTitle.adjustsFontSizeToFitWidth=YES;
     lblNavTitle.text = title;
+    lblNavTitle.backgroundColor = [UIColor grayColor];
     
     rectOfView.size.width = _width;
     UIView * vwCustom = [[UIView alloc] initWithFrame:rectOfView];
+    vwCustom.backgroundColor = [UIColor greenColor];
     [vwCustom addSubview:lblNavTitle];
     
     return vwCustom;
