@@ -33,6 +33,9 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="PbC-CO-4JH">
+                        <rect key="frame" x="15" y="66" width="290" height="86"/>
+                    </imageView>
                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQy-ba-FgW">
                         <rect key="frame" x="15" y="160" width="145" height="30"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,13 +52,6 @@
                             <action selector="pressButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ulf-TF-qDe"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separatorLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-ax-cV2">
-                        <rect key="frame" x="15" y="217" width="290" height="3"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="3" id="HZP-Rz-PEq"/>
-                            <constraint firstAttribute="width" constant="290" id="y1A-tb-kdh"/>
-                        </constraints>
-                    </imageView>
                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brO-oY-v5X">
                         <rect key="frame" x="160" y="160" width="145" height="30"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.4941176471" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,26 +67,25 @@
                             <action selector="pressButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KFh-Ty-7H8"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerBig.png" translatesAutoresizingMaskIntoConstraints="NO" id="PbC-CO-4JH">
-                        <rect key="frame" x="15" y="66" width="290" height="86"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separatorLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJV-ax-cV2">
+                        <rect key="frame" x="15" y="217" width="290" height="3"/>
                         <constraints>
-                            <constraint firstAttribute="height" priority="500" constant="86" id="GM5-3U-T5B"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="snQ-jR-WZs"/>
+                            <constraint firstAttribute="height" constant="3" id="HZP-Rz-PEq"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LQy-ba-FgW" firstAttribute="width" secondItem="brO-oY-v5X" secondAttribute="width" id="0gu-G2-j82"/>
                     <constraint firstItem="PbC-CO-4JH" firstAttribute="top" secondItem="f2Z-UF-vcZ" secondAttribute="bottom" constant="8" id="0ok-5e-Aac"/>
+                    <constraint firstAttribute="bottom" secondItem="tJV-ax-cV2" secondAttribute="bottom" constant="4" id="1q3-Pc-sbx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="tHi-8S-d8Y" secondAttribute="trailing" constant="7" id="4LD-EY-GDB"/>
                     <constraint firstItem="LQy-ba-FgW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="4WF-pg-Snf"/>
-                    <constraint firstItem="tJV-ax-cV2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="4fL-aU-eJx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="PbC-CO-4JH" secondAttribute="trailing" constant="7" id="6SO-x5-frP"/>
                     <constraint firstItem="tHi-8S-d8Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="9AZ-K1-21B"/>
+                    <constraint firstAttribute="trailing" secondItem="tJV-ax-cV2" secondAttribute="trailing" constant="15" id="C7F-ee-lDu"/>
                     <constraint firstItem="tJV-ax-cV2" firstAttribute="top" secondItem="LQy-ba-FgW" secondAttribute="bottom" constant="27" id="Gns-TT-zJW"/>
                     <constraint firstItem="f2Z-UF-vcZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="JSz-Cl-CfY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="tJV-ax-cV2" secondAttribute="trailing" constant="7" id="Ksi-Xq-q5A"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="tJV-ax-cV2" secondAttribute="bottom" constant="-4" id="N79-Jx-AcW"/>
+                    <constraint firstItem="tJV-ax-cV2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Nxd-Di-1IY"/>
                     <constraint firstItem="f2Z-UF-vcZ" firstAttribute="top" secondItem="tHi-8S-d8Y" secondAttribute="bottom" constant="-3" id="O7F-IX-B8o"/>
                     <constraint firstItem="tHi-8S-d8Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="bay-9B-phe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="f2Z-UF-vcZ" secondAttribute="trailing" constant="7" id="c56-Gb-Tpc"/>
