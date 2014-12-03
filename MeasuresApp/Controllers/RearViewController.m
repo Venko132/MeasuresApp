@@ -73,7 +73,7 @@
     return listOfEvents.count;
 }
 
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[HelperClass sharedHelper] selectSizePhone:54.0f andSizePad:108.0f];
 }

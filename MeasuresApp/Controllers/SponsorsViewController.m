@@ -95,9 +95,15 @@
     [self.navigationController pushViewController:articleController animated:NO];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [[HelperClass sharedHelper] selectSizePhone:97.0f andSizePad:150.0f];
+}
+
+static float const hFooter = 30.0f;
+
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIImageView * imgBanner = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), 30.0f)];
+    UIImageView * imgBanner = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.bounds), hFooter)];
     imgBanner.image = [UIImage imageNamed:constImageBanner];
     return imgBanner;
 }
