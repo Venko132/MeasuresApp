@@ -123,14 +123,31 @@
 +(NSString*)convertDate:(NSDate*)_date toStringFormat:(NSString*)_stringFormat{
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_UA"];
-    [formatter setLocale: locale];;
+    [formatter setLocale: locale];
     [formatter setDateFormat:_stringFormat];
     
     NSString *result = [formatter stringFromDate:_date];
     return result;
 }
 
--(void)shareFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+#pragma mark - Share information
+
+#pragma mark - FB share dialog
+
+-(void)shareFacebook:(NSString*)_textSheer
+     andDescrioption:(NSString*)_description
+               image:(UIImage*)_imgSheer
+       forController:(UIViewController*)_controllerCall
+           andImgUrl:(NSString*)_urlImg
+             andLink:(NSString*)_link
+{
+    
+    //URL page
+    NSURL * urlBase;
+    if(_link)
+        urlBase = [NSURL URLWithString:_link];
+    else urlBase = [NSURL URLWithString:strBaseUrl];
+    
     SLComposeViewController *controller = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeFacebook];
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
@@ -152,21 +169,111 @@
         [controller setInitialText:_textSheer];
         if(_imgSheer)
             [controller addImage:_imgSheer];
-        //[controller addURL:[NSURL URLWithString:@"http://www.test.com"]];
+        
+        [controller addURL:urlBase];
+        
         [_controllerCall presentViewController:controller animated:YES completion:nil];
+        
     } else {
-        //[HelperClass showMessage:@"Facebook integration is not available.  A Facebook account must be set up on your device."  withTitle:@"Error"];
-        [[FacebookHelper sharedHelper] shareToFB:_textSheer andImage:_imgSheer];
+        
+        // Check if the Facebook app is installed and we can present the share dialog
+        FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+        params.link = urlBase;
+        params.name = _textSheer;
+        params.linkDescription = _description;
+        if(_urlImg)
+            params.picture = [NSURL URLWithString:_urlImg];
+        
+        // If the Facebook app is installed and we can present the share dialog
+        if ([FBDialogs canPresentShareDialogWithParams:params]) {
+            [FBDialogs presentShareDialogWithParams:params clientState:nil handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                if(error) {
+                    NSLog(@"Error publishing story: %@", error.description);
+                    [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Something went wrong"
+                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+                } else {
+                    // Success
+                    NSLog(@"result %@", results);
+                }
+            }];
+        } else {
+             // If the Facebook app is NOT installed and we can't present the share dialog
+            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           _textSheer, @"name",
+                                           _description, @"description",
+                                           urlBase, @"link",
+                                           nil];
+            
+            if(_urlImg)
+                [params setObject:[NSURL URLWithString:_urlImg] forKey: @"picture"];
+            
+            // Show the feed dialog
+            [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                                   parameters:params
+                                                      handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                          if (error) {
+                                                              // An error occurred, we need to handle the error
+                                                              // See: https://developers.facebook.com/docs/ios/errors
+                                                              NSLog(@"Error publishing story: %@", error.description);
+                                                          } else {
+                                                              if (result == FBWebDialogResultDialogNotCompleted) {
+                                                                  // User cancelled.
+                                                                  NSLog(@"User cancelled.");
+                                                              } else {
+                                                                  // Handle the publish feed callback
+                                                                  NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                                  
+                                                                  if (![urlParams valueForKey:@"post_id"]) {
+                                                                      // User cancelled.
+                                                                      NSLog(@"User cancelled.");
+                                                                      
+                                                                  } else {
+                                                                      // User clicked the Share button
+                                                                      NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                      NSLog(@"result %@", result);
+                                                                  }
+                                                              }
+                                                          }
+                                                      }];
+        }
     }
 }
 
--(void)shareTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall{
+- (NSDictionary*)parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val =
+        [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        params[kv[0]] = val;
+    }
+    return params;
+}
+
+#pragma mark - TW share dialog
+
+-(void)shareTwitter:(NSString*)_textSheer
+    andDescrioption:(NSString*)_description
+              image:(UIImage*)_imgSheer
+      forController:(UIViewController*)_controllerCall
+          andImgUrl:(NSString*)_urlImg
+            andLink:(NSString*)_link
+{
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:_textSheer];
         if(_imgSheer)
             [tweetSheet addImage:_imgSheer];
+        
+        //URL page
+        NSURL * urlBase;
+        if(_link)
+            urlBase = [NSURL URLWithString:_link];
+        else urlBase = [NSURL URLWithString:strBaseUrl];
+        [tweetSheet addURL:urlBase];
+        
         [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result)
          {
              if (result == SLComposeViewControllerResultCancelled)
@@ -186,6 +293,8 @@
     }
 }
 
+#pragma mark - Detect device
+
 -(BOOL)detectIsDeviceIPad{
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         return YES;
@@ -198,5 +307,9 @@
         return _sizePad;
     else return _sizePhone;
 }
+
+
+
+
 
 @end

@@ -80,7 +80,9 @@
     [VKSdk processOpenURL:url fromApplication:sourceApplication];
     [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     
-    return YES;
+    BOOL returnVaue = ([VKSdk processOpenURL:url fromApplication:sourceApplication] || [FBAppCall handleOpenURL:url sourceApplication:sourceApplication]);
+    
+    return returnVaue;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

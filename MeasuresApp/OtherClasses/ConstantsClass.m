@@ -35,4 +35,6 @@ NSString * const constFootterString = @"(c) 2014 Don't Take Fake Christmas Marke
 
 NSString *const VKApiID  = @"4642356";
 
+NSString* const strBaseUrl = @"http://bitrix.besaba.com";
+
 @end

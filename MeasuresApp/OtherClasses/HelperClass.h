@@ -46,8 +46,19 @@
 
 +(NSString*)convertDate:(NSDate*)_date toStringFormat:(NSString*)_stringFormat;
 
--(void)shareFacebook:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
--(void)shareTwitter:(NSString*)_textSheer image:(UIImage*)_imgSheer forController:(UIViewController*)_controllerCall;
+-(void)shareFacebook:(NSString*)_textSheer
+     andDescrioption:(NSString*)_description
+               image:(UIImage*)_imgSheer
+       forController:(UIViewController*)_controllerCall
+           andImgUrl:(NSString*)_urlImg
+             andLink:(NSString*)_link;
+
+-(void)shareTwitter:(NSString*)_textSheer
+    andDescrioption:(NSString*)_description
+              image:(UIImage*)_imgSheer
+      forController:(UIViewController*)_controllerCall
+          andImgUrl:(NSString*)_urlImg
+            andLink:(NSString*)_link;
 
 - (BOOL)detectIsDeviceIPad;
 - (float)selectSizePhone:(float)_sizePhone andSizePad:(float)_sizePad;

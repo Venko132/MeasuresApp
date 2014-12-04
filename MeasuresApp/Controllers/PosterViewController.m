@@ -90,20 +90,10 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
     
     self.lblInfo.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
-    //Test
-    //[self testDecodeHtml];
-    
+
     [self initLblDateAndPlace];
 }
-/*
-- (void)testDecodeHtml{
-    NSString * s = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByEscapingForAsciiHTML];
-    NSString * s1 = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
-    NSString * s2 = [[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByEscapingForHTML];
-   // NSString * as = [[[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags] stringByRemovingNewLinesAndWhitespace] stringByDecodingHTMLEntities];
-    NSString * as = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
-}
-*/
+
 #pragma mark - Other methods
 
 - (void)initLblTitleOfAction{
@@ -111,15 +101,6 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     self.lblTitleOfAction.textColor = [UIColor whiteColor];
     self.lblTitleOfAction.text = [dataModel placeNameAtIndex:indexOfAction];
     self.lblTitleOfAction.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ribbonBg.png"]];
-    // 2
-   /* NSString * name = [dataModel placeNameAtIndex:indexOfAction];
-    if(name){
-        NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:name];
-        NSRange rangeTitle = [name rangeOfString:name];
-        [attString addAttribute:NSBackgroundColorAttributeName value:[HelperClass appPinkColor] range:rangeTitle];
-        self.lblTitleOfAction.attributedText = attString;
-    }
-    */
 }
 
 - (void)initAlertMessageAbouteFinishAction
@@ -147,9 +128,6 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     
     self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
     self.lblPlaceOfAction.text = [[[dataModel placeDateTextAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
-    //[[dataModel placeSubtitleAtIndex:indexOfAction] gtm_stringByUnescapingFromHTML];
-    //self.lblDateOfAction.minimumScaleFactor = 0.5;
-    //[self.lblDateOfAction setAdjustsFontSizeToFitWidth:YES];
 }
 
 - (void)setCornerRadiusForView:(UIView*)_viewS
@@ -181,7 +159,8 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     if([dataModel placeImageAtIndex:indexOfAction])
         shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[dataModel placeImageAtIndex:indexOfAction]
                                                                andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
-    //shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
+    if([dataModel place:indexOfAction])
+        shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
     [shareDialog presentIn:self];
 }
 

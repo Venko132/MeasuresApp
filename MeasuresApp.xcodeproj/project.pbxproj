@@ -540,8 +540,8 @@
 		84C90C821A1DE9980093BDE9 /* OtherClasses */ = {
 			isa = PBXGroup;
 			children = (
-				8440AE451A2EDDC600CF81B2 /* FacebookHelper.m */,
 				8440AE461A2EDDC600CF81B2 /* FacebookHelper.h */,
+				8440AE451A2EDDC600CF81B2 /* FacebookHelper.m */,
 				84E2106A1A2DB8B000886661 /* NSString+HTML.h */,
 				84E2106B1A2DB8B000886661 /* NSString+HTML.m */,
 				84E210671A2DB75000886661 /* GTMNSString+HTML.h */,
@@ -909,8 +909,8 @@
 			baseConfigurationReference = EC52C47A06BEE6ADFA8D90D1 /* Pods-MeasuresApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Alexander Blagodarenko (FJTUE7ZT4K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alexander Blagodarenko (FJTUE7ZT4K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MeasuresApp",
@@ -919,7 +919,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d6c06bac-3663-4e67-a452-acdcd7bf7cda";
+				PROVISIONING_PROFILE = "5348d1c8-46dd-4591-a74c-313129eb65d9";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -929,8 +929,8 @@
 			baseConfigurationReference = 5E5EE0241ECEC18F453A3491 /* Pods-MeasuresApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Alexander Blagodarenko (FJTUE7ZT4K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alexander Blagodarenko (FJTUE7ZT4K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MeasuresApp",
@@ -939,7 +939,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d6c06bac-3663-4e67-a452-acdcd7bf7cda";
+				PROVISIONING_PROFILE = "5348d1c8-46dd-4591-a74c-313129eb65d9";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

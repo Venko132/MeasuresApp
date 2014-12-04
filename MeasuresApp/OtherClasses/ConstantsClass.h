@@ -33,5 +33,6 @@ extern NSString * const constMessageFinish;//это мероприятие уж�
 
 extern NSString * const constFootterString;
 extern NSString *const VKApiID;
+extern NSString* const strBaseUrl;
 
 @end
