@@ -27,12 +27,15 @@
 - (NSString*) participantsNameAtIndex:(NSInteger)index;
 - (id) participantsLogoAtIndex:(NSInteger) index;
 - (id) participantsDetailsAtIndex:(NSInteger) index;
+- (NSString*) participantsLogoURLAtIndex:(NSInteger) index;
+- (id) participantsLinkAtIndex:(NSInteger) index;
 
 // Sponsors
 -(NSInteger)sponsorsCount;
 -(NSString*)sponsorNameAtIndex:(NSInteger)index;
 -(id)sponsorLogoAtIndex:(NSInteger)index;
 -(id)sponsorDetailsAtIndex:(NSInteger)index;
+- (NSString*) sponsorLogoURLAtIndex:(NSInteger) index;
 
 //Places
 -(NSInteger) placesCount;
@@ -43,6 +46,8 @@
 -(id) placeDetailsURLAtIndex:(NSInteger)index;
 -(NSDate*) placeDateAtIndex:(NSInteger)index;
 -(NSString*) placeDateTextAtIndex:(NSInteger)index;
+- (NSString*) placesImageURLAtIndex:(NSInteger) index;
+-(NSString*) placeLinkAtIndex:(NSInteger)index;
 
 // News
 -(NSInteger) newsCount;

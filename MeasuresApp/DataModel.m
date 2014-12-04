@@ -173,9 +173,19 @@
     return [self imageByURL:[self valueForm:selectedParticipant index:index key:const_LogoURL]];
 }
 
+- (NSString*) participantsLogoURLAtIndex:(NSInteger) index
+{
+    return [self valueForm:selectedParticipant index:index key:const_LogoURL];
+}
+
 - (id) participantsDetailsAtIndex:(NSInteger) index
 {
     return [self valueForm:selectedParticipant index:index key:const_Details];
+}
+
+- (id) participantsLinkAtIndex:(NSInteger) index
+{
+    return [self valueForm:selectedParticipant index:index key:const_Link];
 }
 
 #pragma mark Sponsors
@@ -204,6 +214,11 @@
 -(id)sponsorLogoAtIndex:(NSInteger)index
 {
     return [self imageByURL:[self valueForm:[allData objectForKey:const_Sponsors] index:index key:const_LogoURL]];
+}
+
+- (NSString*) sponsorLogoURLAtIndex:(NSInteger) index
+{
+    return [self valueForm:[allData objectForKey:const_Sponsors] index:index key:const_LogoURL];
 }
 
 -(id)sponsorDetailsAtIndex:(NSInteger)index
@@ -247,6 +262,11 @@
     return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Date_Row];
 }
 
+-(NSString*) placeLinkAtIndex:(NSInteger)index
+{
+    return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Link];
+}
+
 -(NSString*) placeNameAtIndex:(NSInteger)index
 {
     return [self valueForm:[allData objectForKey:const_Places] index:index key:const_Name];
@@ -260,6 +280,11 @@
 -(id) placeImageAtIndex:(NSInteger)index
 {
     return [self imageByURL:[self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL]];
+}
+
+- (NSString*) placesImageURLAtIndex:(NSInteger) index
+{
+    return [self valueForm:[allData objectForKey:const_Places] index:index key:const_LogoURL];
 }
 
 -(MKPointAnnotation*) placeMapPointAtIndex:(NSInteger)index
