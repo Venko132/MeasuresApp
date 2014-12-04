@@ -15,7 +15,6 @@
 		843F9E311A1E4499005FA987 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F9E2F1A1E4499005FA987 /* NewsTableViewCell.m */; };
 		843F9E321A1E4499005FA987 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E301A1E4499005FA987 /* NewsTableViewCell.xib */; };
 		843F9E361A1E5179005FA987 /* DetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F9E341A1E5179005FA987 /* DetailArticleViewController.m */; };
-		843F9E371A1E5179005FA987 /* DetailArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E351A1E5179005FA987 /* DetailArticleViewController.xib */; };
 		843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E391A1F44A3005FA987 /* posterImage.png */; };
 		843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3B1A1F6154005FA987 /* menu@2x.png */; };
 		843F9E3F1A1F6154005FA987 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 843F9E3C1A1F6154005FA987 /* banner.png */; };
@@ -35,6 +34,8 @@
 		8440AE571A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */; };
 		8440AE5D1A2F410500CF81B2 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE5C1A2F410500CF81B2 /* SponsorTableViewCell.xib */; };
 		8440AE631A2F42F400CF81B2 /* AdressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE621A2F42F400CF81B2 /* AdressTableViewCell.xib */; };
+		847576E51A3067E600338C86 /* DetailArticleViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847576E31A3067E600338C86 /* DetailArticleViewController~ipad.xib */; };
+		847576E61A3067E600338C86 /* DetailArticleViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847576E41A3067E600338C86 /* DetailArticleViewController~iphone.xib */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
 		8475FEE71A1E08D60028ED17 /* ConstantsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEE61A1E08D60028ED17 /* ConstantsClass.m */; };
 		8478FCD51A2094700022E421 /* AdressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478FCD31A2094700022E421 /* AdressTableViewCell.m */; };
@@ -108,7 +109,6 @@
 		843F9E301A1E4499005FA987 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		843F9E331A1E5179005FA987 /* DetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailArticleViewController.h; sourceTree = "<group>"; };
 		843F9E341A1E5179005FA987 /* DetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailArticleViewController.m; sourceTree = "<group>"; };
-		843F9E351A1E5179005FA987 /* DetailArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailArticleViewController.xib; sourceTree = "<group>"; };
 		843F9E391A1F44A3005FA987 /* posterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = posterImage.png; sourceTree = "<group>"; };
 		843F9E3B1A1F6154005FA987 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		843F9E3C1A1F6154005FA987 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
@@ -129,6 +129,8 @@
 		8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CategoryTableViewCell~iphone.xib"; sourceTree = "<group>"; };
 		8440AE5C1A2F410500CF81B2 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
 		8440AE621A2F42F400CF81B2 /* AdressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdressTableViewCell.xib; sourceTree = "<group>"; };
+		847576E31A3067E600338C86 /* DetailArticleViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailArticleViewController~ipad.xib"; sourceTree = "<group>"; };
+		847576E41A3067E600338C86 /* DetailArticleViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailArticleViewController~iphone.xib"; sourceTree = "<group>"; };
 		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
 		8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorTableViewCell.m; sourceTree = "<group>"; };
 		8475FEE51A1E08D60028ED17 /* ConstantsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantsClass.h; sourceTree = "<group>"; };
@@ -253,7 +255,8 @@
 			children = (
 				843F9E331A1E5179005FA987 /* DetailArticleViewController.h */,
 				843F9E341A1E5179005FA987 /* DetailArticleViewController.m */,
-				843F9E351A1E5179005FA987 /* DetailArticleViewController.xib */,
+				847576E31A3067E600338C86 /* DetailArticleViewController~ipad.xib */,
+				847576E41A3067E600338C86 /* DetailArticleViewController~iphone.xib */,
 			);
 			name = DetailArticle;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				84BF5A731A1CC56C00EB28C6 /* news.png in Resources */,
 				84E7ABA41A27148200EB5E9A /* ParticipantsFooterCollectionReusableView.xib in Resources */,
 				843F9E3A1A1F44A3005FA987 /* posterImage.png in Resources */,
+				847576E51A3067E600338C86 /* DetailArticleViewController~ipad.xib in Resources */,
 				84AA4F761A1CD42500601CCD /* PosterViewController~iphone.xib in Resources */,
 				84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */,
 				843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */,
@@ -693,6 +697,7 @@
 				84BF5A6F1A1CC56C00EB28C6 /* map.png in Resources */,
 				84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */,
 				8440AE531A2F119800CF81B2 /* ParticipantsViewController.xib in Resources */,
+				847576E61A3067E600338C86 /* DetailArticleViewController~iphone.xib in Resources */,
 				843F9E3F1A1F6154005FA987 /* banner.png in Resources */,
 				84BF5A6D1A1CC56C00EB28C6 /* comments.png in Resources */,
 				84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */,
@@ -701,7 +706,6 @@
 				84BF5A701A1CC56C00EB28C6 /* menu.png in Resources */,
 				843F9E4C1A1F770D005FA987 /* Nautilus.otf in Resources */,
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
-				843F9E371A1E5179005FA987 /* DetailArticleViewController.xib in Resources */,
 				843F9E491A1F770D005FA987 /* Fregat_bold_italic.otf in Resources */,
 				8440AE571A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib in Resources */,
 				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,

@@ -25,10 +25,17 @@ static NSArray  * SCOPE = nil;
 
 @end
 
-static float const fontSizeDate = 12.0f;
-static float const fontSizeInfo = 12.0f;
-static float const fontSizeInfoSubtitle = 10.0f;
-static float const fontSizeInfoTitle = 18.0f;
+//Phone
+static float const fontSizeDatePhone = 12.0f;
+static float const fontSizeInfoPhone = 12.0f;
+static float const fontSizeInfoSubtitlePhone = 10.0f;
+static float const fontSizeInfoTitlePhone = 18.0f;
+
+//Pad
+static float const fontSizeDatePad = 24.0f;
+static float const fontSizeInfoPad = 24.0f;
+static float const fontSizeInfoSubtitlePad = 20.0f;
+static float const fontSizeInfoTitlePad = 36.0f;
 
 static NSString * const strHtmlTagH1 = @"<h1>";
 static NSString * const strHtmlTagSpan = @"</span>";
@@ -85,15 +92,15 @@ static NSString * const strHtmlTagP = @"<p>";
 #pragma mark - TableView delegate
 
 - (void)setInfo{
-    [self.lblDate setFont:[UIFont fontWithName:constFontNautilusPompilius size:fontSizeDate]];
+    [self.lblDate setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizeDatePhone andSizePad:fontSizeDatePad]]];
     self.lblDate.textColor = [HelperClass appGrayColor];
     
     self.lblTitle.textColor = [HelperClass appPink2Color];
-    [self.lblTitle setFont:[UIFont fontWithName:constFontFregatBold size:fontSizeInfoTitle]];
+    [self.lblTitle setFont:[UIFont fontWithName:constFontFregatBold size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoTitlePhone andSizePad:fontSizeInfoTitlePad]]];
     
-    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:fontSizeInfoSubtitle]];
+    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoSubtitlePhone andSizePad:fontSizeInfoSubtitlePad]]];
     
-    [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:12.0f]];
+    [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:12.0f andSizePad:24.0f]]];
 
     // set Info
     self.lblDate.text = [HelperClass convertDate:self.articleDate toStringFormat:@"dd MMMM yyyy"];
@@ -130,8 +137,8 @@ static NSString * const strHtmlTagP = @"<p>";
     NSRange rangeInfo = [allInfo rangeOfString:_infoS options:NSBackwardsSearch];
     
     //Font
-    UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:fontSizeInfoTitle];
-    UIFont * fontInfo = [UIFont fontWithName:constFontArial size:fontSizeInfo];
+    UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoTitlePhone andSizePad:fontSizeInfoTitlePad]];
+    UIFont * fontInfo = [UIFont fontWithName:constFontArial size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoPhone andSizePad:fontSizeInfoPad]];
     //Color
     if(rangeTitle.location != NSNotFound){
         [attString addAttribute:NSForegroundColorAttributeName value:[HelperClass appPink2Color] range:rangeTitle];
