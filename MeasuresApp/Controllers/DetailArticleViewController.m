@@ -246,7 +246,9 @@ static NSString * const strHtmlTagP = @"<p>";
     if(self.articleAvatar)
         shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:self.articleAvatar
                                                            andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
-    //shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
+    if(self.articleLink && (self.articleLink.length > 0))
+        shareDialog.otherAttachmentsStrings = @[self.articleLink];
+    else shareDialog.otherAttachmentsStrings = @[strBaseUrl];
     [shareDialog presentIn:self];
 }
 
@@ -281,12 +283,22 @@ static NSString * const strHtmlTagP = @"<p>";
 #pragma mark - Share message in social networks
 
 -(IBAction)facebookPost:(id)sender{
-    [[HelperClass sharedHelper] shareFacebook:self.articleTitle image:self.articleAvatar forController:self];
+    [[HelperClass sharedHelper] shareFacebook:self.articleTitle
+                              andDescrioption:self.articleSubtitle
+                                        image:self.articleAvatar
+                                forController:self
+                                    andImgUrl:self.articleUrlImage
+                                      andLink:self.articleLink];
 }
 
 -(IBAction)twitterPost:(id)sender{
     
-    [[HelperClass sharedHelper] shareTwitter:self.articleTitle image:self.articleAvatar forController:self];
+    [[HelperClass sharedHelper] shareTwitter:self.articleTitle
+                             andDescrioption:self.articleSubtitle
+                                       image:self.articleAvatar
+                               forController:self
+                                   andImgUrl:self.articleUrlImage
+                                     andLink:self.articleLink];
 }
 
 /*

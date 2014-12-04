@@ -346,6 +346,11 @@
     return [self valueForm:[allData objectForKey:const_News] index:index key:const_Date];
 }
 
+- (NSString*) newsLogoURLAtIndex:(NSInteger) index
+{
+    return [self valueForm:[allData objectForKey:const_News] index:index key:const_LogoURL];
+}
+
 #pragma mark Articles
 
 -(void) addArticleWithID:(NSString*)IDval text:(NSString*) test

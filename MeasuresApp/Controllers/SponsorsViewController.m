@@ -91,6 +91,8 @@
     articleController.articleSubtitle = nil;
     articleController.articleInfo = [[DataModel Instance] sponsorDetailsAtIndex:rowIndex];
     articleController.articleDate = nil;
+    articleController.articleUrlImage = [[DataModel Instance] sponsorLogoURLAtIndex:rowIndex];
+    articleController.articleLink = nil;
     
     [self.navigationController pushViewController:articleController animated:NO];
 }

@@ -116,6 +116,8 @@ static float const constHeigthOfTblCell = 125.0f;
     articleController.articleSubtitle = [dataModel newsSubtitleAtIndex:row];
     articleController.articleInfo = [dataModel newsDetailsAtIndex:row];
     articleController.articleDate = [dataModel newsDateAtIndex:row];
+    articleController.articleLink = nil;
+    articleController.articleUrlImage = [dataModel newsLogoURLAtIndex:row];;
     
     [self.navigationController pushViewController:articleController animated:NO];
 }

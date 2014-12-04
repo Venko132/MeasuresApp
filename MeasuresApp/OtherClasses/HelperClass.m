@@ -144,7 +144,7 @@
     
     //URL page
     NSURL * urlBase;
-    if(_link)
+    if(_link && (_link.length > 4))
         urlBase = [NSURL URLWithString:_link];
     else urlBase = [NSURL URLWithString:strBaseUrl];
     
@@ -215,6 +215,8 @@
                                                               // An error occurred, we need to handle the error
                                                               // See: https://developers.facebook.com/docs/ios/errors
                                                               NSLog(@"Error publishing story: %@", error.description);
+                                                              [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Something went wrong"
+                                                                                         delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
                                                           } else {
                                                               if (result == FBWebDialogResultDialogNotCompleted) {
                                                                   // User cancelled.
@@ -269,7 +271,7 @@
         
         //URL page
         NSURL * urlBase;
-        if(_link)
+        if(_link && (_link.length > 4))
             urlBase = [NSURL URLWithString:_link];
         else urlBase = [NSURL URLWithString:strBaseUrl];
         [tweetSheet addURL:urlBase];

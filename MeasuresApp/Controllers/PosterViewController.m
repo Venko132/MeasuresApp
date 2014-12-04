@@ -159,8 +159,11 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     if([dataModel placeImageAtIndex:indexOfAction])
         shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[dataModel placeImageAtIndex:indexOfAction]
                                                                andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
-    if([dataModel place:indexOfAction])
-        shareDialog.otherAttachmentsStrings = @[@"https://vk.com/dev/ios_sdk"];
+    
+    if([dataModel placeLinkAtIndex:indexOfAction] && ([dataModel placeLinkAtIndex:indexOfAction].length > 0))
+        shareDialog.otherAttachmentsStrings = @[[dataModel placeLinkAtIndex:indexOfAction]];
+    else shareDialog.otherAttachmentsStrings = @[strBaseUrl];
+    
     [shareDialog presentIn:self];
 }
 
@@ -195,12 +198,21 @@ static float const fontSizeTitleOfActionPad = 48.0f;
 #pragma mark - Share message in social networks
 
 -(IBAction)facebookPost:(id)sender{
-    [[HelperClass sharedHelper] shareFacebook:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
+    [[HelperClass sharedHelper] shareFacebook:[dataModel placeNameAtIndex:indexOfAction]
+                              andDescrioption:[dataModel placeSubtitleAtIndex:indexOfAction]
+                                        image:[dataModel placeImageAtIndex:indexOfAction]
+                                forController:self
+                                    andImgUrl:[dataModel placesImageURLAtIndex:indexOfAction]
+                                      andLink:[dataModel placeLinkAtIndex:indexOfAction]];
 }
 
 -(IBAction)twitterPost:(id)sender{
 
-    [[HelperClass sharedHelper] shareTwitter:[dataModel placeNameAtIndex:indexOfAction] image:[dataModel placeImageAtIndex:indexOfAction] forController:self];
+    [[HelperClass sharedHelper] shareTwitter:[dataModel placeNameAtIndex:indexOfAction] andDescrioption:[dataModel placeSubtitleAtIndex:indexOfAction]
+                                       image:[dataModel placeImageAtIndex:indexOfAction]
+                               forController:self
+                                   andImgUrl:[dataModel placesImageURLAtIndex:indexOfAction]
+                                     andLink:[dataModel placeLinkAtIndex:indexOfAction]];
 }
 
 /*

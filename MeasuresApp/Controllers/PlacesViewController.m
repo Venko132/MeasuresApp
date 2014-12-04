@@ -115,6 +115,8 @@
     articleController.articleSubtitle = [dataModel placeSubtitleAtIndex:rowIndex];
     articleController.articleInfo = [dataModel placeDetailsURLAtIndex:rowIndex];
     articleController.articleDate = [dataModel placeDateAtIndex:rowIndex];
+    articleController.articleLink = [dataModel placeLinkAtIndex:rowIndex];
+    articleController.articleUrlImage = [dataModel placesImageURLAtIndex:rowIndex];
     
     [self.navigationController pushViewController:articleController animated:NO];
 }

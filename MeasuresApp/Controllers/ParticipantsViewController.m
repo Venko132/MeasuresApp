@@ -136,6 +136,8 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     articleController.articleSubtitle = nil;
     articleController.articleInfo = [dataModel participantsDetailsAtIndex:rowIndex];
     articleController.articleDate = nil;
+    articleController.articleLink = [dataModel participantsLinkAtIndex:rowIndex];
+    articleController.articleUrlImage = [dataModel participantsLogoURLAtIndex:rowIndex];
     
     [self.navigationController pushViewController:articleController animated:NO];
 }

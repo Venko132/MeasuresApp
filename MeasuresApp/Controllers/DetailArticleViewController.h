@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSString *    articleInfo;
 @property (strong, nonatomic) UIImage *     articleAvatar;
 @property (strong, nonatomic) UIImage *     articleBanner;
+@property (strong, nonatomic) NSString *    articleLink;
+@property (strong, nonatomic) NSString *    articleUrlImage;
 
 @property (weak, nonatomic) IBOutlet UITextView *txtVwInfo;
 @property (weak, nonatomic) IBOutlet UIWebView *wbVwInfo;

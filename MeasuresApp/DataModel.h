@@ -29,6 +29,7 @@
 - (id) participantsDetailsAtIndex:(NSInteger) index;
 - (NSString*) participantsLogoURLAtIndex:(NSInteger) index;
 - (id) participantsLinkAtIndex:(NSInteger) index;
+- (NSString*) newsLogoURLAtIndex:(NSInteger) index;
 
 // Sponsors
 -(NSInteger)sponsorsCount;
