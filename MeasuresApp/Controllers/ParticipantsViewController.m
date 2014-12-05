@@ -231,7 +231,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [self animationOfListCategories:nil];
 }
 
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
 }
@@ -254,7 +254,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
         self.tblListOfCategories.hidden = NO;
         heigthAnimation = heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
-        [UIView animateWithDuration:2.1f animations:^{
+        [UIView animateWithDuration:0.2f animations:^{
             //Container
             CGRect newRect = self.vwContainerOfAnimation.frame;
             newRect.size.height += heigthAnimation;
@@ -275,12 +275,17 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             isCategoriesOpen = YES;
             
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowUp] forState:UIControlStateNormal];
+            
+            /*CGRect newRect = self.tblListOfCategories.frame;
+            newRect.size.height += heigthAnimation;
+            self.tblListOfCategories.frame = newRect;
+             */
         }];
     } else {
         
         heigthAnimation = -heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
-        [UIView animateWithDuration:2.1f animations:^{
+        [UIView animateWithDuration:0.2f animations:^{
             //Container
             CGRect newRect = self.vwContainerOfAnimation.frame;
             newRect.size.height += heigthAnimation;
