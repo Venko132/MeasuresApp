@@ -82,7 +82,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     dataModel = [DataModel Instance];
     //[self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cltMemberCellId];
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleParticipants
-                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                        andWith:[HelperClass sharedHelper].widthOfView
                                                        fontSize:12.0f];
     
     UINib *cellNib = [UINib nibWithNibName:@"MemberCollectionViewCell" bundle:nil];
@@ -258,6 +258,11 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             CGRect newRect = self.vwContainerOfAnimation.frame;
             newRect.size.height += heigthAnimation;
             self.vwContainerOfAnimation.frame = newRect;
+            
+            //Table
+            newRect = self.tblListOfCategories.frame;
+            newRect.size.height += heigthAnimation;
+            self.tblListOfCategories.frame = newRect;
             
             //CollectionView
             newRect = self.cltListOfPartisipants.frame;

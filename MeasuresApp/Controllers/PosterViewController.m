@@ -68,7 +68,7 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     self.navigationItem.titleView = [HelperClass setNavBarTitle:nameAction
                                                         andWith:CGRectGetWidth(self.view.bounds)
                                                        fontSize:12.0f];
-    
+    [HelperClass sharedHelper].widthOfView = CGRectGetWidth(self.view.bounds);
     [self.navigationController.navigationBar setTranslucent:NO];
     [self setCornerRadiusForView:self.btnShareFB];
     

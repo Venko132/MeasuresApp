@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitlePlaces
-                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                        andWith:[HelperClass sharedHelper].widthOfView
                                                        fontSize:12.0f];
     [self initProperties];
 }

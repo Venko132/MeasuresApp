@@ -43,7 +43,7 @@
 - (void)initProperties
 {
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleNews
-                                                        andWith:CGRectGetWidth(self.view.bounds)
+                                                        andWith:[HelperClass sharedHelper].widthOfView
                                                        fontSize:12.0f];
     
     listOfNews = [[NSMutableArray alloc] initWithArray:@[@"news.png"]];

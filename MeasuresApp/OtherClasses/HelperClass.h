@@ -33,6 +33,8 @@
 //@property (strong, nonatomic) UIColor * appBlueColor;
 //@property (strong, nonatomic) UIColor * appPinkColor;
 
+@property (assign, nonatomic) float widthOfView;
+
 + (HelperClass*)sharedHelper;
 + (void)showMessage:(NSString*)alertText withTitle:(NSString*)alertTitle;
 + (UIView*)setNavBarTitle:(NSString*)title andWith:(float)_width fontSize:(float)_fontSize;
