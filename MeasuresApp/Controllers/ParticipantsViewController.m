@@ -261,10 +261,10 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             self.vwContainerOfAnimation.frame = newRect;
             
             //Table
-            newRect = self.tblListOfCategories.frame;
+            /*newRect = self.tblListOfCategories.frame;
             newRect.size.height += heigthAnimation;
             self.tblListOfCategories.frame = newRect;
-            
+            */
             //CollectionView
             newRect = self.cltListOfPartisipants.frame;
             newRect.size.height -= heigthAnimation;
