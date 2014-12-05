@@ -145,6 +145,7 @@ static NSString * const mapsYandex = @"Yandex Maps";
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString * pathOfChoosedApp;
+    NSURL * baseUrlMapsApp;
     NSString * titleAlert;
     NSString * _titleApp;
     //coordinates for the place we want to display
@@ -153,12 +154,15 @@ static NSString * const mapsYandex = @"Yandex Maps";
     
     switch (buttonIndex) {
         case 0:
-            pathOfChoosedApp = [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=14",locationCoordinate.latitude,locationCoordinate.longitude];
+            pathOfChoosedApp = [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=12",locationCoordinate.latitude,locationCoordinate.longitude];
+            NSLog(@"%@",pathOfChoosedApp);
             _titleApp = mapsGoogle;
+            baseUrlMapsApp = [NSURL URLWithString:@"comgooglemaps://"];
             break;
         case 2:
             pathOfChoosedApp = [NSString stringWithFormat:@"yandexmaps://maps.yandex.ru/?pt=%f,%f&ll=%f,%f", locationCoordinate.longitude, locationCoordinate.latitude, locationCoordinate.longitude, locationCoordinate.latitude];
             _titleApp = mapsYandex;
+            baseUrlMapsApp = [NSURL URLWithString:@"yandexmaps://maps.yandex.ru/"];
             break;
             
         default:
@@ -181,7 +185,7 @@ static NSString * const mapsYandex = @"Yandex Maps";
         //Google Maps
         //construct a URL using the comgooglemaps schema
         
-        if (![[UIApplication sharedApplication] canOpenURL:urlApp]) {
+        if (![[UIApplication sharedApplication] canOpenURL:baseUrlMapsApp]) {
             NSLog(@"Maps app is not installed");
             [HelperClass showMessage:titleAlert withTitle:@"Ошибка"];
             //left as an exercise for the reader: open the Google Maps mobile website instead!
