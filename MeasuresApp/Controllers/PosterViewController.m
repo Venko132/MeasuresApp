@@ -210,6 +210,7 @@ static float const fontSizeTitleOfActionPad = 48.0f;
                                      andLink:[dataModel placeLinkAtIndex:indexOfAction]];
 }
 
+
 /*
 #pragma mark - Navigation
 
