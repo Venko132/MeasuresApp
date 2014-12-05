@@ -403,7 +403,7 @@
 
     if (parsedObject==nil)
     {
-        NSLog(@"Error in NSJSONSerialization for %@ / %@",urlString,[error description]);
+       // NSLog(@"Error in NSJSONSerialization for %@ / %@",urlString,[error description]);
         return nil;
     }
 

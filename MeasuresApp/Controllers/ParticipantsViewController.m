@@ -68,10 +68,6 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.constHContainerBtnCategory.constant = [[HelperClass sharedHelper] selectSizePhone:40.0f andSizePad:60.0f];
-    self.constrHFooter.constant = [[HelperClass sharedHelper] selectSizePhone:32.0f andSizePad:64.0f];
-    
-    [self.view layoutIfNeeded];
 }
 
 - (void)initProperties
@@ -189,28 +185,19 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 {
     static NSString *cellIdentifier = @"Cell";
     CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //NSInteger row = indexPath.row;
     
     if (nil == cell)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    if(indexPath.row == _presentedRow)
-        [cell.contentView setBackgroundColor:selectedCellBGColor];
-        
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSString *text = (NSString*)dataModel.categorys[indexPath.row];//[NSString stringWithFormat:@"Category %i",row];
     
     cell.lblCategory.text = text;
-     
-    /*
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(!cell)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    cell.textLabel.text = (NSString*)dataModel.categorys[indexPath.row];
-    */
+    
     return cell;
 }
 
@@ -239,7 +226,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [self animationOfListCategories:nil];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
 }
@@ -262,7 +249,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
         self.tblListOfCategories.hidden = NO;
         heigthAnimation = heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
-        [UIView animateWithDuration:0.1f animations:^{
+        [UIView animateWithDuration:2.1f animations:^{
             //Container
             CGRect newRect = self.vwContainerOfAnimation.frame;
             newRect.size.height += heigthAnimation;
@@ -282,26 +269,17 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
         } completion:^(BOOL finished) {
             isCategoriesOpen = YES;
             
-            self.constrHContainerTbl.constant += heigthAnimation;
-            self.constrHTbl.constant = self.constrHContainerTbl.constant;
-            //[self.view updateConstraintsIfNeeded];
-            //[self.vwContainerOfAnimation updateConstraintsIfNeeded];
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowUp] forState:UIControlStateNormal];
         }];
     } else {
         
         heigthAnimation = -heigthOfTable;
         self.vwContainerOfAnimation.hidden = NO;
-        [UIView animateWithDuration:0.1f animations:^{
+        [UIView animateWithDuration:2.1f animations:^{
             //Container
             CGRect newRect = self.vwContainerOfAnimation.frame;
             newRect.size.height += heigthAnimation;
             self.vwContainerOfAnimation.frame = newRect;
-            
-            //Table
-            newRect = self.tblListOfCategories.frame;
-            newRect.size.height += heigthAnimation;
-            self.tblListOfCategories.frame = newRect;
             
             //CollectionView
             newRect = self.cltListOfPartisipants.frame;
@@ -311,9 +289,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             
         } completion:^(BOOL finished) {
             isCategoriesOpen = NO;
-            self.constrHContainerTbl.constant -= heigthOfTable;
-            self.constrHTbl.constant = self.constrHContainerTbl.constant;
-            //[self.view updateConstraintsIfNeeded];
+
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowDown] forState:UIControlStateNormal];
         }];
     }
