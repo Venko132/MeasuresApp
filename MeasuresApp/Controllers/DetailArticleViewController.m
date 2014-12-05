@@ -118,6 +118,7 @@ static NSString * const strHtmlTagP = @"<p>";
     [self setNewPositionOfTxtVw];
     
     self.txtVwInfo.editable = NO;
+    self.wbVwInfo.delegate = self;
     
 }
 
