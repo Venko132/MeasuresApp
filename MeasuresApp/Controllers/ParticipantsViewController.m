@@ -63,7 +63,6 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 
 -(void) viewDidLayoutSubviews{
 
-    //[self.view layoutIfNeeded];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -76,7 +75,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     self.cltListOfPartisipants.delegate = self;
     
     dataModel = [DataModel Instance];
-    //[self.cltListOfPartisipants registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:cltMemberCellId];
+
     self.navigationItem.titleView = [HelperClass setNavBarTitle:constViewTitleParticipants
                                                         andWith:[HelperClass sharedHelper].widthOfView
                                                        fontSize:12.0f];
@@ -193,16 +192,9 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSString *text = (NSString*)dataModel.categorys[indexPath.row];//[NSString stringWithFormat:@"Category %i",row];
-    
+    NSString *text = (NSString*)dataModel.categorys[indexPath.row];
     cell.lblCategory.text = text;
     
-    /*
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(!cell)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    cell.textLabel.text = (NSString*)dataModel.categorys[indexPath.row];
-    */
     return cell;
 }
 
@@ -260,11 +252,6 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             newRect.size.height += heigthAnimation;
             self.vwContainerOfAnimation.frame = newRect;
             
-            //Table
-            /*newRect = self.tblListOfCategories.frame;
-            newRect.size.height += heigthAnimation;
-            self.tblListOfCategories.frame = newRect;
-            */
             //CollectionView
             newRect = self.cltListOfPartisipants.frame;
             newRect.size.height -= heigthAnimation;
@@ -275,11 +262,6 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             isCategoriesOpen = YES;
             
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowUp] forState:UIControlStateNormal];
-            
-            /*CGRect newRect = self.tblListOfCategories.frame;
-            newRect.size.height += heigthAnimation;
-            self.tblListOfCategories.frame = newRect;
-             */
         }];
     } else {
         

@@ -80,8 +80,6 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     //Show Alert of End Action
     NSString * alert = [dataModel placeDateTextAtIndex:indexOfAction];
     
-    //NSDate * dateAction = [dataModel placeDateAtIndex:indexOfAction];
-    //if([dateAction compare:[NSDate dateWithTimeIntervalSinceNow:0]] != NSOrderedAscending)
     if(![alert isEqualToString:constMessageFinish])
         self.vwContainerForMessageAboutFinish.hidden = YES;
     
