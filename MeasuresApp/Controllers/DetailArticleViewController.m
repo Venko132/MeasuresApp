@@ -262,9 +262,7 @@ static NSString * const strHtmlTagP = @"<p>";
 }
 
 - (void)vkSdkReceivedNewToken:(VKAccessToken *)newToken {
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self startWorkingWithVK];
-    }];
+    [self performSelector:@selector(startWorkingWithVK) withObject:nil afterDelay:1.0f];
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller {
@@ -272,9 +270,7 @@ static NSString * const strHtmlTagP = @"<p>";
 }
 
 - (void)vkSdkAcceptedUserToken:(VKAccessToken *)token {
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self startWorkingWithVK];
-    }];
+    [self performSelector:@selector(startWorkingWithVK) withObject:nil afterDelay:1.0f];
 }
 - (void)vkSdkUserDeniedAccess:(VKError *)authorizationError {
     [[[UIAlertView alloc] initWithTitle:nil message:@"Access denied" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
