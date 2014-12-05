@@ -199,19 +199,20 @@
                 }
             }];
         } else {
-             // If the Facebook app is NOT installed and we can't present the share dialog
-            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+            
+            //If the Facebook app is NOT installed and we can't present the share dialog
+            NSMutableDictionary *params1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                            _textSheer, @"name",
                                            _description, @"description",
-                                           urlBase, @"link",
+                                           [urlBase absoluteString], @"link",
                                            nil];
             
-            if(_urlImg)
-                [params setObject:[NSURL URLWithString:_urlImg] forKey: @"picture"];
+            if(_urlImg && _urlImg.length>4)
+                [params1 setObject:_urlImg forKey: @"picture"];
             
             // Show the feed dialog
             [FBWebDialogs presentFeedDialogModallyWithSession:nil
-                                                   parameters:params
+                                                   parameters:params1
                                                       handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
                                                           if (error) {
                                                               // An error occurred, we need to handle the error
