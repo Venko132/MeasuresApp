@@ -185,7 +185,6 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 {
     static NSString *cellIdentifier = @"Cell";
     CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    //NSInteger row = indexPath.row;
     
     if (nil == cell)
     {
@@ -198,6 +197,12 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     
     cell.lblCategory.text = text;
     
+    /*
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(!cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    cell.textLabel.text = (NSString*)dataModel.categorys[indexPath.row];
+    */
     return cell;
 }
 
