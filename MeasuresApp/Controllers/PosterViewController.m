@@ -89,7 +89,7 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     
     self.imgPlaceOfAction.image = [dataModel placeImageAtIndex:indexOfAction];
     
-    self.lblInfo.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
+    self.lblInfo.text = [[[dataModel placeSubtitleAtIndex:indexOfAction] stringByConvertingHTMLToPlainText]  stringByDecodingHTMLEntities];
 
     [self initLblDateAndPlace];
 }
@@ -127,7 +127,7 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     [self.lblDateOfAction setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizeDateOfActionPhone andSizePad:fontSizeDateOfActionPad]]];
     
     self.lblDateOfAction.text = [HelperClass convertDate:[dataModel placeDateAtIndex:indexOfAction] toStringFormat:@"dd MMMM yyyy"];
-    self.lblPlaceOfAction.text = [[[dataModel placeDateTextAtIndex:indexOfAction] stringByStrippingTags]  stringByDecodingHTMLEntities];
+    self.lblPlaceOfAction.text = [[[dataModel placeDateTextAtIndex:indexOfAction] stringByConvertingHTMLToPlainText]  stringByDecodingHTMLEntities];
 }
 
 - (void)setCornerRadiusForView:(UIView*)_viewS

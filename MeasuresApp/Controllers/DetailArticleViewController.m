@@ -108,7 +108,7 @@ static NSString * const strHtmlTagP = @"<p>";
     if(self.articleAvatar)
         self.imgAvatar.image = self.articleAvatar;
     
-    self.articleSubtitle = [[self.articleSubtitle stringByStrippingTags]  stringByDecodingHTMLEntities];
+    self.articleSubtitle = [[self.articleSubtitle stringByConvertingHTMLToPlainText]  stringByDecodingHTMLEntities];
     self.lblTitle.attributedText = [self setTitle:self.articleTitle
                                           andInfo:self.articleSubtitle];
     self.posYLblTitleStartMax = CGRectGetMaxY(self.lblTitle.frame);

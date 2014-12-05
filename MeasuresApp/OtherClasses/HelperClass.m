@@ -142,6 +142,8 @@
              andLink:(NSString*)_link
 {
     
+    _description = [[_description stringByConvertingHTMLToPlainText]  stringByDecodingHTMLEntities];
+    
     //URL page
     NSURL * urlBase;
     if(_link && (_link.length > 4))
