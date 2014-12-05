@@ -149,10 +149,11 @@ static NSString * const mapsYandex = @"Yandex Maps";
     NSString * _titleApp;
     //coordinates for the place we want to display
     CLLocationCoordinate2D locationCoordinate = [dataModel placeMapPointAtIndex:self.rowIndex].coordinate;
+    NSString * strLocationName = [dataModel placeNameAtIndex:self.rowIndex];
     
     switch (buttonIndex) {
         case 0:
-            pathOfChoosedApp = [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",locationCoordinate.latitude,locationCoordinate.longitude];
+            pathOfChoosedApp = [NSString stringWithFormat:@"comgooglemaps://?center=%f,%f&zoom=14",locationCoordinate.latitude,locationCoordinate.longitude];
             _titleApp = mapsGoogle;
             break;
         case 2:
@@ -174,7 +175,7 @@ static NSString * const mapsYandex = @"Yandex Maps";
         //Apple Maps, using the MKMapItem class
         MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:locationCoordinate addressDictionary:nil];
         MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
-        item.name = nil;
+        item.name = strLocationName;
         [item openInMapsWithLaunchOptions:nil];
     } else if (urlApp) {
         //Google Maps
