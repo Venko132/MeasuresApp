@@ -117,6 +117,8 @@ static NSString * const strHtmlTagP = @"<p>";
     [self calculationOfPosYLblTitle];
     [self setNewPositionOfTxtVw];
     
+    self.txtVwInfo.editable = NO;
+    
 }
 
 - (NSMutableAttributedString*)setTitle:(NSString*)_titleS andInfo:(NSString*)_infoS
@@ -295,6 +297,17 @@ static NSString * const strHtmlTagP = @"<p>";
                                forController:self
                                    andImgUrl:self.articleUrlImage
                                      andLink:self.articleLink];
+}
+
+#pragma mark -WebView delegate
+
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[inRequest URL]];
+        return NO;
+    }
+    
+    return YES;
 }
 
 /*
