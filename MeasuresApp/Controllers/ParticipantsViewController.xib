@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -12,6 +11,7 @@
                 <outlet property="constHContainerBtnCategory" destination="cWB-BK-bb7" id="iCt-1D-itQ"/>
                 <outlet property="constrHContainerTbl" destination="N8K-UN-Cap" id="8oD-co-JaX"/>
                 <outlet property="constrHFooter" destination="WG1-jF-WGy" id="jLs-hX-bfx"/>
+                <outlet property="constrHTbl" destination="vfb-LM-riy" id="fp3-6I-oB2"/>
                 <outlet property="lblFooter" destination="p8K-p9-Rjo" id="IWO-04-h4J"/>
                 <outlet property="tblListOfCategories" destination="hq7-bw-YoC" id="ZJt-0h-nou"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -49,13 +49,15 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="none" rowHeight="25" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-bw-YoC">
                             <rect key="frame" x="15" y="0.0" width="290" height="1"/>
                             <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="vfb-LM-riy"/>
+                            </constraints>
                             <color key="sectionIndexBackgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="N8K-UN-Cap"/>
-                        <constraint firstAttribute="bottom" secondItem="hq7-bw-YoC" secondAttribute="bottom" id="QSJ-8T-HVp"/>
                         <constraint firstItem="hq7-bw-YoC" firstAttribute="leading" secondItem="4Uf-CD-0EG" secondAttribute="leading" constant="15" id="S1l-LI-aoj"/>
                         <constraint firstItem="hq7-bw-YoC" firstAttribute="top" secondItem="4Uf-CD-0EG" secondAttribute="top" id="hM7-0N-qdy"/>
                         <constraint firstAttribute="trailing" secondItem="hq7-bw-YoC" secondAttribute="trailing" constant="15" id="sg3-rz-JgQ"/>

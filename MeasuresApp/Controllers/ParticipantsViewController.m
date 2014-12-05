@@ -189,25 +189,34 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 {
     static NSString *cellIdentifier = @"Cell";
     CategoryTableViewCell *cell = (CategoryTableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    //NSInteger row = indexPath.row;
     
     if (nil == cell)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CategoryTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    if(indexPath.row == _presentedRow)
+        [cell.contentView setBackgroundColor:selectedCellBGColor];
+        
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSString *text = (NSString*)dataModel.categorys[indexPath.row];//[NSString stringWithFormat:@"Category %i",row];
     
     cell.lblCategory.text = text;
-    
+     
+    /*
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(!cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    cell.textLabel.text = (NSString*)dataModel.categorys[indexPath.row];
+    */
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[tableView cellForRowAtIndexPath:indexPath] setBackgroundColor:selectedCellBGColor];
+    [[tableView cellForRowAtIndexPath:indexPath].contentView setBackgroundColor:selectedCellBGColor];
     NSInteger row = indexPath.row;
     
     if ( row == _presentedRow )
@@ -217,7 +226,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     }
     
     NSIndexPath * indexPathDeselect = [NSIndexPath indexPathForRow:_presentedRow inSection:0];
-    [[tableView cellForRowAtIndexPath:indexPathDeselect] setBackgroundColor:notSelectedCellBGColor];
+    [[tableView cellForRowAtIndexPath:indexPathDeselect].contentView setBackgroundColor:notSelectedCellBGColor];
     
     //Filter memberships
     _presentedRow = row;
@@ -230,7 +239,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
     [self animationOfListCategories:nil];
 }
 
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
 }
@@ -274,8 +283,9 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             isCategoriesOpen = YES;
             
             self.constrHContainerTbl.constant += heigthAnimation;
+            self.constrHTbl.constant = self.constrHContainerTbl.constant;
             //[self.view updateConstraintsIfNeeded];
-            
+            //[self.vwContainerOfAnimation updateConstraintsIfNeeded];
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowUp] forState:UIControlStateNormal];
         }];
     } else {
@@ -288,6 +298,11 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
             newRect.size.height += heigthAnimation;
             self.vwContainerOfAnimation.frame = newRect;
             
+            //Table
+            newRect = self.tblListOfCategories.frame;
+            newRect.size.height += heigthAnimation;
+            self.tblListOfCategories.frame = newRect;
+            
             //CollectionView
             newRect = self.cltListOfPartisipants.frame;
             newRect.size.height -= heigthAnimation;
@@ -297,6 +312,7 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
         } completion:^(BOOL finished) {
             isCategoriesOpen = NO;
             self.constrHContainerTbl.constant -= heigthOfTable;
+            self.constrHTbl.constant = self.constrHContainerTbl.constant;
             //[self.view updateConstraintsIfNeeded];
             [self.btnCategory setImage:[UIImage imageNamed:constImageArrowDown] forState:UIControlStateNormal];
         }];

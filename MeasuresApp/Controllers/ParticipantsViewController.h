@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHFooter;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHContainerTbl;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrHTbl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constHContainerBtnCategory;
 
 
