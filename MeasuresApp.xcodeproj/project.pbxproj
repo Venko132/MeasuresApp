@@ -33,6 +33,8 @@
 		8440AE571A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */; };
 		8440AE5D1A2F410500CF81B2 /* SponsorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE5C1A2F410500CF81B2 /* SponsorTableViewCell.xib */; };
 		8440AE631A2F42F400CF81B2 /* AdressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440AE621A2F42F400CF81B2 /* AdressTableViewCell.xib */; };
+		844A00C11A32F78900524474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A00BF1A32F78900524474 /* Default-568h@2x.png */; };
+		844A00C21A32F78900524474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A00C01A32F78900524474 /* Default@2x.png */; };
 		847576E51A3067E600338C86 /* DetailArticleViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847576E31A3067E600338C86 /* DetailArticleViewController~ipad.xib */; };
 		847576E61A3067E600338C86 /* DetailArticleViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847576E41A3067E600338C86 /* DetailArticleViewController~iphone.xib */; };
 		8475FEE11A1DF3850028ED17 /* SponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475FEDF1A1DF3850028ED17 /* SponsorTableViewCell.m */; };
@@ -129,6 +131,8 @@
 		8440AE551A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CategoryTableViewCell~iphone.xib"; sourceTree = "<group>"; };
 		8440AE5C1A2F410500CF81B2 /* SponsorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorTableViewCell.xib; sourceTree = "<group>"; };
 		8440AE621A2F42F400CF81B2 /* AdressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdressTableViewCell.xib; sourceTree = "<group>"; };
+		844A00BF1A32F78900524474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		844A00C01A32F78900524474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		847576E31A3067E600338C86 /* DetailArticleViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailArticleViewController~ipad.xib"; sourceTree = "<group>"; };
 		847576E41A3067E600338C86 /* DetailArticleViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailArticleViewController~iphone.xib"; sourceTree = "<group>"; };
 		8475FEDE1A1DF3850028ED17 /* SponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorTableViewCell.h; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 		84BF5A581A1CC56C00EB28C6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				844A00BF1A32F78900524474 /* Default-568h@2x.png */,
+				844A00C01A32F78900524474 /* Default@2x.png */,
 				840DD7131A2B45CB003A17E5 /* ribbonBg.png */,
 				84F3E9361A2A30DA00221E88 /* fb.png */,
 				84E7AB9C1A26259800EB5E9A /* TW.png */,
@@ -679,6 +685,7 @@
 				84AA4F881A1CD5B400601CCD /* InstagramViewController.xib in Resources */,
 				84BF5A741A1CC56C00EB28C6 /* photo.png in Resources */,
 				8440AE631A2F42F400CF81B2 /* AdressTableViewCell.xib in Resources */,
+				844A00C21A32F78900524474 /* Default@2x.png in Resources */,
 				8440AE4B1A2EE41000CF81B2 /* RearTableViewCell~ipad.xib in Resources */,
 				84BF5A6E1A1CC56C00EB28C6 /* comments_photo.jpg in Resources */,
 				8440AE4D1A2EE8F000CF81B2 /* PosterViewController~ipad.xib in Resources */,
@@ -693,6 +700,7 @@
 				84AA4F761A1CD42500601CCD /* PosterViewController~iphone.xib in Resources */,
 				84C90C781A1CDB0B0093BDE9 /* RearTableViewCell.xib in Resources */,
 				843F9E4E1A1F9ECD005FA987 /* bannerBig.png in Resources */,
+				844A00C11A32F78900524474 /* Default-568h@2x.png in Resources */,
 				84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */,
 				84AA4F8E1A1CD5D300601CCD /* PlacesViewController.xib in Resources */,
 				84F3E9371A2A30DA00221E88 /* fb.png in Resources */,
