@@ -9,6 +9,9 @@
 #import "DataModel.h"
 #import <MapKit/MapKit.h>
 
+#define const_BASIC_URL @"http://dtf.cmpua.com"
+//#define const_BASIC_URL @"http://bitrix.besaba.com"
+
 #define const_Participants @"Participants"
 #define const_Category @"Category"
 #define const_Name @"Name"
@@ -490,6 +493,9 @@
 
 -(void)downloadImage:(NSString*)url
 {
+    if (url == nil)
+        return;
+    
     if ([onDownloadImages indexOfObject:url]!=NSNotFound)
         return;
     
@@ -555,8 +561,7 @@
 -(void)load
 {
     // Load Participant and Sponsors
-    
-    NSDictionary *parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/members.php?command=allShow"];
+    NSDictionary *parsedObject = [self getDataForUrl: [NSString stringWithFormat:@"%@/request/members.php?command=allShow",const_BASIC_URL]];
     
     if (parsedObject==nil)
     {
@@ -569,7 +574,10 @@
 //    }];
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
+        
         NSString* name = [parsedObject objectForKey:@"name"][i];
+        if (name == [NSNull null])
+            continue;
         NSString* logoURL = [parsedObject objectForKey:@"logo"][i];
         NSString* categorys = [parsedObject objectForKey:@"category"][i];
         NSArray* categotysArr = [categorys componentsSeparatedByString:@", "];
@@ -591,7 +599,7 @@
     
     // Load Categorys
     parsedObject = nil;
-    parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/category.php?command=allShow"];
+    parsedObject = [self getDataForUrl: [NSString stringWithFormat:@"%@/request/category.php?command=allShow",const_BASIC_URL]];
 //    NSLog(@" == Parse url: categoy");
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
@@ -599,13 +607,15 @@
     NSArray* cats = [parsedObject objectForKey:@"cat_name"];
 //    NSString* link =[parsedObject objectForKey:@"link"][0];
     for (NSString* cat in cats) {
+        if (cat == [NSNull null])
+            continue;
         if (![cat isEqualToString:@"спонсоры"])
             [self addCategory:cat];
     }
 
     // Load Locations
     parsedObject = nil;
-    parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/locations.php?command=allShow"];
+    parsedObject = [self getDataForUrl: [NSString stringWithFormat:@"%@/request/locations.php?command=allShow",const_BASIC_URL]];
 //    
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
@@ -613,6 +623,8 @@
     
     for (int i=0; i<[[parsedObject objectForKey:@"id"]count]; i++) {
         NSString* name = [parsedObject objectForKey:@"name"][i];
+        if (name == [NSNull null])
+            continue;
         NSString* subtitle = [parsedObject objectForKey:@"description"][i];
         NSString* image = [parsedObject objectForKey:@"image"][i];
         NSString* latitude =[parsedObject objectForKey:@"latitude"][i];
@@ -636,7 +648,8 @@
     /// Load News and other Articles
     
     parsedObject = nil;
-    parsedObject = [self getDataForUrl:@"http://bitrix.besaba.com/request/articles.php?command=allShow"];
+    parsedObject = [self getDataForUrl: [NSString stringWithFormat:@"%@/request/articles.php?command=allShow",const_BASIC_URL]];
+//    [self getDataForUrl:@"http://bitrix.besaba.com/request/articles.php?command=allShow"];
 //    NSLog(@" == articles");
 //    [parsedObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 //        NSLog(@"%@ -> %@",[key description], [[obj class]description]);
