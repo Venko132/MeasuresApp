@@ -46,11 +46,12 @@
 
 - (void)initProperties
 {
-    NSInteger indexOfAction =  [[DataModel Instance] GetNearestAction];
-    NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
-    if(!nameAction)
+   // NSInteger indexOfAction =  [[DataModel Instance] GetNearestAction];
+    NSString * nameAction = @"Главная";//[[DataModel Instance] placeNameAtIndex:indexOfAction];
+    /*if(!nameAction)
         nameAction = constImagePoster;
-    listOfEvents = @[nameAction,@"Участники",@"Спонсоры",@"Места",@"Новости"/*,@"Instagram"*/];
+     */
+    listOfEvents = @[nameAction,@"Новости",@"Участники",@"Партнеры"/*,@"Места"*//*,@"Instagram"*/];
     
     tblListOfEvents.dataSource = self;
     tblListOfEvents.delegate  = self;
@@ -126,16 +127,16 @@
             newFrontController = [[PosterViewController alloc] init];
             break;
         case 1:
-            newFrontController = [[ParticipantsViewController alloc] init];
+            newFrontController = [[NewsViewController alloc] init];
             break;
         case 2:
-            newFrontController = [[SponsorsViewController alloc] init];
+            newFrontController = [[ParticipantsViewController alloc] init];
             break;
         case 3:
-            newFrontController = [[PlacesViewController alloc] init];
+            newFrontController = [[SponsorsViewController alloc] init];
             break;
         case 4:
-            newFrontController = [[NewsViewController alloc] init];
+            newFrontController = [[PlacesViewController alloc] init];
             break;
         case 5:
             newFrontController = [[InstagramViewController alloc] init];

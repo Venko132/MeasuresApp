@@ -11,8 +11,8 @@
 
 @implementation RearTableViewCell
 
-static float fontSizeTitlePhone = 14.0f;
-static float fontSizeTitlePad = 28.0f;
+static float fontSizeTitlePhone = 21.0f;
+static float fontSizeTitlePad = 42.0f;
 
 - (void)awakeFromNib {
     // Initialization code

@@ -61,9 +61,9 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     dataModel = [DataModel Instance];
     indexOfAction = [dataModel GetNearestAction];
     
-    NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
+    NSString * nameAction = @"Главная";//[[DataModel Instance] placeNameAtIndex:indexOfAction];
     if(!nameAction)
-        nameAction = constImagePoster;
+        nameAction = @"Главная";
     
     self.navigationItem.titleView = [HelperClass setNavBarTitle:nameAction
                                                         andWith:CGRectGetWidth(self.view.bounds)

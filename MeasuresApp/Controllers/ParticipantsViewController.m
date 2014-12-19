@@ -225,13 +225,13 @@ static NSString * const cltMembersFooterId = @"MembersFooter";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
+    return [[HelperClass sharedHelper] selectSizePhone:50.0f andSizePad:100.0f];
 }
 
 
 - (IBAction)animationOfListCategories:(id)sender {
-    float heigthOfTable = [[HelperClass sharedHelper] selectSizePhone:100.0f andSizePad:200.0f];
-    float heigthOfCell = [[HelperClass sharedHelper] selectSizePhone:25.0f andSizePad:50.0f];
+    float heigthOfTable = [[HelperClass sharedHelper] selectSizePhone:150.0f andSizePad:300.0f];
+    float heigthOfCell = [[HelperClass sharedHelper] selectSizePhone:50.0f andSizePad:1000.0f];
     
     if((dataModel.categorys.count * heigthOfCell) < heigthOfTable)
         heigthOfTable = dataModel.categorys.count * heigthOfCell;
