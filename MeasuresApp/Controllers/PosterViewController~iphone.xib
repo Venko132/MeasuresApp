@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -115,10 +114,11 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aov-jV-NHx">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separatorLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-7D-ZXy">
-                                    <rect key="frame" x="15" y="78" width="290" height="3"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-7D-ZXy">
+                                    <rect key="frame" x="15" y="80" width="290" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="3" id="RMr-WX-T1k"/>
+                                        <constraint firstAttribute="height" constant="1" id="RMr-WX-T1k"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-Ic-dui">
@@ -129,7 +129,7 @@
                                 </label>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="cyG-7D-ZXy" firstAttribute="top" secondItem="sjr-Ic-dui" secondAttribute="bottom" constant="10" id="8hv-SA-cNz"/>
+                                <constraint firstItem="cyG-7D-ZXy" firstAttribute="top" secondItem="sjr-Ic-dui" secondAttribute="bottom" constant="12" id="8hv-SA-cNz"/>
                                 <constraint firstItem="sjr-Ic-dui" firstAttribute="top" secondItem="aov-jV-NHx" secondAttribute="top" constant="5" id="DKb-8L-0yj"/>
                                 <constraint firstItem="cyG-7D-ZXy" firstAttribute="leading" secondItem="aov-jV-NHx" secondAttribute="leading" constant="15" id="gyh-ny-sT0"/>
                                 <constraint firstAttribute="trailing" secondItem="sjr-Ic-dui" secondAttribute="trailing" constant="25" id="oqH-lM-seR"/>
@@ -318,6 +318,5 @@
         <image name="fb.png" width="80" height="80"/>
         <image name="ribbonLeft" width="13" height="32"/>
         <image name="ribbonRight" width="13" height="32"/>
-        <image name="separatorLine.png" width="768" height="3"/>
     </resources>
 </document>

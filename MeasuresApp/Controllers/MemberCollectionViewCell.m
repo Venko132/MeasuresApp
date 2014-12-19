@@ -8,7 +8,7 @@
 
 #import "MemberCollectionViewCell.h"
 
-static float fontSize = 10.0f;
+static float fontSize = 12.0f;
 
 @implementation MemberCollectionViewCell
 
