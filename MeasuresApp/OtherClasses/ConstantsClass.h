@@ -17,6 +17,7 @@ extern NSString * const constFontFregatBold;
 extern NSString * const constFontFregatItalic;
 extern NSString * const constFontFregatRegular;
 extern NSString * const constFontNautilusPompilius;
+extern NSString * const constFontRotondac;
 
 extern NSString * const constImageMainMenu;
 extern NSString * const constImagePoster;

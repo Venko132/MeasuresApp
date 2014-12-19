@@ -64,6 +64,7 @@
 		<string>Fregat_bold_italic.otf</string>
 		<string>Fregat_italic.otf</string>
 		<string>Fregat_regular.otf</string>
+		<string>rotondac.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

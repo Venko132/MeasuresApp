@@ -62,7 +62,7 @@
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    /*
+    
     for (NSString *familyName in [UIFont familyNames]) {
         
         for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
@@ -72,7 +72,7 @@
         }
         
     }
-    */
+    
     return YES;
 }
 

@@ -16,7 +16,7 @@ static float fontSizeTitlePad = 42.0f;
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblTitle setFont:[UIFont fontWithName:constFontFregatRegular size:[[HelperClass sharedHelper] selectSizePhone:fontSizeTitlePhone andSizePad:fontSizeTitlePad]]];
+    [self.lblTitle setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizeTitlePhone andSizePad:fontSizeTitlePad]]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
