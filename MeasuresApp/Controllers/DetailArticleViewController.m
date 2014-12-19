@@ -249,7 +249,7 @@ static NSString * const strHtmlTagP = @"<p>";
     if(self.articleAvatar)
         shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:self.articleAvatar
                                                            andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
-    if(self.articleLink && (self.articleLink.length > 0))
+    if(self.articleLink && (self.articleLink.length > 6))
         shareDialog.otherAttachmentsStrings = @[self.articleLink];
     else shareDialog.otherAttachmentsStrings = @[strBaseUrl];
     [shareDialog presentIn:self];

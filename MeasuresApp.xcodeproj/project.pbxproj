@@ -60,6 +60,7 @@
 		84AA4F941A1CD5FB00601CCD /* SponsorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4F921A1CD5FB00601CCD /* SponsorsViewController.xib */; };
 		84ABFA851A321B51009092C1 /* ParticipantsViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ABFA831A321B51009092C1 /* ParticipantsViewController~ipad.xib */; };
 		84ABFA861A321B51009092C1 /* ParticipantsViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ABFA841A321B51009092C1 /* ParticipantsViewController~iphone.xib */; };
+		84AF91E81A44B9B700A1EA91 /* rotondac.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84AF91E71A44B9B700A1EA91 /* rotondac.otf */; };
 		84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A591A1CC56C00EB28C6 /* bookmark.png */; };
 		84BF5A6A1A1CC56C00EB28C6 /* bookmark_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */; };
 		84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5B1A1CC56C00EB28C6 /* calendar.png */; };
@@ -173,6 +174,7 @@
 		84AA4F921A1CD5FB00601CCD /* SponsorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorsViewController.xib; sourceTree = "<group>"; };
 		84ABFA831A321B51009092C1 /* ParticipantsViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ParticipantsViewController~ipad.xib"; sourceTree = "<group>"; };
 		84ABFA841A321B51009092C1 /* ParticipantsViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ParticipantsViewController~iphone.xib"; sourceTree = "<group>"; };
+		84AF91E71A44B9B700A1EA91 /* rotondac.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotondac.otf; sourceTree = "<group>"; };
 		84BF5A591A1CC56C00EB28C6 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
 		84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookmark_photo.jpg; sourceTree = "<group>"; };
 		84BF5A5B1A1CC56C00EB28C6 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		843F9E411A1F770D005FA987 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				84AF91E71A44B9B700A1EA91 /* rotondac.otf */,
 				843F9E421A1F770D005FA987 /* Fregat */,
 				843F9E471A1F770D005FA987 /* Nautilus.otf */,
 			);
@@ -677,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8440AE5D1A2F410500CF81B2 /* SponsorTableViewCell.xib in Resources */,
+				84AF91E81A44B9B700A1EA91 /* rotondac.otf in Resources */,
 				843995D61A1E43ED00B6148A /* NewsTableViewCellR.xib in Resources */,
 				843F9E3E1A1F6154005FA987 /* menu@2x.png in Resources */,
 				84BF5A6C1A1CC56C00EB28C6 /* calendar_photo.jpg in Resources */,
