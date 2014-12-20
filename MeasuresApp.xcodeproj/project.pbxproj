@@ -61,6 +61,7 @@
 		84ABFA851A321B51009092C1 /* ParticipantsViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ABFA831A321B51009092C1 /* ParticipantsViewController~ipad.xib */; };
 		84ABFA861A321B51009092C1 /* ParticipantsViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ABFA841A321B51009092C1 /* ParticipantsViewController~iphone.xib */; };
 		84AF91E81A44B9B700A1EA91 /* rotondac.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84AF91E71A44B9B700A1EA91 /* rotondac.otf */; };
+		84AF92071A4502CB00A1EA91 /* iconSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AF92061A4502CB00A1EA91 /* iconSplash.png */; };
 		84BF5A691A1CC56C00EB28C6 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A591A1CC56C00EB28C6 /* bookmark.png */; };
 		84BF5A6A1A1CC56C00EB28C6 /* bookmark_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */; };
 		84BF5A6B1A1CC56C00EB28C6 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BF5A5B1A1CC56C00EB28C6 /* calendar.png */; };
@@ -175,6 +176,7 @@
 		84ABFA831A321B51009092C1 /* ParticipantsViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ParticipantsViewController~ipad.xib"; sourceTree = "<group>"; };
 		84ABFA841A321B51009092C1 /* ParticipantsViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ParticipantsViewController~iphone.xib"; sourceTree = "<group>"; };
 		84AF91E71A44B9B700A1EA91 /* rotondac.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotondac.otf; sourceTree = "<group>"; };
+		84AF92061A4502CB00A1EA91 /* iconSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSplash.png; sourceTree = "<group>"; };
 		84BF5A591A1CC56C00EB28C6 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
 		84BF5A5A1A1CC56C00EB28C6 /* bookmark_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bookmark_photo.jpg; sourceTree = "<group>"; };
 		84BF5A5B1A1CC56C00EB28C6 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 		84BF5A581A1CC56C00EB28C6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84AF92061A4502CB00A1EA91 /* iconSplash.png */,
 				844A00BF1A32F78900524474 /* Default-568h@2x.png */,
 				844A00C01A32F78900524474 /* Default@2x.png */,
 				840DD7131A2B45CB003A17E5 /* ribbonBg.png */,
@@ -723,6 +726,7 @@
 				849E269D1A1BAC9E00C56951 /* LaunchScreen.xib in Resources */,
 				843F9E491A1F770D005FA987 /* Fregat_bold_italic.otf in Resources */,
 				8440AE571A2F31F400CF81B2 /* CategoryTableViewCell~iphone.xib in Resources */,
+				84AF92071A4502CB00A1EA91 /* iconSplash.png in Resources */,
 				84BF5A721A1CC56C00EB28C6 /* nav_bg.png in Resources */,
 				84ABFA851A321B51009092C1 /* ParticipantsViewController~ipad.xib in Resources */,
 				843F9E321A1E4499005FA987 /* NewsTableViewCell.xib in Resources */,
