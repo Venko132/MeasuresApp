@@ -25,7 +25,7 @@ NSString * const constImageBanner   = @"banner.png";
 NSString * const constImageArrowUp  = @"mbUp.png";
 NSString * const constImageArrowDown = @"mbDown.png";
 
-NSString * const constViewTitleSponsors = @"Спонсоры";
+NSString * const constViewTitleSponsors = @"Партнеры";
 NSString * const constViewTitleNews = @"Новости";
 NSString * const constViewTitlePlaces = @"Места";
 NSString * const constViewTitleParticipants = @"Участники";
