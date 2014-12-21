@@ -26,14 +26,14 @@ static NSArray  * SCOPE = nil;
 @end
 
 //Phone
-static float const fontSizeDatePhone = 12.0f;
-static float const fontSizeInfoPhone = 12.0f;
-static float const fontSizeInfoSubtitlePhone = 10.0f;
+static float const fontSizeDatePhone = 14.0f;
+static float const fontSizeInfoPhone = 14.0f;
+static float const fontSizeInfoSubtitlePhone = 12.0f;
 static float const fontSizeInfoTitlePhone = 18.0f;
 
 //Pad
-static float const fontSizeDatePad = 24.0f;
-static float const fontSizeInfoPad = 24.0f;
+static float const fontSizeDatePad = 28.0f;
+static float const fontSizeInfoPad = 28.0f;
 static float const fontSizeInfoSubtitlePad = 20.0f;
 static float const fontSizeInfoTitlePad = 36.0f;
 
@@ -98,7 +98,7 @@ static NSString * const strHtmlTagP = @"<p>";
     self.lblTitle.textColor = [HelperClass appPink2Color];
     [self.lblTitle setFont:[UIFont fontWithName:constFontFregatBold size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoTitlePhone andSizePad:fontSizeInfoTitlePad]]];
     
-    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoSubtitlePhone andSizePad:fontSizeInfoSubtitlePad]]];
+    [self.txtVwInfo setFont:[UIFont fontWithName:constFontArial size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoPhone andSizePad:fontSizeInfoPad]]];
     
     [self.lblTitleForSocialShare setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:12.0f andSizePad:24.0f]]];
 
@@ -141,7 +141,7 @@ static NSString * const strHtmlTagP = @"<p>";
     
     //Font
     UIFont * fontTitle = [UIFont fontWithName:constFontFregatBold size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoTitlePhone andSizePad:fontSizeInfoTitlePad]];
-    UIFont * fontInfo = [UIFont fontWithName:constFontArial size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoPhone andSizePad:fontSizeInfoPad]];
+    UIFont * fontInfo = [UIFont fontWithName:constFontArial size:[[HelperClass sharedHelper] selectSizePhone:fontSizeInfoSubtitlePhone andSizePad:fontSizeInfoSubtitlePad]];
     //Color
     if(rangeTitle.location != NSNotFound){
         [attString addAttribute:NSForegroundColorAttributeName value:[HelperClass appPink2Color] range:rangeTitle];
@@ -249,7 +249,7 @@ static NSString * const strHtmlTagP = @"<p>";
     if(self.articleAvatar)
         shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:self.articleAvatar
                                                            andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
-    if(self.articleLink && (self.articleLink.length > 0))
+    if(self.articleLink && (self.articleLink.length > 6))
         shareDialog.otherAttachmentsStrings = @[self.articleLink];
     else shareDialog.otherAttachmentsStrings = @[strBaseUrl];
     [shareDialog presentIn:self];

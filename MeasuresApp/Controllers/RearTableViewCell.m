@@ -11,12 +11,12 @@
 
 @implementation RearTableViewCell
 
-static float fontSizeTitlePhone = 14.0f;
-static float fontSizeTitlePad = 28.0f;
+static float fontSizeTitlePhone = 21.0f;
+static float fontSizeTitlePad = 42.0f;
 
 - (void)awakeFromNib {
     // Initialization code
-    [self.lblTitle setFont:[UIFont fontWithName:constFontFregatRegular size:[[HelperClass sharedHelper] selectSizePhone:fontSizeTitlePhone andSizePad:fontSizeTitlePad]]];
+    [self.lblTitle setFont:[UIFont fontWithName:constFontNautilusPompilius size:[[HelperClass sharedHelper] selectSizePhone:fontSizeTitlePhone andSizePad:fontSizeTitlePad]]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

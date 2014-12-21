@@ -61,9 +61,9 @@ static float const fontSizeTitleOfActionPad = 48.0f;
     dataModel = [DataModel Instance];
     indexOfAction = [dataModel GetNearestAction];
     
-    NSString * nameAction = [[DataModel Instance] placeNameAtIndex:indexOfAction];
+    NSString * nameAction = @"Главная";//[[DataModel Instance] placeNameAtIndex:indexOfAction];
     if(!nameAction)
-        nameAction = constImagePoster;
+        nameAction = @"Главная";
     
     self.navigationItem.titleView = [HelperClass setNavBarTitle:nameAction
                                                         andWith:CGRectGetWidth(self.view.bounds)
@@ -154,12 +154,15 @@ static float const fontSizeTitleOfActionPad = 48.0f;
 {
     VKShareDialogController * shareDialog = [VKShareDialogController new];
     shareDialog.text = [dataModel placeNameAtIndex:indexOfAction];
-    if([dataModel placeImageAtIndex:indexOfAction])
-        shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:[dataModel placeImageAtIndex:indexOfAction]
+    if([dataModel placeImageAtIndex:indexOfAction]){
+        UIImage * img = (UIImage* )[dataModel placeImageAtIndex:indexOfAction];
+        shareDialog.uploadImages = @[[VKUploadImage uploadImageWithImage:img
                                                                andParams:[VKImageParameters jpegImageWithQuality:0.9]]];
+    }
     
-    if([dataModel placeLinkAtIndex:indexOfAction] && ([dataModel placeLinkAtIndex:indexOfAction].length > 0))
-        shareDialog.otherAttachmentsStrings = @[[dataModel placeLinkAtIndex:indexOfAction]];
+    NSString * link = [dataModel placeLinkAtIndex:indexOfAction];
+    if(link && (link.length > 6))
+        shareDialog.otherAttachmentsStrings = @[link];
     else shareDialog.otherAttachmentsStrings = @[strBaseUrl];
     
     [shareDialog presentIn:self];

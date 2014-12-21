@@ -8,8 +8,8 @@
 
 #import "NewsTableViewCell.h"
 
-static float const fontSizeDate = 12.0f;
-static float const fontSizeInfo = 10.0f;
+static float const fontSizeDate = 14.0f;
+static float const fontSizeInfo = 12.0f;
 static float const fontSizeInfoTitle = 16.0f;
 
 @implementation NewsTableViewCell
