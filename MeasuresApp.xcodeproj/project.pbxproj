@@ -643,7 +643,7 @@
 				TargetAttributes = {
 					849E26851A1BAC9E00C56951 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = FJTUE7ZT4K;
+						DevelopmentTeam = FU5YCSD884;
 					};
 					849E26A11A1BAC9E00C56951 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -874,7 +874,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "459c5a7b-e450-4ef0-a0de-c3a6c0023057";
+				PROVISIONING_PROFILE = "bb41a211-b58f-44ad-a168-290adcd47002";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -910,7 +910,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "459c5a7b-e450-4ef0-a0de-c3a6c0023057";
+				PROVISIONING_PROFILE = "bb41a211-b58f-44ad-a168-290adcd47002";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -921,8 +921,8 @@
 			baseConfigurationReference = EC52C47A06BEE6ADFA8D90D1 /* Pods-MeasuresApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrii Sirchenko (FU5YCSD884)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Andrii Sirchenko (FU5YCSD884)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MeasuresApp",
@@ -931,7 +931,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5348d1c8-46dd-4591-a74c-313129eb65d9";
+				PROVISIONING_PROFILE = "bb41a211-b58f-44ad-a168-290adcd47002";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -941,8 +941,8 @@
 			baseConfigurationReference = 5E5EE0241ECEC18F453A3491 /* Pods-MeasuresApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Blagodarenko (P537PGJ69L)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andrii Sirchenko (FU5YCSD884)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Andrii Sirchenko (FU5YCSD884)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MeasuresApp",
@@ -951,7 +951,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5348d1c8-46dd-4591-a74c-313129eb65d9";
+				PROVISIONING_PROFILE = "bb41a211-b58f-44ad-a168-290adcd47002";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
